@@ -50,25 +50,12 @@
       -moz-opacity: 0;
       filter: alpha(opacity=0);
     }
-    /* company block  */
-    .company-block {
-      margin: 0 0 18px 18px;
-      float: left;
-    }
-    .company-block img {
-      border: inset 15px transparent;
-      padding: 10px;
-      width: 160px;
-      height: 160px;
-      box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.35);
-      box-sizing: border-box;
-      transition: box-shadow 0.3s;
-      background-color: white;
-    }
   </style>
 </head>
 <body>
-  <?php include "layouts/application.php" ?>
-  <script src="assets/js/application.js"></script>
+  <?php include "../layouts/header.php" ?>
+  <?php include "login.php" ?>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/open-tab.js"></script>
 </body>
 </html>
