@@ -15,7 +15,7 @@
       $_SESSION["teacher_name"] = $row["full_name"];
       $_SESSION["id_teacher"]= $row["id"];
       $_SESSION["login_user"] = $myusername;
-      header("location: ../../dashboard/teacher_layout.php?xem=list_request_confirm");
+      header("location: ../../dashboard/layout_teacher.php?status=list_request_confirm");
     } else {
       header("location: ../../public/404.php");
     }

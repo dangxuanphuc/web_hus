@@ -14,7 +14,7 @@
     if ($count == 1) {
       $_SESSION["organization_name"]=$row["organization_name"];
       $_SESSION["organization_id"]=$row["id"];
-      header("location: ../../dashboard/company_layout.php?xem=list_request_enterprise");
+      header("location: ../../dashboard/layout_company.php?status=list_request_enterprise");
     } else {
       header("location: ../../public/404.php");
     }
