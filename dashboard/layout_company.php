@@ -7,11 +7,11 @@
 <body>
   <div class="wrap w3-light-grey">
     <div class="w3-row w3-green header">
-      <?php include("../views/company/header.php");?>
+      <?php include("../modules/company/header.php");?>
     </div>
 
     <div class="w3-row content w3-light-grey">
-      <?php include("../views/company/content.php");?>
+      <?php include("../modules/company/content.php");?>
     </div>
   </div>
 </body>
