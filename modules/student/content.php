@@ -6,7 +6,7 @@ if(isset($_GET["status"])){
 }
 if($temp == "list_enterprise_request"){
   include("../server/student/list_enterprise_request.php");
-} else if($temp == "detail_request_enerprise"){
+} else if($temp == "detail_request_enterprise"){
   include("detail_request_enterprise.php");
 } else if($temp == "student_assigned_table"){
   include("student_assigned_table.php");

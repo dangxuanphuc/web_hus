@@ -14,6 +14,7 @@
     if ($count > 0) {
       $_SESSION["username"] = $row["name"];
       $id = $row["id"];
+      $_SESSION["student_id"] = $id;
       $sqlSelectStatus = "SELECT status FROM intern_organization_request_assignment WHERE student_id = $id";
       $resultSatusCode = mysqli_query($conn, $sqlSelectStatus);
       $statusRegister = mysqli_fetch_array($resultSatusCode, MYSQLI_ASSOC);

@@ -29,7 +29,7 @@
       <?php }?>
     </div>
     <div class="w3-row">
-      <button> <a href="layout_student.php?xem=list_enterprise_request">Back</a></button>
+      <button> <a href="layout_student.php?status=list_enterprise_request">Back</a></button>
       <?php
         if($status_assigned_table["status"] == "0" || $status_assigned_table["status"] == "1" ||$status_enterprise_recruitment_request_form["statuss"] == "4000" ){?>
           <button type="button" disabled>Register</button>

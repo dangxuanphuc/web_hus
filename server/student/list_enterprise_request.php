@@ -1,87 +1,68 @@
 <?php
-include("../config.php");
+  include("../server/config.php");
+  // pagination
+  if(isset($_GET['page'])){
+    $get_page = $_GET['page'];
+  } else $get_page=1;
 
-// phan trang
-if(isset($_GET['trang'])){
-  $get_trang=$_GET['trang'];
-}
-else $get_trang=1;
-
-$trang1=($get_trang-1)*6;
-// Vitrichay=(tranghientai-1)*sobanghitrenmoitrang
-// limit(vtrichay,soluonghangcanlay)
-$sql=mysqli_query($connect,"SELECT * from enterprise_recruitment_request_form  where statuss='3000' or statuss='4000' limit $trang1,6 ");
-
+  $page1 = ($get_page-1)*6;
+  $sql = mysqli_query($conn, "SELECT * FROM enterprise_recruitment_request_form WHERE statuss='3000' OR statuss='4000' LIMIT $page1,6 ");
 ?>
-<?php while($row=mysqli_fetch_assoc($sql))
-
-{  ?>
-<div  class=" w3-row enterprise w3-light-green">
-
-<p><?php  name_enterprise($row["organization_id"]);?></p>
-          <p><?php echo  $row['request_name']?></p>
-          <p> số lương người cần tuyển: <?php echo $row["amount"];?></p>
-          <p>số lượng người đăng kí  :<?php number_of_registrations($row["id"]);?> </p>
-          <p>số lượng người đã phân công :<?php number_of_assigned($row["id"]);?>  </p>
-          <p>Trạng thái : <?php check_status($row["statuss"]);?></p>
-          <a href="layout_student.php?xem=detail_request_enerprise&id=<?php echo $row["id"];?>&organization_id=<?php echo $row["organization_id"];?> ">XEM CHI TIET</a>
-    </div>
-
-<?php
-}
-?>
-<div  class=" w3-row">
-<?php
-// phan trang
-$sql_trang=mysqli_query($connect,"SELECT * from enterprise_recruitment_request_form where statuss='3000' or statuss='4000'  ");
-
-$count=mysqli_num_rows($sql_trang);
-$trang=ceil($count/6);
-  echo "Trang:";
-  for($b=1;$b<=$trang;$b++){
-      echo '<a href="?xem=list_enterprise_request&trang='.$b.'" > '.$b . '</a>';
-  }
-?>
+<?php while($row = mysqli_fetch_assoc($sql)) { ?>
+  <div class="w3-row enterprise w3-light-green">
+    <p><?php name_enterprise($row["organization_id"]);?></p>
+    <p><?php echo $row["request_name"]?></p>
+    <p>số lương người cần tuyển: <?php echo $row["amount"];?></p>
+    <p>số lượng người đăng kí: <?php number_of_registrations($row["id"]);?> </p>
+    <p>số lượng người đã phân công: <?php number_of_assigned($row["id"]);?>  </p>
+    <p>Trạng thái: <?php check_status($row["statuss"]);?></p>
+    <a href="layout_student.php?status=detail_request_enterprise&id=<?php echo $row["id"];?>&organization_id=<?php echo $row["organization_id"];?>">XEM CHI TIET</a>
   </div>
+<?php } ?>
+
+<div class="w3-row">
   <?php
-// LAY TEN DOANH NGHIEP
-function name_enterprise($organization_id){
-    global $connect;
-    $sql_name=mysqli_query($connect,"SELECT * from enterprise_profile  where id=$organization_id ");
-    $dong=mysqli_fetch_assoc($sql_name);
+    // pagination
+    $sql_page = mysqli_query($conn, "SELECT * FROM enterprise_recruitment_request_form WHERE statuss='3000' OR statuss='4000'");
+    $count = mysqli_num_rows($sql_page);
+    $page = ceil($count/6);
+    echo "page:";
+    for($b=1; $b<=$page; $b++){
+      echo "<a href='?status=list_enterprise_request&page=".$b."' > ".$b . "</a>";
+    }
+  ?>
+</div>
+
+<?php
+  // Get company name
+  function name_enterprise($organization_id){
+    global $conn;
+    $sql_name = mysqli_query($conn, "SELECT * FROM enterprise_profile
+      WHERE id=$organization_id");
+    $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
-}
-
-    // LAY SO LUONG NGUOI DANG KI
-    function number_of_registrations($organization_id){
-        global $connect;
-
-        $sql_number=mysqli_query($connect,"SELECT * from student_registration  where request_id=$organization_id ");
-
-     $sl=mysqli_fetch_assoc($sql_number);
-
-        $count = mysqli_num_rows($sql_number);
-        echo $count;
-    }
-
-
-     // LAY SO LUONG NGUOI Phan cong
-     function number_of_assigned($organization_id){
-        global $connect;
-
-        $sql_number=mysqli_query($connect,"SELECT * from assigned_table  where organization_request_id=$organization_id ");
-
-       $sl=mysqli_fetch_assoc($sql_number);
-       $count = mysqli_num_rows($sql_number);
-
-        echo $count;
-    }
-
-// kiem tra trang thai
-function check_status($status){
-  if($status==4000)
-  echo " ngừng nhận đăng kí ";
-  elseif($status==3000)
-  echo " chờ sinh viên đăng kí";
-}
+  }
+  // Get number registration
+  function number_of_registrations($organization_id){
+    global $conn;
+    $sql_number = mysqli_query($conn, "SELECT * FROM student_registration WHERE request_id=$organization_id");
+    $sl = mysqli_fetch_assoc($sql_number);
+    $count = mysqli_num_rows($sql_number);
+    echo $count;
+  }
+    // Get number assigned
+    function number_of_assigned($organization_id){
+    global $conn;
+    $sql_number=mysqli_query($conn, "SELECT * from assigned_table  where organization_request_id=$organization_id");
+    $sl = mysqli_fetch_assoc($sql_number);
+    $count = mysqli_num_rows($sql_number);
+    echo $count;
+  }
+  // Check status
+  function check_status($status){
+    if($status == 4000)
+      echo " ngừng nhận đăng kí ";
+    elseif($status == 3000)
+      echo " chờ sinh viên đăng kí";
+  }
 ?>

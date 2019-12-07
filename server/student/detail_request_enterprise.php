@@ -18,13 +18,13 @@ $row = mysqli_fetch_assoc($result);
     <p><?php address_enterprise($row["organization_id"]);?></p>
   </div>
   <div class="w3-row">
-    <p>số lượng người đăng kí  :<?php number_of_registrations($row["organization_id"]);?></p>
+    <p>Number of registration: <?php number_of_registrations($row["organization_id"]);?></p>
   </div>
   <div class="w3-row">
-    <p>số lượng người đã phân công :<?php number_of_assigned($row["organization_id"]);?></p>
+    <p>Number of assigned: <?php number_of_assigned($row["organization_id"]);?></p>
   </div>
   <div class="w3-row">
-    <p>Trạng thái : <?php check_status($row["statuss"]);?></p>
+    <p>Status: <?php check_status($row["statuss"]);?></p>
   </div>
 </div>
 
@@ -32,7 +32,7 @@ $row = mysqli_fetch_assoc($result);
   // Get company name
   function name_enterprise($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from enterprise_profile where id=$organization_id ");
+    $sql_name = mysqli_query($conn, "SELECT * from enterprise_profile where id=$organization_id");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
   }
@@ -43,31 +43,30 @@ $row = mysqli_fetch_assoc($result);
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["address"];
   }
-
   // Get number of register
-  function number_of_registrations($organization_id){
+  function number_of_registrations($organization_id) {
     global $conn;
     $dem = 0;
-    $sql_number = mysqli_query($conn, "SELECT * from student_registration  where request_id=$organization_id ");
-    while($sl = mysqli_fetch_assoc($sql_number)){
+    $sql_number = mysqli_query($conn, "SELECT * FROM student_registration WHERE request_id=$organization_id ");
+    while($sl = mysqli_fetch_assoc($sql_number)) {
       $dem++;
     }
     echo $dem;
   }
 
   // Get number of assigned
-  function number_of_assigned($organization_id){
+  function number_of_assigned($organization_id) {
     global $conn;
     $dem = 0;
-    $sql_number = mysqli_query($conn,"SELECT * from assigned_table  where organization_request_id=$organization_id ");
-    while($sl = mysqli_fetch_assoc($sql_number)){
+    $sql_number = mysqli_query($conn,"SELECT * from assigned_table  where organization_request_id=$organization_id");
+    while($sl = mysqli_fetch_assoc($sql_number)) {
       $dem++;
     }
     echo $dem;
   }
 
   // Check status
-  function check_status($status){
+  function check_status($status) {
     if($status == 4000)
       echo " ngừng nhận đăng kí";
     elseif($status == 3000)

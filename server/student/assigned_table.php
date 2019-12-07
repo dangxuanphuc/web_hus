@@ -20,7 +20,7 @@ $sql = "UPDATE `assigned_table`
   AND `assigned_table`.`student_id` = $student_id";
 
 if(mysqli_query($conn, $sql))
-  header("location: ../../dashboard/layout_student.php?xem=list_enterprise_request");
+  header("location: ../../dashboard/layout_student.php?status=list_enterprise_request");
 else echo "Error deleting record: " . mysqli_error($conn);
 
 mysqli_close($conn);
