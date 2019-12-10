@@ -43,13 +43,11 @@
       width: 75%;
       margin-top: 6px;
     }
-    /* Clear floats after the columns */
     .row:after {
       content: "";
       display: table;
       clear: both;
     }
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 600px) {
       .col-25, .col-75, input[type=submit] {
         width: 100%;
@@ -60,32 +58,29 @@
 </head>
 <body>
   <div class="container">
-    <div class="w3-row w3-center">
-      <h3>Change password</h3>
-    </div>
-    <form action="../server/student/update_pass_student.php" method="post"enctype="multipart/form-data">
+    <form action="../server/teacher/add_capacity.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-25">
-          <label for="current">Current password</label>
+          <label for="capacity_name">Capacity name</label>
         </div>
         <div class="col-25">
-          <input type="password" id="current" name="pass">
+          <input type="text" id="capacity_name" name="capacity_name">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="new">New password</label>
+          <label for="capacity_type">Capacity type</label>
         </div>
         <div class="col-25">
-          <input type="password" id="new" name="new_pass">
+          <input type="text" id="capacity_type" name="capacity_type">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="re_type">Re-type new password</label>
+          <label for="capacity_note">Note</label>
         </div>
         <div class="col-25">
-          <input type="password" id="re_type" name="password">
+          <input type="text" id="capacity_note" name="capacity_note">
         </div>
       </div>
       <div class="row">
@@ -95,4 +90,3 @@
   </div>
 </body>
 </html>
-

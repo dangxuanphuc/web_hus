@@ -5,7 +5,7 @@ $row = mysqli_fetch_assoc($result);
 ?>
 
 <div class="w3-col s3" style="margin-top: 30px; margin-left: 10px;">
-  <img src="teacher/modules/uploads/<?php echo $row['img']?> alt=" height="100px" width="80px">
+  <img src="teacher/modules/uploads/<?php echo $row['avatar']?> alt=" height="100px" width="80px">
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">

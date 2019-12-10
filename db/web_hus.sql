@@ -40,25 +40,26 @@ CREATE TABLE `ablity_dictionary` (
 --
 
 INSERT INTO `ablity_dictionary` (`id`, `ablity_name`, `ablity_type`, `ablity_note`) VALUES
-(1, 'PHP', 'ngôn ngữ lạp trình', '10'),
-(2, 'JAVA', 'ngôn ngữ lạp trình', '10'),
-(3, 'C#', 'ngôn ngữ lạp trình', '10'),
-(4, 'C/C++', 'ngôn ngữ lạp trình', '10'),
-(5, 'JavaScript', 'ngôn ngữ lạp trình', '10'),
-(6, 'PYTHON', 'ngôn ngữ lạp trình', '10'),
-(7, 'CSS', 'ngôn ngữ lạp trình', '10'),
-(8, 'HTML', 'ngôn ngữ lạp trình', '10'),
-(9, 'MYSQL', 'Hệ quản trị cơ sở dữ liệu', '10'),
-(10, 'SQL', 'Hệ quản trị cơ sở dữ liệu', '10'),
-(11, 'NodeJS', 'ngôn ngữ lập trình', '10'),
-(12, 'Cấu trúc dữ liệu', 'môn học  CNTT', '10'),
-(13, 'Trí tuệ nhân tạo', 'môn học  CNTT', '10'),
-(14, 'Mạng máy tính', 'môn học  CNTT', '10'),
-(15, 'lập trình hướng đối tượng', 'môn học  CNTT', '10'),
-(16, 'Thiết kế đánh giá thuật toán', 'môn học  CNTT', '10'),
-(17, 'TOEIC', 'Chứng chỉ ngoại ngữ', '990'),
-(18, 'IELTS', 'Chứng chỉ ngoại ngữ', '9.0'),
-(19, 'thao', 'tt', '2 nam');
+(1, 'RUBY', 'Ngôn ngữ lập trình', '10'),
+(2, 'JAVA', 'Ngôn ngữ lập trình', '10'),
+(3, 'C#', 'Ngôn ngữ lập trình', '10'),
+(4, 'C/C++', 'Ngôn ngữ lập trình', '10'),
+(5, 'JavaScript', 'Ngôn ngữ lập trình', '10'),
+(6, 'PYTHON', 'Ngôn ngữ lập trình', '10'),
+(7, 'PHP', 'Ngôn ngữ lập trình', '10'),
+(8, 'SWIFT', 'Ngôn ngữ lập trình', '10'),
+(9, 'GOLANG', 'Ngôn ngữ lập trình', '10'),
+(10, 'MYSQL', 'Hệ quản trị cơ sở dữ liệu', '10'),
+(11, 'SQL', 'Hệ quản trị cơ sở dữ liệu', '10'),
+(12, 'NodeJS', 'Ngôn ngữ lập trình', '10'),
+(13, 'Cấu trúc dữ liệu', 'Môn hoc CNTT', '10'),
+(14, 'Trí tuệ nhân tạo', 'Môn hoc CNTT', '10'),
+(15, 'Mạng máy tính', 'Môn hoc CNTT', '10'),
+(16, 'Lập trình hướng đối tượng', 'Môn hoc CNTT', '10'),
+(17, 'Thiết kế đánh giá thuật toán', 'Môn hoc CNTT', '10'),
+(18, 'TOEIC', 'Chứng chỉ ngoại ngữ', '990'),
+(19, 'IELTS', 'Chứng chỉ ngoại ngữ', '9.0'),
+(20, 'JLPT', 'Chứng chỉ ngoại ngữ', '180');
 
 -- --------------------------------------------------------
 
@@ -101,8 +102,8 @@ CREATE TABLE `enterprise_profile` (
   `address` varchar(200) NOT NULL,
   `home_page` varchar(200) NOT NULL,
   `tax_number` int(11) NOT NULL,
-  `Description` text DEFAULT NULL,
-  `img` varchar(15) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `avatar` varchar(15) DEFAULT NULL,
   `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -110,10 +111,17 @@ CREATE TABLE `enterprise_profile` (
 -- Dumping data for table `enterprise_profile`
 --
 
-INSERT INTO `enterprise_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `Description`, `img`, `password`) VALUES
-(1, 'anhthao', 44, 33, 'address', 'home', 123456, 'Bạn đang hoang mang vì không biết mình đang trình độ mầm non hay đang lon ton lên Đại Học', 'hinhanh', '77777'),
-(2, 'AnhThao', 44, 55, 'rr', 'rr', 99999, ' Chế độ đầy đủ', '64581900_137532', '123456'),
-(3, 'th', 5, 0, 'rr', 'rr', 0, NULL, 'img1.PNG', '123456');
+INSERT INTO `enterprise_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
+(1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10021, 'Make awesome things that matter.', 'sun*.png', '123456'),
+(2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10034, 'Lorem ipsum dolor sit amet.', 'rikkei.png', '123456'),
+(3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10127, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
+(4, 'FPT Telecom', 550, 420, 'My Dinh, Hanoi', 'https://www.fpt.vn/', 10236, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(5, '2NF', 320, 350, 'My Dinh, Hanoi', 'http://2nf.com.vn/', 10145, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(6, 'Beetsoft', 500, 620, 'My Dinh, Hanoi', 'https://beetsoft.com.vn', 10117, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(7, 'FSS', 440, 540, 'My Dinh, Hanoi', 'https://fss.com.vn/', 10206, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(8, 'Nashtech', 700, 500, 'My Dinh, Hanoi', 'https://www.nashtechglobal.com/', 10256, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(9, 'SmartOSC', 660, 470, 'Handico, Hanoi', 'http://www.smartosc.com/', 10068, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(10, 'FPT Information System', 870, 620, 'Keangnam, Hanoi', 'https://www.fis.vn/', 10115, 'Lorem ipsum dolor sit amet.', 'fis.png', '123456');
 
 -- --------------------------------------------------------
 
@@ -136,12 +144,16 @@ CREATE TABLE `enterprise_recruitment_request_form` (
 --
 
 INSERT INTO `enterprise_recruitment_request_form` (`id`, `request_name`, `organization_id`, `short_description`, `amount`, `date_submitted`, `statuss`) VALUES
-(3, 'Tuyen dung', 1, 'SENIOR', 1, '2019-11-20', 4000),
-(4, 'Thuc Tap', 1, 'freelancer', 12, '2019-11-12', 1000),
-(5, 'hoc viec', 2, 'lam luon', 12, '2019-11-19', 3000),
-(6, 't', 2, 'hhh', 12, '2019-12-01', 3000),
-(7, 't', 2, 'rrrf', 44, '2019-12-01', 3000),
-(8, 't', 2, 'rrrf', 2, '2019-12-01', 4000);
+(1, 'Ruby Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
+(2, 'Senior Android Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
+(3, 'QC Leader', 1, 'Lorem ipsum', 1, '2019-11-15', 4000),
+(4, 'Java Developer', 1, 'Lorem ipsum', 5, '2019-11-19', 1000),
+(5, 'Frontend ReactJS, VueJS', 2, 'Lorem ipsum', 12, '2019-11-19', 2000),
+(6, 'Java Internship', 4, 'Lorem ipsum', 7, '2019-11-19', 3000),
+(7, 'Swift Developer', 7, 'Lorem ipsum', 8, '2019-11-20', 4000),
+(8, 'Senior iOS Developer', 3, 'Lorem ipsum', 4, '2019-11-23', 3000),
+(9, 'Tester', 3, 'Lorem ipsum', 9, '2019-11-25', 2000),
+(10, 'Senior Business Analyst', 4, 'Lorem ipsum', 4, '2019-11-25', 4000);
 
 -- --------------------------------------------------------
 
@@ -162,15 +174,16 @@ CREATE TABLE `list_of_required_capacity_of_each_request_coupon` (
 --
 
 INSERT INTO `list_of_required_capacity_of_each_request_coupon` (`id`, `organization_request_id`, `ability_id`, `ability_required`, `note`) VALUES
-(1, 5, 3, 7, '2 nam kinh nghiem'),
-(2, 5, 4, 8, '2 nam kinh nghiem'),
-(8, 3, 4, 2, '2 nam'),
-(13, 7, 3, 3, 'note'),
-(17, 4, 16, 1, 'note'),
-(21, 6, 5, 4, 'note'),
-(22, 6, 4, 4, 'note'),
-(27, 4, 6, 1, 'note'),
-(28, 3, 4, 1, 'note');
+(1, 3, 3, 7, '1 năm kinh nghiệm'),
+(2, 5, 4, 8, 'Sinh viên mới tốt nghiệp'),
+(3, 4, 4, 2, '2 năm kinh nghiệm'),
+(4, 7, 3, 3, '1 năm kinh nghiệm'),
+(5, 4, 7, 1, 'Sinh viên mới tốt nghiệp'),
+(6, 6, 5, 4, 'Không cần kinh nghiệm'),
+(7, 6, 2, 4, '1 năm kinh nghiệm'),
+(8, 4, 6, 1, 'Không cần kinh nghiệm'),
+(9, 3, 4, 1, 'Sinh viên mới tốt nghiệp'),
+(10, 3, 4, 1, 'Sinh viên mới tốt nghiệp');
 
 -- --------------------------------------------------------
 
@@ -185,7 +198,7 @@ CREATE TABLE `student_profile` (
   `date_of_birth` date NOT NULL,
   `join_date` date NOT NULL,
   `class_name` varchar(20) NOT NULL,
-  `img` varchar(15) DEFAULT NULL,
+  `avatar` varchar(15) DEFAULT NULL,
   `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -193,13 +206,17 @@ CREATE TABLE `student_profile` (
 -- Dumping data for table `student_profile`
 --
 
-INSERT INTO `student_profile` (`id`, `student_code`, `name`, `date_of_birth`, `join_date`, `class_name`, `img`, `password`) VALUES
-(1, 'student', 'Student', '2019-12-11', '2019-11-15', 'k62a3', '64255995_833472', '55555'),
-(2, '2', 'thao', '2402-02-02', '3930-03-03', 'rr', '33', '123456'),
-(3, '55', 'tathao', '2019-11-28', '2019-12-01', '55', 'img1.PNG', '123456'),
-(4, '12345', 'anh', '2019-12-19', '2019-12-02', 'k62a3', 'img1.PNG', '123456'),
-(6, '123456', 'thu', '2019-12-19', '2019-12-02', 'k62a3', 'img1.PNG', '123456'),
-(7, 'thien', 'thien', '2019-12-12', '2019-12-02', 'k62a3', 'img1.PNG', '123456');
+INSERT INTO `student_profile` (`id`, `student_code`, `name`, `date_of_birth`, `join_date`, `class_name`, `avatar`, `password`) VALUES
+(1, 's001', 'XuanPhuc', '1999-12-11', '2019-11-15', 'k61a3', 'index.png', '123456'),
+(2, 's002', 'user2', '2001-02-02', '2019-12-03', 'k63a2', 'index.png', '123456'),
+(3, 's003', 'user3', '1998-11-28', '2019-12-01', 'k61a2', 'index.png', '123456'),
+(4, 's004', 'user4', '1996-07-09', '2019-12-02', 'k62a3', 'index.png', '123456'),
+(5, 's005', 'user5', '1995-02-05', '2019-12-02', 'k59a5', 'index.png', '123456'),
+(6, 's006', 'user6', '1996-04-07', '2019-12-02', 'k61a3', 'index.png', '123456'),
+(7, 's007', 'user7', '1999-11-19', '2019-12-02', 'k63a3', 'index.png', '123456'),
+(8, 's008', 'user8', '2000-13-06', '2019-12-02', 'k62a3', 'index.png', '123456'),
+(9, 's009', 'user9', '1999-01-09', '2019-12-02', 'k62a1', 'index.png', '123456'),
+(10, 's0010', 'user10', '1997-05-12', '2019-12-02', 'k62a3', 'index.png', '123456');
 
 -- --------------------------------------------------------
 
@@ -258,7 +275,7 @@ CREATE TABLE `teacher_profile` (
   `full_name` varchar(100) NOT NULL,
   `teacher_code` varchar(40) NOT NULL,
   `sex` varchar(40) NOT NULL,
-  `img` varchar(100) DEFAULT NULL,
+  `avatar` varchar(100) DEFAULT NULL,
   `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -266,9 +283,17 @@ CREATE TABLE `teacher_profile` (
 -- Dumping data for table `teacher_profile`
 --
 
-INSERT INTO `teacher_profile` (`id`, `full_name`, `teacher_code`, `sex`, `img`, `password`) VALUES
-(1, 'thao', 'thao', 'rrrr', NULL, '77777'),
-(2, 'a thao', '12345', '1', 'img1.PNG', '123456');
+INSERT INTO `teacher_profile` (`id`, `full_name`, `teacher_code`, `sex`, `avatar`, `password`) VALUES
+(1, 'Vũ Trịnh Hà Minh', 't001', '1', 'index.png', '123456'),
+(2, 'Hoàng Thị Hiền', 't002', '1', 'index.png', '123456'),
+(3, 'Nguyễn Thị Phương', 't003', '1', 'index.png', '123456'),
+(4, 'Đoàn Thanh Vân', 't004', '1', 'index.png', '123456'),
+(5, 'Nguyễn Văn Toản', 't005', '2', 'index.png', '123456'),
+(6, 'Đoàn Thanh Vân', 't006', '1', 'index.png', '123456'),
+(7, 'Vũ Quang Tùng', 't007', '2', 'index.png', '123456'),
+(8, 'Nguyễn Tá Tuấn', 't008', '2', 'index.png', '123456'),
+(9, 'Đoàn Thanh Vân', 't009', '1', 'index.png', '123456'),
+(10, 'Đỗ Minh Duyên', 't0010', '1', 'index.png', '123456');
 
 --
 -- Indexes for dumped tables
