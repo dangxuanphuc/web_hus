@@ -1,22 +1,22 @@
 <?php
   include("../server/config.php");
+  $request_id = $_GET["request_id"];
   $student_id = $_GET["student_id"];
-  $sql = mysqli_query($conn, "SELECT * from student_profile where id=$student_id");
-  $row = mysqli_fetch_assoc($sql);
 
+  $sql = mysqli_query($conn, "SELECT * from student_profile where id=$student_id ");
+  $row = mysqli_fetch_assoc($sql);
   $sql2 = "SELECT ab.ablity_name, l.ability_rate
     FROM student_skill_profile l
     JOIN ablity_dictionary ab on ab.id = l.ability_id
     WHERE l.student_id = $student_id";
   $sql_student_skill_profile = mysqli_query($conn, $sql2);
 ?>
-
-<div class="w3-col s3" style="margin-top: 30px;margin-left: 10px;">
-  <img src="../public/uploads/teacher/<?php echo $row['avatar']?>" height="250px" width="200px">
+<div class="w3-col s3" style="margin-top: 30px ;margin-left: 10px ;">
+  <img src="../public/uploads/teacher/<?php echo $row['avatar']?> " height="250px" width="200px">
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
-    <div class="w3-col w3-center"><h1 class="w3-card"><?php echo $row["name"];?></h1></div>
+    <div class=" w3-col w3-center"><h1 class="w3-card"><?php echo $row["name"];?></h1></div>
   </div>
   <div class="w3-row">
     <div class="w3-col s2">
@@ -42,7 +42,7 @@
       <?php } ?>
     </div>
     <div class="w3-row">
-      <button> <a href="layout_teacher.php?status=list_student">Back</a></button>
+      <button><a href="layout_company.php?status=showmore&id=<?php echo $request_id;?>"  >Back</a></button>
     </div>
   </div>
 </div>

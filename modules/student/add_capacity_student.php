@@ -1,6 +1,5 @@
 <?php
   include("../server/config.php");
-  // Get list skill
   $sql_ablity_dictionary = mysqli_query($conn, "SELECT * from ablity_dictionary");
 ?>
 <h3>Add skill</h3>

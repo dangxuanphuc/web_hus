@@ -51,7 +51,7 @@
       <button> <a href="layout_student.php?status=add_capacity_student">Add skill</a></button>
     </div>
     <div class="w3-row">
-      <button> <a href="layout_student.php?status=list_enterprise_request">Back</a></button>
+      <button> <a href="layout_student.php?status=list_company_request">Back</a></button>
     </div>
   </div>
 </div>

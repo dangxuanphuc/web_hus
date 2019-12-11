@@ -6,7 +6,7 @@
     $myusername = mysqli_real_escape_string($conn, $_POST["txtUsername"]);
     $pass = mysqli_real_escape_string($conn, $_POST["txtPassword"]);
 
-    $sql = "SELECT * FROM enterprise_profile WHERE tax_number = '$myusername' and password='$pass'";
+    $sql = "SELECT * FROM company_profile WHERE tax_number = '$myusername' and password='$pass'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
@@ -14,7 +14,7 @@
     if ($count == 1) {
       $_SESSION["organization_name"]=$row["organization_name"];
       $_SESSION["organization_id"]=$row["id"];
-      header("location: ../../dashboard/layout_company.php?status=list_request_enterprise");
+      header("location: ../../dashboard/layout_company.php?status=list_request_company");
     } else {
       header("location: ../../public/404.php");
     }

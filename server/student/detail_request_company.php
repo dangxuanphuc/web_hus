@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * from enterprise_recruitment_request_form where id = $request_id";
+$sql = "SELECT * from company_recruitment_request_form where id = $request_id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -9,13 +9,13 @@ $row = mysqli_fetch_assoc($result);
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
-    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_enterprise($row["organization_id"]);?></h1></div>
+    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_company($row["organization_id"]);?></h1></div>
   </div>
   <div class="w3-row">
     <div class="w3-col w3-center"> <p><?php echo $row["request_name"]?></p></div>
   </div>
   <div class="w3-row">
-    <p><?php address_enterprise($row["organization_id"]);?></p>
+    <p><?php address_company($row["organization_id"]);?></p>
   </div>
   <div class="w3-row">
     <p>Number of registration: <?php number_of_registrations($row["organization_id"]);?></p>
@@ -30,16 +30,16 @@ $row = mysqli_fetch_assoc($result);
 
 <?php
   // Get company name
-  function name_enterprise($organization_id){
+  function name_company($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from enterprise_profile where id=$organization_id");
+    $sql_name = mysqli_query($conn, "SELECT * from company_profile where id=$organization_id");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
   }
   // Get company address
-  function address_enterprise($organization_id){
+  function address_company($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from enterprise_profile where id=$organization_id ");
+    $sql_name = mysqli_query($conn, "SELECT * from company_profile where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["address"];
   }

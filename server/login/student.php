@@ -15,13 +15,13 @@
       $_SESSION["username"] = $row["name"];
       $id = $row["id"];
       $_SESSION["student_id"] = $id;
-      $sqlSelectStatus = "SELECT status FROM intern_organization_request_assignment WHERE student_id = $id";
+      $sqlSelectStatus = "SELECT status FROM intern_organization_request_assignment WHERE student_id = $id" AND status <> 2;
       $resultSatusCode = mysqli_query($conn, $sqlSelectStatus);
       $statusRegister = mysqli_fetch_array($resultSatusCode, MYSQLI_ASSOC);
-      if($statusRegister["status"] == 0 || $statusRegister["status"] == 1 || $statusRegister["status"] == 2){
+      if($statusRegister["status"] == 0 || $statusRegister["status"] == 1 || $statusRegister["status"] == 2) {
         header("location: ../../dashboard/layout_student.php?status=student_assigned_table");
-      }else{
-        header("location: ../../dashboard/layout_student.php?status=list_enterprise_request");
+      } else {
+        header("location: ../../dashboard/layout_student.php?status=list_company_request");
       }
     } else {
       header("location: ../../public/404.php");

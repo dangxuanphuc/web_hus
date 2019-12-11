@@ -15,12 +15,11 @@ echo $create ."</br>";
 echo $student_id;
 
 $sql = "UPDATE `assigned_table`
-  SET `start_date` = '$start_date', `end_date` = '$end_date', `status` = '$status', `create_date` = '$create'
-  WHERE  `assigned_table`.`organization_request_id` = $request_id
-  AND `assigned_table`.`student_id` = $student_id";
+  SET `start_date`='$start_date', `end_date`='$end_date', `status`='$status', `create_date`='$create'
+  WHERE `assigned_table`.`student_id`=$student_id";
 
 if(mysqli_query($conn, $sql))
-  header("location: ../../dashboard/layout_student.php?status=list_enterprise_request");
+  header("location: ../../dashboard/layout_student.php?status=list_company_request");
 else echo "Error deleting record: " . mysqli_error($conn);
 
 mysqli_close($conn);

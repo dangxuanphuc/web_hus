@@ -7,7 +7,7 @@
     </p>
     <p>
       <label for="teacherPSW" class="control-label">Password</label>
-      <input type="text" id="teacherPSW" class="form-control w3-input"
+      <input type="password" id="teacherPSW" class="form-control w3-input"
         name="txtPassword" required>
     </p>
   </div>

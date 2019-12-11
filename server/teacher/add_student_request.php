@@ -16,7 +16,7 @@
     global $request_id;
     $sql = "DELETE FROM student_registration WHERE student_id = $student_id";
     if(mysqli_query($conn, $sql)){
-      header("location: ../../layout_teacher.php?status=list_assigned&id=".$request_id);
+      header("location: ../../dashboard/layout_teacher.php?status=list_assigned&id=".$request_id);
     } else {
       echo "Error deleting record: ";
     }

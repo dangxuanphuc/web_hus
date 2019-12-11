@@ -4,11 +4,11 @@ if(isset($_GET["page"])){
   $get_page = $_GET["page"];
 } else $get_page = 1;
 $page1 = ($get_page-1)*6;
-$sql = mysqli_query($conn, "SELECT * FROM enterprise_recruitment_request_form WHERE statuss='1000' limit $page1,6");
+$sql = mysqli_query($conn, "SELECT * FROM company_recruitment_request_form WHERE statuss='1000' limit $page1,6");
 ?>
 <?php while($row = mysqli_fetch_assoc($sql)) { ?>
-  <div class="enterprise">
-    <p><?php name_enterprise($row["organization_id"]);?></p>
+  <div class="company">
+    <p><?php name_company($row["organization_id"]);?></p>
     <p><?php echo $row["request_name"]?></p>
     <p>Amount: <?php echo $row["amount"];?></p>
     <p>Status: <?php check_status($row["statuss"]);?></p>
@@ -17,7 +17,7 @@ $sql = mysqli_query($conn, "SELECT * FROM enterprise_recruitment_request_form WH
 <?php } ?>
 <div class="w3-row">
   <?php
-    $sql_page = mysqli_query($conn, "SELECT * FROM enterprise_recruitment_request_form WHERE statuss='1000' ");
+    $sql_page = mysqli_query($conn, "SELECT * FROM company_recruitment_request_form WHERE statuss='1000' ");
     $count = mysqli_num_rows($sql_page);
     $page = ceil($count/6);
     echo "page:";
@@ -27,9 +27,9 @@ $sql = mysqli_query($conn, "SELECT * FROM enterprise_recruitment_request_form WH
   ?>
 </div>
 <?php
-  function name_enterprise($organization_id){
+  function name_company($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from enterprise_profile where id=$organization_id ");
+    $sql_name = mysqli_query($conn, "SELECT * from company_profile where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
   }

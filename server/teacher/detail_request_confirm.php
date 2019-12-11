@@ -1,7 +1,7 @@
 <?php
-  include("../config.php");
+  include("../server/config.php");
   $request_id = $_GET["id"];
-  $sql = mysqli_query($conn, "SELECT * from enterprise_recruitment_request_form where id=$request_id ");
+  $sql = mysqli_query($conn, "SELECT * from company_recruitment_request_form where id=$request_id ");
   $row = mysqli_fetch_assoc($sql);
   $sql2 = "SELECT ab.ablity_name, l.ability_required
     FROM list_of_required_capacity_of_each_request_coupon  l
@@ -11,11 +11,11 @@
 ?>
 
 <div class="w3-col s3" style="margin-top: 30px;margin-left: 10px;">
-  <img src="../public/uploads/teacher<?php img_enterprise($row['organization_id'])?> " height="250px" width="200px">
+  <img src="../public/uploads/teacher<?php img_company($row['organization_id'])?> " height="250px" width="200px">
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
-    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_enterprise($row["organization_id"]);?></h1></div>
+    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_company($row["organization_id"]);?></h1></div>
   </div>
   <div class="w3-row">
     <div class="w3-col w3-center"><p><?php echo $row["request_name"]?></p></div>
@@ -25,7 +25,7 @@
       <i class="fa fa-map-marker" style="font-size:30px;color: red;margin-top: 10px"></i>
     </div>
     <div class="w3-col s9">
-      <p style="margin-left: -50px;"><?php address_enterprise($row["organization_id"]);?></p>
+      <p style="margin-left: -50px;"><?php address_company($row["organization_id"]);?></p>
     </div>
   </div>
   <div class="w3-row">
@@ -56,21 +56,21 @@
 </div>
 
 <?php
-  function img_enterprise($organization_id){
+  function img_company($organization_id){
     global $conn;
-    $sql_img = mysqli_query($conn, "SELECT * from enterprise_profile where id=$organization_id ");
+    $sql_img = mysqli_query($conn, "SELECT * from company_profile where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_img);
     echo $dong["avatar"];
   }
-  function name_enterprise($organization_id){
+  function name_company($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn,"SELECT * from enterprise_profile where id=$organization_id ");
+    $sql_name = mysqli_query($conn,"SELECT * from company_profile where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
   }
-  function address_enterprise($organization_id){
+  function address_company($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn,"SELECT * from enterprise_profile where id=$organization_id ");
+    $sql_name = mysqli_query($conn,"SELECT * from company_profile where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["address"];
   }

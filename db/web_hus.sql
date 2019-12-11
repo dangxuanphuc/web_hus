@@ -91,10 +91,10 @@ INSERT INTO `assigned_table` (`organization_request_id`, `student_id`, `start_da
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enterprise_profile`
+-- Table structure for table `company_profile`
 --
 
-CREATE TABLE `enterprise_profile` (
+CREATE TABLE `company_profile` (
   `id` int(11) NOT NULL,
   `organization_name` varchar(20) NOT NULL,
   `employee_count` int(11) NOT NULL,
@@ -108,10 +108,10 @@ CREATE TABLE `enterprise_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `enterprise_profile`
+-- Dumping data for table `company_profile`
 --
 
-INSERT INTO `enterprise_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
+INSERT INTO `company_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
 (1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10021, 'Make awesome things that matter.', 'sun*.png', '123456'),
 (2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10034, 'Lorem ipsum dolor sit amet.', 'rikkei.png', '123456'),
 (3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10127, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
@@ -126,10 +126,10 @@ INSERT INTO `enterprise_profile` (`id`, `organization_name`, `employee_count`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enterprise_recruitment_request_form`
+-- Table structure for table `company_recruitment_request_form`
 --
 
-CREATE TABLE `enterprise_recruitment_request_form` (
+CREATE TABLE `company_recruitment_request_form` (
   `id` int(5) NOT NULL,
   `request_name` varchar(250) NOT NULL,
   `organization_id` int(11) NOT NULL,
@@ -140,10 +140,10 @@ CREATE TABLE `enterprise_recruitment_request_form` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `enterprise_recruitment_request_form`
+-- Dumping data for table `company_recruitment_request_form`
 --
 
-INSERT INTO `enterprise_recruitment_request_form` (`id`, `request_name`, `organization_id`, `short_description`, `amount`, `date_submitted`, `statuss`) VALUES
+INSERT INTO `company_recruitment_request_form` (`id`, `request_name`, `organization_id`, `short_description`, `amount`, `date_submitted`, `statuss`) VALUES
 (1, 'Ruby Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
 (2, 'Senior Android Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
 (3, 'QC Leader', 1, 'Lorem ipsum', 1, '2019-11-15', 4000),
@@ -312,15 +312,15 @@ ALTER TABLE `assigned_table`
   ADD PRIMARY KEY (`student_id`,`organization_request_id`);
 
 --
--- Indexes for table `enterprise_profile`
+-- Indexes for table `company_profile`
 --
-ALTER TABLE `enterprise_profile`
+ALTER TABLE `company_profile`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `enterprise_recruitment_request_form`
+-- Indexes for table `company_recruitment_request_form`
 --
-ALTER TABLE `enterprise_recruitment_request_form`
+ALTER TABLE `company_recruitment_request_form`
   ADD PRIMARY KEY (`id`),
   ADD KEY `organization_id` (`organization_id`);
 
@@ -369,15 +369,15 @@ ALTER TABLE `ablity_dictionary`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `enterprise_profile`
+-- AUTO_INCREMENT for table `company_profile`
 --
-ALTER TABLE `enterprise_profile`
+ALTER TABLE `company_profile`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `enterprise_recruitment_request_form`
+-- AUTO_INCREMENT for table `company_recruitment_request_form`
 --
-ALTER TABLE `enterprise_recruitment_request_form`
+ALTER TABLE `company_recruitment_request_form`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
@@ -403,23 +403,23 @@ ALTER TABLE `teacher_profile`
 --
 
 --
--- Constraints for table `enterprise_recruitment_request_form`
+-- Constraints for table `company_recruitment_request_form`
 --
-ALTER TABLE `enterprise_recruitment_request_form`
-  ADD CONSTRAINT `enterprise_organization_FK` FOREIGN KEY (`organization_id`) REFERENCES `enterprise_profile` (`id`);
+ALTER TABLE `company_recruitment_request_form`
+  ADD CONSTRAINT `company_organization_FK` FOREIGN KEY (`organization_id`) REFERENCES `company_profile` (`id`);
 
 --
 -- Constraints for table `list_of_required_capacity_of_each_request_coupon`
 --
 ALTER TABLE `list_of_required_capacity_of_each_request_coupon`
   ADD CONSTRAINT `list_of_required_capacity_of_each_request_coupon_ibfk_1` FOREIGN KEY (`ability_id`) REFERENCES `ablity_dictionary` (`id`),
-  ADD CONSTRAINT `list_of_required_capacity_of_each_request_coupon_ibfk_2` FOREIGN KEY (`organization_request_id`) REFERENCES `enterprise_recruitment_request_form` (`id`);
+  ADD CONSTRAINT `list_of_required_capacity_of_each_request_coupon_ibfk_2` FOREIGN KEY (`organization_request_id`) REFERENCES `company_recruitment_request_form` (`id`);
 
 --
 -- Constraints for table `student_registration`
 --
 ALTER TABLE `student_registration`
-  ADD CONSTRAINT `student_registration_ibfk_2` FOREIGN KEY (`request_id`) REFERENCES `enterprise_recruitment_request_form` (`id`),
+  ADD CONSTRAINT `student_registration_ibfk_2` FOREIGN KEY (`request_id`) REFERENCES `company_recruitment_request_form` (`id`),
   ADD CONSTRAINT `student_registration_ibfk_3` FOREIGN KEY (`student_id`) REFERENCES `student_profile` (`id`);
 
 --

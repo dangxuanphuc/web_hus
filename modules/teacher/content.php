@@ -9,7 +9,7 @@
     <a href="layout_teacher.php?status=list_request_cancel"><h3>List request cancel</h3></a>
     <a href="layout_teacher.php?status=list_teacher"><h3>List teacher</h3></a>
     <a href="layout_teacher.php?status=list_student"><h3>List student</h3></a>
-    <a href="layout_teacher.php?status=list_enterprise"><h3>List company</h3></a>
+    <a href="layout_teacher.php?status=list_company"><h3>List company</h3></a>
     <a href="layout_teacher.php?status=update_pass_teacher"><h3>Change password</h3></a>
   </div>
 
@@ -30,7 +30,7 @@
         include("add_capacity.php");
       } elseif ($temp == "list_request_unconfimred") {
         include("list_request_unconfimred.php");
-      } elseif ($temp == "detail_request_enerprise") {
+      } elseif ($temp == "detail_request_company") {
         include("../server/teacher/detail_request_unconfimred.php");
       } elseif ($temp == "list_request_cancel") {
         include("list_request_cancel.php");
@@ -42,7 +42,7 @@
         include("../server/teacher/detail_request_confirm.php");
       } elseif ($temp == "list_assigned") {
         include("list_assigned.php");
-      } elseif ($temp == "list_student_regster") {
+      } elseif ($temp == "list_student_register") {
         include("list_student_register.php");
       } elseif ($temp == "add_student_request") {
         include("../server/teacher/add_student_request.php");

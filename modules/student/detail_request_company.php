@@ -5,8 +5,8 @@
   $organization_id = $_GET["organization_id"]
 ?>
 <div class="w3-row">
-  <?php include("../server/student/detail_request_enterprise.php");?>
+  <?php include("../server/student/detail_request_company.php");?>
 </div>
 <div class="w3-row w3-margin-top ">
-  <?php include("../server/student/detail_request_enterprise_capacity.php");?>
+  <?php include("../server/student/detail_request_company_capacity.php");?>
 </div>

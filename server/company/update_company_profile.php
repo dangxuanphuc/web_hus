@@ -1,19 +1,19 @@
 <?php
   include("../config.php");
+  session_start();
+  $organization_id = $_SESSION["organization_id"];
   $name = $_POST["company_name"];
-  $code = $_POST["company_id"];
-  $employee = $_POST["employee"];
+  $empl = $_POST["empl"];
   $revenue = $_POST["revenue"];
   $address = $_POST["address"];
   $home = $_POST["home"];
   $image = $_FILES["company_avatar"]["name"];
   $image_tmp = $_FILES["company_avatar"]["tmp_name"];
-  $password = $_POST["Password"];
   move_uploaded_file($image_tmp, "../public/uploads/teacher/".$image);
 
-  $sql = "INSERT INTO company_profile(organization_name, employee_count, gross_revenue, address, home_page, tax_number, avatar, 'password') VALUES('$name', '$employee', '$revenue', '$address', '$home', '$code', '$image', '$password')";
+  $sql = "UPDATE `company_profile` SET   `organization_name`='$name', `employee_count`='$empl', `gross_revenue`='$revenue', `address`='$address', home_page='$home', avatar='$image' WHERE `id`= $organization_id";
   if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    header("location: ../../dashboard/layout_company.php?status=company_profile");
   } else {
     echo("Failed");
   }
