@@ -1,14 +1,13 @@
 <?php
   include_once("../server/config.php");
 
-  $sql = "SELECT * FROM company_recruitment_request_form";
-  $resultCompanyRequest = mysqli_query($conn, $sql);
-  $followingdataCompanyRequest = $resultCompanyRequest->fetch_array(MYSQLI_ASSOC);
+  $sql = "SELECT * FROM intern_organization_requests";
+  $resultOrganizationRequest = mysqli_query($conn, $sql);
+  $followingdataOrganizationRequest = $resultOrganizationRequest->fetch_array(MYSQLI_ASSOC);
 
   $value = $_SESSION["username"];
-  $sqlGetStartAndEndDate = "SELECT start_date, end_date
-    FROM assigned_table WHERE student_id = (SELECT id FROM student_profile
-      WHERE student_profile.student_code = '$value')";
+  $sqlGetStartAndEndDate = "SELECT start_date, end_date FROM intern_organization_request_assignment WHERE student_id = (
+    SELECT id FROM intern_students WHERE intern_students.student_code = '$value')";
   $result = mysqli_query($conn, $sqlGetStartAndEndDate);
   $followingdataDate = $result->fetch_array(MYSQLI_ASSOC);
 ?>
@@ -20,10 +19,10 @@
 
   <body>
     <div class="container">
-      <form action="../server/student/assigned_table.php?request_id=<?php echo $followingdataCompanyRequest['id']?>" method="POST" >
+      <form action="../server/student/request_assigned.php?request_id=<?php echo $followingdataOrganizationRequest['id']?>" method="POST" >
         <div class="w3-panel w3-card" style="width: 400px; display: block; height: 30%; margin-left: 300px">
-          <p>Subject: <?php echo $followingdataCompanyRequest["request_name"] ?></p>
-          <p>Description: <?php echo $followingdataCompanyRequest["short_description"] ?></p>
+          <p>Subject: <?php echo $followingdataOrganizationRequest["request_name"] ?></p>
+          <p>Description: <?php echo $followingdataOrganizationRequest["short_description"] ?></p>
           <label for="uname"><b>Start date: </b></label>
           <input type="date" name="start_date" value="<?php echo $followingdataDate["start_date"] ?>" required>
           <br>

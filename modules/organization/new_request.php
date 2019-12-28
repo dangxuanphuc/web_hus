@@ -59,55 +59,31 @@
 <body>
   <div class="container">
     <div class="w3-row w3-center">
-      <h3>Update profile</h3>
+      <h3>Add new request</h3>
     </div>
-    <form action="../server/company/update_company_profile.php" method="post"enctype="multipart/form-data">
+    <form action="../server/organization/new_request.php" method="post">
       <div class="row">
         <div class="col-25">
-          <label for="company_name">Company name</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="company_name" name="company_name">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="empl">Number of employee</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="empl" name="empl">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="revenue">Revenue</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="revenue" name="revenue">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="address">Address</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="address" name="address">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="home">Home</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="home" name="home">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="company_avatar">Avatar</label>
+          <label for="request_name">Request name</label>
         </div>
         <div class="col-75">
-          <input type="file" name="company_avatar" required>
+          <input type="text" id="request_name" name="request_name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="amount">amount</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="amount" name="amount">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="description">Description</label>
+        </div>
+        <div class="col-75">
+          <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
         </div>
       </div>
       <div class="row">

@@ -1,6 +1,6 @@
 <?php
   include("../server/config.php");
-  $sql_student = mysqli_query($conn, "SELECT * from student_profile");
+  $sql_student = mysqli_query($conn, "SELECT * from intern_students");
 ?>
 <h1>List Student</h1>
 <table class="w3-table">

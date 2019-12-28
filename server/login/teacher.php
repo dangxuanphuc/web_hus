@@ -6,7 +6,7 @@
     $myusername = mysqli_real_escape_string($conn, $_POST["txtUsername"]);
     $pass = mysqli_real_escape_string($conn, $_POST["txtPassword"]);
 
-    $sql = "SELECT * FROM teacher_profile WHERE teacher_code = '$myusername' and password='$pass'";
+    $sql = "SELECT * FROM intern_teachers WHERE teacher_code = '$myusername' and password='$pass'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 

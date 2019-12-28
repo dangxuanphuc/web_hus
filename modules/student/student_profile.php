@@ -1,12 +1,12 @@
 <?php
   include("../server/config.php");
   $student_id = $_SESSION["student_id"];
-  $sql = mysqli_query($conn, "SELECT * from student_profile where id=$student_id ");
+  $sql = mysqli_query($conn, "SELECT * from intern_students where id=$student_id ");
   $row = mysqli_fetch_assoc($sql);
   // Get list skills
-  $sql_student_skill_profile = mysqli_query($conn, "SELECT ab.ablity_name, l.ability_rate
-    FROM student_skill_profile l
-    JOIN ablity_dictionary ab on ab.id=l.ability_id
+  $sql_intern_student_ability = mysqli_query($conn, "SELECT ab.ability_name, l.ability_rate
+    FROM intern_student_ability l
+    JOIN intern_ability_dictionary ab on ab.id=l.ability_id
     WHERE l.student_id=$student_id");
 ?>
 
@@ -34,9 +34,9 @@
   <div class="w3-row">
     <div class="w3-col">
       <div class="w3-row">  <h3 style="margin-left:5px;">Skills</h3></div>
-      <?php while($row1=mysqli_fetch_assoc($sql_student_skill_profile)) { ?>
+      <?php while($row1=mysqli_fetch_assoc($sql_intern_student_ability)) { ?>
         <div class="w3-row">
-          <div class="w3-col s2"><p><?php echo $row1["ablity_name"]?></p></div>
+          <div class="w3-col s2"><p><?php echo $row1["ability_name"]?></p></div>
           <div class="w3-col s8 progres"><progress value="<?php echo $row1['ability_rate']?>" max="10"></div>
         </div>
       <?php }?>
@@ -51,7 +51,7 @@
       <button> <a href="layout_student.php?status=add_capacity_student">Add skill</a></button>
     </div>
     <div class="w3-row">
-      <button> <a href="layout_student.php?status=list_company_request">Back</a></button>
+      <button> <a href="layout_student.php?status=list_organization_request">Back</a></button>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * from company_recruitment_request_form where id = $request_id";
+$sql = "SELECT * from intern_organization_requests where id = $request_id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -9,13 +9,13 @@ $row = mysqli_fetch_assoc($result);
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
-    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_company($row["organization_id"]);?></h1></div>
+    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_organization($row["organization_id"]);?></h1></div>
   </div>
   <div class="w3-row">
     <div class="w3-col w3-center"> <p><?php echo $row["request_name"]?></p></div>
   </div>
   <div class="w3-row">
-    <p><?php address_company($row["organization_id"]);?></p>
+    <p><?php address_organization($row["organization_id"]);?></p>
   </div>
   <div class="w3-row">
     <p>Number of registration: <?php number_of_registrations($row["organization_id"]);?></p>
@@ -29,17 +29,17 @@ $row = mysqli_fetch_assoc($result);
 </div>
 
 <?php
-  // Get company name
-  function name_company($organization_id){
+  // Get organization name
+  function name_organization($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from company_profile where id=$organization_id");
+    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile where id=$organization_id");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
   }
-  // Get company address
-  function address_company($organization_id){
+  // Get organization address
+  function address_organization($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from company_profile where id=$organization_id ");
+    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["address"];
   }
@@ -47,24 +47,22 @@ $row = mysqli_fetch_assoc($result);
   function number_of_registrations($organization_id) {
     global $conn;
     $dem = 0;
-    $sql_number = mysqli_query($conn, "SELECT * FROM student_registration WHERE request_id=$organization_id ");
+    $sql_number = mysqli_query($conn, "SELECT * FROM intern_student_register WHERE request_id=$organization_id ");
     while($sl = mysqli_fetch_assoc($sql_number)) {
       $dem++;
     }
     echo $dem;
   }
-
   // Get number of assigned
   function number_of_assigned($organization_id) {
     global $conn;
     $dem = 0;
-    $sql_number = mysqli_query($conn,"SELECT * from assigned_table  where organization_request_id=$organization_id");
+    $sql_number = mysqli_query($conn,"SELECT * from intern_organization_request_assignment  where organization_request_id=$organization_id");
     while($sl = mysqli_fetch_assoc($sql_number)) {
       $dem++;
     }
     echo $dem;
   }
-
   // Check status
   function check_status($status) {
     if($status == 4000)

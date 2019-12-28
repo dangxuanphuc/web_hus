@@ -1,11 +1,11 @@
 <?php
 include("../config.php");
 $request_id = $_GET["id"];
-$sql = mysqli_query($conn, "SELECT * from company_recruitment_request_form where id=$request_id ");
+$sql = mysqli_query($conn, "SELECT * from intern_organization_requests where id=$request_id ");
 $row = mysqli_fetch_assoc($sql);
-$sql = mysqli_query($conn, "SELECT ab.ablity_name, l.ability_required
-  FROM list_of_required_capacity_of_each_request_coupon  l
-  JOIN ablity_dictionary ab  on ab.id=l.ability_id
+$sql = mysqli_query($conn, "SELECT ab.ability_name, l.ability_required
+  FROM intern_organization_request_abilities  l
+  JOIN intern_ability_dictionary ab  on ab.id=l.ability_id
   WHERE l.organization_request_id=$request_id ");
 ?>
 <div class="w3-col s3" style="margin-top: 30px ;margin-left: 10px ;">
@@ -13,7 +13,7 @@ $sql = mysqli_query($conn, "SELECT ab.ablity_name, l.ability_required
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
-    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_company($row["organization_id"]);?></h1></div>
+    <div class=" w3-col w3-center"><h1 class="w3-card"><?php name_organization($row["organization_id"]);?></h1></div>
   </div>
   <div class="w3-row">
     <div class="w3-col w3-center"> <p><?php echo $row["request_name"]?></p></div>
@@ -23,7 +23,7 @@ $sql = mysqli_query($conn, "SELECT ab.ablity_name, l.ability_required
       <h3>Address</h3>
     </div>
     <div class="w3-col s9">
-      <p ><?php address_company($row["organization_id"]);?></p>
+      <p ><?php address_organization($row["organization_id"]);?></p>
     </div>
   </div>
   <div class="w3-row">
@@ -41,7 +41,7 @@ $sql = mysqli_query($conn, "SELECT ab.ablity_name, l.ability_required
       <div class="w3-row"><h3 style="margin-left:5px;">Request tuyen dung</h3></div>
       <?php while($row=mysqli_fetch_assoc($sql)) { ?>
         <div class="w3-row">
-          <div class="w3-col s4 "><p><?php echo $row["ablity_name"]?></p></div>
+          <div class="w3-col s4 "><p><?php echo $row["ability_name"]?></p></div>
           <div class="w3-col s8 progres"><progress value="<?php echo $row['ability_required']?>" max="10" ></div>
         </div>
       <?php } ?>
@@ -55,21 +55,21 @@ $sql = mysqli_query($conn, "SELECT ab.ablity_name, l.ability_required
 
 
 <?php
-  function img_company($organization_id){
+  function img_organization($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from company_profile  where id=$organization_id ");
+    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile  where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["avatar"];
   }
-  function name_company($organization_id){
+  function name_organization($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from company_profile  where id=$organization_id ");
+    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile  where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
   }
-  function address_company($organization_id){
+  function address_organization($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from company_profile where id=$organization_id ");
+    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile where id=$organization_id ");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["address"];
   }

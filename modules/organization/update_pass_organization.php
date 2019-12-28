@@ -61,7 +61,7 @@
     <div class="w3-row w3-center">
       <h3>Change password</h3>
     </div>
-    <form action="../server/company/update_pass_company.php" method="post" enctype="multipart/form-data">
+    <form action="../server/organization/update_pass_organization.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-25">
           <label for="current_pwd">Current password</label>

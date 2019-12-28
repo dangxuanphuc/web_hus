@@ -12,11 +12,10 @@ $image_tmp = $_FILES["uploadedFile"]["tmp_name"];
 move_uploaded_file($image_tmp, "../../public/uploads/teacher/".$image);
 $student_id = $_SESSION["student_id"];
 
-$sql = "UPDATE `company_profile` SET `name`="$name", `date_of_birth`="$date" , `class_name`="$class", `avatar`="$image"  WHERE `id`=$student_id";
+$sql = "UPDATE `intern_organization_profile` SET `name`="$name", `date_of_birth`="$date" , `class_name`="$class", `avatar`="$image"  WHERE `id`=$student_id";
 if (mysqli_query($conn, $sql)) {
   header("location: ../../dashboard/layout_student.php?status=student_profile");
-}
-else {
+} else {
   echo("Error");
 }
 ?>

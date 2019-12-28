@@ -10,7 +10,7 @@
         <a href="javascript:void(0)" onclick="openTab(event, 'teacher');">
           <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Teacher</div>
         </a>
-        <a href="javascript:void(0)" onclick="openTab(event, 'company');">
+        <a href="javascript:void(0)" onclick="openTab(event, 'organization');">
           <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Organization</div>
         </a>
       </div>
@@ -23,8 +23,8 @@
         <?php include "teacher.php" ?>
       </div>
 
-      <div id="company" class="w3-container w3-padding-24 w3-left-align tab" style="display:none">
-        <?php include "company.php" ?>
+      <div id="organization" class="w3-container w3-padding-24 w3-left-align tab" style="display:none">
+        <?php include "organization.php" ?>
       </div>
     </div>
   </div>

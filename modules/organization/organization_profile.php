@@ -1,7 +1,7 @@
 <?php
   include("../server/config.php");
   $id = $_SESSION["organization_id"] ;
-  $sql = mysqli_query($conn, "SELECT * from company_profile where id=$id");
+  $sql = mysqli_query($conn, "SELECT * from intern_organization_profile where id=$id");
   $row = mysqli_fetch_assoc($sql);
 ?>
 <div class="w3-col s3" style="margin-top: 30px;margin-left: 10px;">
@@ -9,7 +9,7 @@
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
-    <div class=" w3-col w3-center">
+    <div class="w3-col w3-center">
       <h1 class="w3-card"><?php echo $row["organization_name"];?></h1>
     </div>
   </div>
@@ -26,12 +26,16 @@
     <p>Description: <?php echo $row["description"];?></p>
   </div>
   <div class="w3-row">
-    <button><a href="layout_company.php?status=update_company_profile">Update information</a></button>
+    <button>
+      <a class="w3-button w3-light-green" href="layout_organization.php?status=update_organization_profile" style="width: 200px; margin:10px 0px;border-radius: 5px; box-shadow: 2px 2px 2px gray;">Update information</a>
+    </button>
   </div>
   <div class="w3-row">
-    <button><a href="layout_company.php?status=update_pass_company">Update password</a></button>
+    <button>
+      <a class="w3-button w3-light-green" href="layout_organization.php?status=update_pass_organization" style="width: 200px; margin:10px 0px;border-radius: 5px; box-shadow: 2px 2px 2px gray;">Update password</a>
+    </button>
   </div>
 </div>
 <div class="w3-row">
-  <button><a href="layout_company.php?status=list_request_company">Back</a></button>
+  <button><a class="w3-button w3-red" href="layout_organization.php?status=list_request_organization">Back</a></button>
 </div>

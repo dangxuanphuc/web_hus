@@ -58,21 +58,21 @@
 </head>
 <body>
   <div class="container">
-    <form action="../server/teacher/add_company.php" method="post" enctype="multipart/form-data">
+    <form action="../server/teacher/add_organization.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-25">
-          <label for="company_name">Company name</label>
+          <label for="organization_name">Organization name</label>
         </div>
         <div class="col-25">
-          <input type="text" id="company_name" name="company_name">
+          <input type="text" id="organization_name" name="organization_name">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="company_id">Company ID</label>
+          <label for="organization_id">Organization ID</label>
         </div>
         <div class="col-25">
-          <input type="text" id="company_id" name="company_id">
+          <input type="text" id="organization_id" name="organization_id">
         </div>
       </div>
       <div class="row">
@@ -120,7 +120,7 @@
           <label for="subject">Avatar</label>
         </div>
         <div class="col-75">
-          <input type="file" name="company_avatar" required>
+          <input type="file" name="organization_avatar" required>
         </div>
       </div>
       <div class="row">

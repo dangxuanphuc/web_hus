@@ -59,31 +59,55 @@
 <body>
   <div class="container">
     <div class="w3-row w3-center">
-      <h3>Add new request</h3>
+      <h3>Update profile</h3>
     </div>
-    <form action="../server/company/new_request.php" method="post">
+    <form action="../server/organization/update_organization_profile.php" method="post"enctype="multipart/form-data">
       <div class="row">
         <div class="col-25">
-          <label for="request_name">Request name</label>
+          <label for="organization_name">Organization name</label>
         </div>
-        <div class="col-75">
-          <input type="text" id="request_name" name="request_name">
+        <div class="col-25">
+          <input type="text" id="organization_name" name="organization_name">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="amount">amount</label>
+          <label for="empl">Number of employee</label>
         </div>
-        <div class="col-75">
-          <input type="text" id="amount" name="amount">
+        <div class="col-25">
+          <input type="text" id="empl" name="empl">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="description">Description</label>
+          <label for="revenue">Revenue</label>
+        </div>
+        <div class="col-25">
+          <input type="text" id="revenue" name="revenue">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="address">Address</label>
+        </div>
+        <div class="col-25">
+          <input type="text" id="address" name="address">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="home">Home</label>
+        </div>
+        <div class="col-25">
+          <input type="text" id="home" name="home">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="organization_avatar">Avatar</label>
         </div>
         <div class="col-75">
-          <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
+          <input type="file" name="organization_avatar" required>
         </div>
       </div>
       <div class="row">

@@ -8,7 +8,7 @@
   $student_id = $_SESSION["student_id"];
 
   if ($new_pass == $password) {
-    $sql = "UPDATE `student_profile` SET `password`='$password'
+    $sql = "UPDATE `intern_students` SET `password`='$password'
       WHERE `password`=$pass AND `id`=$student_id";
     if (mysqli_query($conn, $sql)) {
       header("location: ../../dashboard/layout_student.php?status=student_profile");

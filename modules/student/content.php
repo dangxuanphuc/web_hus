@@ -4,12 +4,12 @@ if(isset($_GET["status"])){
 } else {
   $temp = "";
 }
-if($temp == "list_company_request"){
-  include("../server/student/list_company_request.php");
-} else if($temp == "detail_request_company"){
-  include("detail_request_company.php");
-} else if($temp == "student_assigned_table"){
-  include("student_assigned_table.php");
+if($temp == "list_organization_request"){
+  include("../server/student/list_organization_request.php");
+} else if($temp == "detail_request_organization"){
+  include("detail_request_organization.php");
+} else if($temp == "student_request_assigned"){
+  include("student_request_assigned.php");
 } else if($temp == "student_profile"){
   include("student_profile.php");
 } else if($temp == "update_student_profile"){

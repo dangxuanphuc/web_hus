@@ -25,21 +25,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ablity_dictionary`
+-- Table structure for table `intern_ability_dictionary`
 --
 
-CREATE TABLE `ablity_dictionary` (
+CREATE TABLE `intern_ability_dictionary` (
   `id` int(6) NOT NULL,
-  `ablity_name` varchar(250) NOT NULL,
-  `ablity_type` varchar(250) NOT NULL,
-  `ablity_note` varchar(250) NOT NULL
+  `ability_name` varchar(250) NOT NULL,
+  `ability_type` varchar(250) NOT NULL,
+  `ability_note` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `ablity_dictionary`
+-- Dumping data for table `intern_ability_dictionary`
 --
 
-INSERT INTO `ablity_dictionary` (`id`, `ablity_name`, `ablity_type`, `ablity_note`) VALUES
+INSERT INTO `intern_ability_dictionary` (`id`, `ability_name`, `ability_type`, `ability_note`) VALUES
 (1, 'RUBY', 'Ngôn ngữ lập trình', '10'),
 (2, 'JAVA', 'Ngôn ngữ lập trình', '10'),
 (3, 'C#', 'Ngôn ngữ lập trình', '10'),
@@ -52,11 +52,11 @@ INSERT INTO `ablity_dictionary` (`id`, `ablity_name`, `ablity_type`, `ablity_not
 (10, 'MYSQL', 'Hệ quản trị cơ sở dữ liệu', '10'),
 (11, 'SQL', 'Hệ quản trị cơ sở dữ liệu', '10'),
 (12, 'NodeJS', 'Ngôn ngữ lập trình', '10'),
-(13, 'Cấu trúc dữ liệu', 'Môn hoc CNTT', '10'),
-(14, 'Trí tuệ nhân tạo', 'Môn hoc CNTT', '10'),
-(15, 'Mạng máy tính', 'Môn hoc CNTT', '10'),
-(16, 'Lập trình hướng đối tượng', 'Môn hoc CNTT', '10'),
-(17, 'Thiết kế đánh giá thuật toán', 'Môn hoc CNTT', '10'),
+(13, 'Cấu trúc dữ liệu', 'Môn học CNTT', '10'),
+(14, 'Trí tuệ nhân tạo', 'Môn học CNTT', '10'),
+(15, 'Mạng máy tính', 'Môn học CNTT', '10'),
+(16, 'Lập trình hướng đối tượng', 'Môn học CNTT', '10'),
+(17, 'Thiết kế đánh giá thuật toán', 'Môn học CNTT', '10'),
 (18, 'TOEIC', 'Chứng chỉ ngoại ngữ', '990'),
 (19, 'IELTS', 'Chứng chỉ ngoại ngữ', '9.0'),
 (20, 'JLPT', 'Chứng chỉ ngoại ngữ', '180');
@@ -64,10 +64,10 @@ INSERT INTO `ablity_dictionary` (`id`, `ablity_name`, `ablity_type`, `ablity_not
 -- --------------------------------------------------------
 
 --
--- Table structure for table `assigned_table`
+-- Table structure for table `intern_organization_request_assignment`
 --
 
-CREATE TABLE `assigned_table` (
+CREATE TABLE `intern_organization_request_assignment` (
   `organization_request_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
   `start_date` date DEFAULT NULL,
@@ -77,24 +77,24 @@ CREATE TABLE `assigned_table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `assigned_table`
+-- Dumping data for table `intern_organization_request_assignment`
 --
 
-INSERT INTO `assigned_table` (`organization_request_id`, `student_id`, `start_date`, `end_date`, `status`, `create_date`) VALUES
-(5, 0, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
+INSERT INTO `intern_organization_request_assignment` (`organization_request_id`, `student_id`, `start_date`, `end_date`, `status`, `create_date`) VALUES
 (5, 1, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
-(0, 2, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
+(5, 2, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
+(0, 3, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
 (5, 4, '2019-11-12', '2102-02-18', 2, '2019-11-05'),
-(5, 6, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
-(1, 7, '2019-11-12', '2019-11-13', 0, '2019-11-05');
+(5, 5, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
+(1, 6, '2019-11-12', '2019-11-13', 0, '2019-11-05');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `company_profile`
+-- Table structure for table `intern_organization_profile`
 --
 
-CREATE TABLE `company_profile` (
+CREATE TABLE `intern_organization_profile` (
   `id` int(11) NOT NULL,
   `organization_name` varchar(20) NOT NULL,
   `employee_count` int(11) NOT NULL,
@@ -108,10 +108,10 @@ CREATE TABLE `company_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `company_profile`
+-- Dumping data for table `intern_organization_profile`
 --
 
-INSERT INTO `company_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
+INSERT INTO `intern_organization_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
 (1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10021, 'Make awesome things that matter.', 'sun*.png', '123456'),
 (2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10034, 'Lorem ipsum dolor sit amet.', 'rikkei.png', '123456'),
 (3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10127, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
@@ -126,10 +126,10 @@ INSERT INTO `company_profile` (`id`, `organization_name`, `employee_count`, `gro
 -- --------------------------------------------------------
 
 --
--- Table structure for table `company_recruitment_request_form`
+-- Table structure for table `intern_organization_requests`
 --
 
-CREATE TABLE `company_recruitment_request_form` (
+CREATE TABLE `intern_organization_requests` (
   `id` int(5) NOT NULL,
   `request_name` varchar(250) NOT NULL,
   `organization_id` int(11) NOT NULL,
@@ -140,10 +140,10 @@ CREATE TABLE `company_recruitment_request_form` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `company_recruitment_request_form`
+-- Dumping data for table `intern_organization_requests`
 --
 
-INSERT INTO `company_recruitment_request_form` (`id`, `request_name`, `organization_id`, `short_description`, `amount`, `date_submitted`, `statuss`) VALUES
+INSERT INTO `intern_organization_requests` (`id`, `request_name`, `organization_id`, `short_description`, `amount`, `date_submitted`, `statuss`) VALUES
 (1, 'Ruby Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
 (2, 'Senior Android Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
 (3, 'QC Leader', 1, 'Lorem ipsum', 1, '2019-11-15', 4000),
@@ -153,15 +153,15 @@ INSERT INTO `company_recruitment_request_form` (`id`, `request_name`, `organizat
 (7, 'Swift Developer', 7, 'Lorem ipsum', 8, '2019-11-20', 4000),
 (8, 'Senior iOS Developer', 3, 'Lorem ipsum', 4, '2019-11-23', 3000),
 (9, 'Tester', 3, 'Lorem ipsum', 9, '2019-11-25', 2000),
-(10, 'Senior Business Analyst', 4, 'Lorem ipsum', 4, '2019-11-25', 4000);
+(10, 'Senior Business Analysit', 4, 'Lorem ipsum', 4, '2019-11-25', 4000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `list_of_required_capacity_of_each_request_coupon`
+-- Table structure for table `intern_organization_request_abilities`
 --
 
-CREATE TABLE `list_of_required_capacity_of_each_request_coupon` (
+CREATE TABLE `intern_organization_request_abilities` (
   `id` int(11) NOT NULL,
   `organization_request_id` int(5) NOT NULL,
   `ability_id` int(11) NOT NULL,
@@ -170,10 +170,10 @@ CREATE TABLE `list_of_required_capacity_of_each_request_coupon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `list_of_required_capacity_of_each_request_coupon`
+-- Dumping data for table `intern_organization_request_abilities`
 --
 
-INSERT INTO `list_of_required_capacity_of_each_request_coupon` (`id`, `organization_request_id`, `ability_id`, `ability_required`, `note`) VALUES
+INSERT INTO `intern_organization_request_abilities` (`id`, `organization_request_id`, `ability_id`, `ability_required`, `note`) VALUES
 (1, 3, 3, 7, '1 năm kinh nghiệm'),
 (2, 5, 4, 8, 'Sinh viên mới tốt nghiệp'),
 (3, 4, 4, 2, '2 năm kinh nghiệm'),
@@ -188,10 +188,10 @@ INSERT INTO `list_of_required_capacity_of_each_request_coupon` (`id`, `organizat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `student_profile`
+-- Table structure for table `intern_students`
 --
 
-CREATE TABLE `student_profile` (
+CREATE TABLE `intern_students` (
   `id` int(11) NOT NULL,
   `student_code` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -203,10 +203,10 @@ CREATE TABLE `student_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `student_profile`
+-- Dumping data for table `intern_students`
 --
 
-INSERT INTO `student_profile` (`id`, `student_code`, `name`, `date_of_birth`, `join_date`, `class_name`, `avatar`, `password`) VALUES
+INSERT INTO `intern_students` (`id`, `student_code`, `name`, `date_of_birth`, `join_date`, `class_name`, `avatar`, `password`) VALUES
 (1, 's001', 'XuanPhuc', '1999-12-11', '2019-11-15', 'k61a3', 'index.png', '123456'),
 (2, 's002', 'user2', '2001-02-02', '2019-12-03', 'k63a2', 'index.png', '123456'),
 (3, 's003', 'user3', '1998-11-28', '2019-12-01', 'k61a2', 'index.png', '123456'),
@@ -221,10 +221,10 @@ INSERT INTO `student_profile` (`id`, `student_code`, `name`, `date_of_birth`, `j
 -- --------------------------------------------------------
 
 --
--- Table structure for table `student_registration`
+-- Table structure for table `intern_student_register`
 --
 
-CREATE TABLE `student_registration` (
+CREATE TABLE `intern_student_register` (
   `id` int(11) DEFAULT NULL,
   `student_id` int(11) NOT NULL,
   `request_id` int(11) NOT NULL,
@@ -232,19 +232,19 @@ CREATE TABLE `student_registration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `student_registration`
+-- Dumping data for table `intern_student_register`
 --
 
-INSERT INTO `student_registration` (`id`, `student_id`, `request_id`, `submit_date`) VALUES
+INSERT INTO `intern_student_register` (`id`, `student_id`, `request_id`, `submit_date`) VALUES
 (NULL, 4, 8, '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `student_skill_profile`
+-- Table structure for table `intern_student_ability`
 --
 
-CREATE TABLE `student_skill_profile` (
+CREATE TABLE `intern_student_ability` (
   `id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
   `ability_id` int(11) NOT NULL,
@@ -252,10 +252,10 @@ CREATE TABLE `student_skill_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `student_skill_profile`
+-- Dumping data for table `intern_student_ability`
 --
 
-INSERT INTO `student_skill_profile` (`id`, `student_id`, `ability_id`, `ability_rate`) VALUES
+INSERT INTO `intern_student_ability` (`id`, `student_id`, `ability_id`, `ability_rate`) VALUES
 (0, 1, 6, 5),
 (0, 1, 9, 5),
 (0, 2, 3, 5),
@@ -267,10 +267,10 @@ INSERT INTO `student_skill_profile` (`id`, `student_id`, `ability_id`, `ability_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `teacher_profile`
+-- Table structure for table `intern_teachers`
 --
 
-CREATE TABLE `teacher_profile` (
+CREATE TABLE `intern_teachers` (
   `id` int(11) NOT NULL,
   `full_name` varchar(100) NOT NULL,
   `teacher_code` varchar(40) NOT NULL,
@@ -280,10 +280,10 @@ CREATE TABLE `teacher_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `teacher_profile`
+-- Dumping data for table `intern_teachers`
 --
 
-INSERT INTO `teacher_profile` (`id`, `full_name`, `teacher_code`, `sex`, `avatar`, `password`) VALUES
+INSERT INTO `intern_teachers` (`id`, `full_name`, `teacher_code`, `sex`, `avatar`, `password`) VALUES
 (1, 'Vũ Trịnh Hà Minh', 't001', '1', 'index.png', '123456'),
 (2, 'Hoàng Thị Hiền', 't002', '1', 'index.png', '123456'),
 (3, 'Nguyễn Thị Phương', 't003', '1', 'index.png', '123456'),
@@ -300,62 +300,62 @@ INSERT INTO `teacher_profile` (`id`, `full_name`, `teacher_code`, `sex`, `avatar
 --
 
 --
--- Indexes for table `ablity_dictionary`
+-- Indexes for table `intern_ability_dictionary`
 --
-ALTER TABLE `ablity_dictionary`
+ALTER TABLE `intern_ability_dictionary`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `assigned_table`
+-- Indexes for table `intern_organization_request_assignment`
 --
-ALTER TABLE `assigned_table`
+ALTER TABLE `intern_organization_request_assignment`
   ADD PRIMARY KEY (`student_id`,`organization_request_id`);
 
 --
--- Indexes for table `company_profile`
+-- Indexes for table `intern_organization_profile`
 --
-ALTER TABLE `company_profile`
+ALTER TABLE `intern_organization_profile`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `company_recruitment_request_form`
+-- Indexes for table `intern_organization_requests`
 --
-ALTER TABLE `company_recruitment_request_form`
+ALTER TABLE `intern_organization_requests`
   ADD PRIMARY KEY (`id`),
   ADD KEY `organization_id` (`organization_id`);
 
 --
--- Indexes for table `list_of_required_capacity_of_each_request_coupon`
+-- Indexes for table `intern_organization_request_abilities`
 --
-ALTER TABLE `list_of_required_capacity_of_each_request_coupon`
+ALTER TABLE `intern_organization_request_abilities`
   ADD PRIMARY KEY (`id`,`organization_request_id`,`ability_id`),
   ADD KEY `FK_assigned_list` (`organization_request_id`),
   ADD KEY `ability_id` (`ability_id`);
 
 --
--- Indexes for table `student_profile`
+-- Indexes for table `intern_students`
 --
-ALTER TABLE `student_profile`
+ALTER TABLE `intern_students`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `student_registration`
+-- Indexes for table `intern_student_register`
 --
-ALTER TABLE `student_registration`
+ALTER TABLE `intern_student_register`
   ADD PRIMARY KEY (`student_id`,`request_id`),
   ADD KEY `request_id` (`request_id`);
 
 --
--- Indexes for table `student_skill_profile`
+-- Indexes for table `intern_student_ability`
 --
-ALTER TABLE `student_skill_profile`
+ALTER TABLE `intern_student_ability`
   ADD PRIMARY KEY (`student_id`,`ability_id`),
   ADD KEY `ability_id` (`ability_id`);
 
 --
--- Indexes for table `teacher_profile`
+-- Indexes for table `intern_teachers`
 --
-ALTER TABLE `teacher_profile`
+ALTER TABLE `intern_teachers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -363,39 +363,39 @@ ALTER TABLE `teacher_profile`
 --
 
 --
--- AUTO_INCREMENT for table `ablity_dictionary`
+-- AUTO_INCREMENT for table `intern_ability_dictionary`
 --
-ALTER TABLE `ablity_dictionary`
+ALTER TABLE `intern_ability_dictionary`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `company_profile`
+-- AUTO_INCREMENT for table `intern_organization_profile`
 --
-ALTER TABLE `company_profile`
+ALTER TABLE `intern_organization_profile`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `company_recruitment_request_form`
+-- AUTO_INCREMENT for table `intern_organization_requests`
 --
-ALTER TABLE `company_recruitment_request_form`
+ALTER TABLE `intern_organization_requests`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `list_of_required_capacity_of_each_request_coupon`
+-- AUTO_INCREMENT for table `intern_organization_request_abilities`
 --
-ALTER TABLE `list_of_required_capacity_of_each_request_coupon`
+ALTER TABLE `intern_organization_request_abilities`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `student_profile`
+-- AUTO_INCREMENT for table `intern_students`
 --
-ALTER TABLE `student_profile`
+ALTER TABLE `intern_students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `teacher_profile`
+-- AUTO_INCREMENT for table `intern_teachers`
 --
-ALTER TABLE `teacher_profile`
+ALTER TABLE `intern_teachers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -403,31 +403,31 @@ ALTER TABLE `teacher_profile`
 --
 
 --
--- Constraints for table `company_recruitment_request_form`
+-- Constraints for table `intern_organization_requests`
 --
-ALTER TABLE `company_recruitment_request_form`
-  ADD CONSTRAINT `company_organization_FK` FOREIGN KEY (`organization_id`) REFERENCES `company_profile` (`id`);
+ALTER TABLE `intern_organization_requests`
+  ADD CONSTRAINT `company_organization_FK` FOREIGN KEY (`organization_id`) REFERENCES `intern_organization_profile` (`id`);
 
 --
--- Constraints for table `list_of_required_capacity_of_each_request_coupon`
+-- Constraints for table `intern_organization_request_abilities`
 --
-ALTER TABLE `list_of_required_capacity_of_each_request_coupon`
-  ADD CONSTRAINT `list_of_required_capacity_of_each_request_coupon_ibfk_1` FOREIGN KEY (`ability_id`) REFERENCES `ablity_dictionary` (`id`),
-  ADD CONSTRAINT `list_of_required_capacity_of_each_request_coupon_ibfk_2` FOREIGN KEY (`organization_request_id`) REFERENCES `company_recruitment_request_form` (`id`);
+ALTER TABLE `intern_organization_request_abilities`
+  ADD CONSTRAINT `intern_organization_request_abilities_ibfk_1` FOREIGN KEY (`ability_id`) REFERENCES `intern_ability_dictionary` (`id`),
+  ADD CONSTRAINT `intern_organization_request_abilities_ibfk_2` FOREIGN KEY (`organization_request_id`) REFERENCES `intern_organization_requests` (`id`);
 
 --
--- Constraints for table `student_registration`
+-- Constraints for table `intern_student_register`
 --
-ALTER TABLE `student_registration`
-  ADD CONSTRAINT `student_registration_ibfk_2` FOREIGN KEY (`request_id`) REFERENCES `company_recruitment_request_form` (`id`),
-  ADD CONSTRAINT `student_registration_ibfk_3` FOREIGN KEY (`student_id`) REFERENCES `student_profile` (`id`);
+ALTER TABLE `intern_student_register`
+  ADD CONSTRAINT `intern_student_register_ibfk_2` FOREIGN KEY (`request_id`) REFERENCES `intern_organization_requests` (`id`),
+  ADD CONSTRAINT `intern_student_register_ibfk_3` FOREIGN KEY (`student_id`) REFERENCES `intern_students` (`id`);
 
 --
--- Constraints for table `student_skill_profile`
+-- Constraints for table `intern_student_ability`
 --
-ALTER TABLE `student_skill_profile`
-  ADD CONSTRAINT `FK_student_skill_capacity` FOREIGN KEY (`ability_id`) REFERENCES `ablity_dictionary` (`id`),
-  ADD CONSTRAINT `FK_student_skill_profile` FOREIGN KEY (`student_id`) REFERENCES `student_profile` (`id`);
+ALTER TABLE `intern_student_ability`
+  ADD CONSTRAINT `FK_student_skill_capacity` FOREIGN KEY (`ability_id`) REFERENCES `intern_ability_dictionary` (`id`),
+  ADD CONSTRAINT `FK_intern_student_ability` FOREIGN KEY (`student_id`) REFERENCES `intern_students` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

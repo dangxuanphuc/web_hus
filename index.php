@@ -50,12 +50,12 @@
       -moz-opacity: 0;
       filter: alpha(opacity=0);
     }
-    /* company block  */
-    .company-block {
+    /* organization block  */
+    .organization-block {
       margin: 0 0 18px 18px;
       float: left;
     }
-    .company-block img {
+    .organization-block img {
       border: inset 15px transparent;
       padding: 10px;
       width: 160px;

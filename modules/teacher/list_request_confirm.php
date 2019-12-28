@@ -4,12 +4,12 @@
     $get_page = $_GET["page"];
   } else $get_page = 1;
   $page1 = ($get_page-1)*6;
-  $sql = mysqli_query($conn, "SELECT * FROM company_recruitment_request_form WHERE statuss='3000' LIMIT $page1,6 ");
+  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE statuss='3000' LIMIT $page1,6 ");
 ?>
 
 <?php while($row = mysqli_fetch_assoc($sql)) { ?>
-  <div class="company">
-    <p><?php name_company($row["organization_id"]);?></p>
+  <div class="organization">
+    <p><?php name_organization($row["organization_id"]);?></p>
     <p><?php echo  $row["request_name"]?></p>
     <p>Amount: <?php echo $row["amount"];?></p>
     <p>Number of registration: <?php number_of_registrations($row["organization_id"]);?> </p>
@@ -21,7 +21,7 @@
 
 <div class="w3-row">
   <?php
-    $sql_page = mysqli_query($conn, "SELECT * FROM company_recruitment_request_form WHERE statuss='3000'");
+    $sql_page = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE statuss='3000'");
     $count = mysqli_num_rows($sql_page);
     $page = ceil($count/6);
     echo "page:";
@@ -32,16 +32,16 @@
 </div>
 
 <?php
-  function name_company($organization_id){
+  function name_organization($organization_id){
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * FROM company_profile WHERE id=$organization_id");
+    $sql_name = mysqli_query($conn, "SELECT * FROM intern_organization_profile WHERE id=$organization_id");
     $dong = mysqli_fetch_assoc($sql_name);
     echo $dong["organization_name"];
   }
   function number_of_registrations($organization_id){
     global $conn;
     $dem = 0;
-    $sql_number = mysqli_query($conn, "SELECT * FROM student_registration WHERE request_id=$organization_id");
+    $sql_number = mysqli_query($conn, "SELECT * FROM intern_student_register WHERE request_id=$organization_id");
     while($sl=mysqli_fetch_assoc($sql_number)){
       $dem++;
     }
@@ -50,7 +50,7 @@
   function number_of_assigned($organization_id){
     global $conn;
     $dem = 0;
-    $sql_number = mysqli_query($conn, "SELECT * FROM assigned_table WHERE organization_request_id=$organization_id");
+    $sql_number = mysqli_query($conn, "SELECT * FROM intern_organization_request_assignment WHERE organization_request_id=$organization_id");
     while($sl = mysqli_fetch_assoc($sql_number)){
       $dem++;
     }

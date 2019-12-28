@@ -8,9 +8,9 @@
   $organization_id = $_SESSION["organization_id"];
 
   if($new_pass == $re_type){
-  $sql = "UPDATE `company_profile` SET `password` = '$re_type' WHERE `password` = $current AND `id` = $organization_id";
+  $sql = "UPDATE `intern_organization_profile` SET `password` = '$re_type' WHERE `password` = $current AND `id` = $organization_id";
   if(mysqli_query($conn, $sql)) {
-    header("location: ../../dashboard/layout_company.php?status=company_profile");
+    header("location: ../../dashboard/layout_organization.php?status=intern_organization_profile");
   } else {
     echo "Error deleting record: " . mysqli_error($conn);
   }

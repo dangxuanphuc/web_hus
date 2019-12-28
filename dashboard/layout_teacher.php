@@ -13,7 +13,7 @@
       width: 900px;
       height: 600px;
     }
-    .company {
+    .organization {
       margin-left: 30px;
       margin-bottom: 30px;
       width: 270px;

@@ -1,10 +1,10 @@
 <?php
 include("../server/config.php");
 $request_id = $_GET["id"];
-$sql = "SELECT * from student_registration ab
-  join student_profile sp on ab.student_id = sp.id
+$sql = "SELECT * from intern_student_register ab
+  join intern_students sp on ab.student_id = sp.id
   where request_id = $request_id";
-$sql_student_registration = mysqli_query($conn, $sql);
+$sql_student_register = mysqli_query($conn, $sql);
 ?>
 <h1>List Registration</h1>
 <table class="w3-table">
@@ -13,7 +13,7 @@ $sql_student_registration = mysqli_query($conn, $sql);
     <th>Information</th>
     <th></th>
   </tr>
-  <?php while($row1 = mysqli_fetch_assoc($sql_student_registration)) { ?>
+  <?php while($row1 = mysqli_fetch_assoc($sql_student_register)) { ?>
     <tr>
       <td> <?php echo $row1["name"] ?></td>
       <td><a href="layout_teacher.php?status=student_profile&student_id=<?php echo $row1['id'] ?>">Show more</a></td>

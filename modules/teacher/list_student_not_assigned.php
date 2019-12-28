@@ -1,8 +1,8 @@
 <?php
   include("../server/config.php");
   $request_id = $_GET["id"];
-  $sql = "SELECT * FROM student_profile
-    WHERE id NOT IN (SELECT student_id FROM assigned_table WHERE status=0 or status=1)";
+  $sql = "SELECT * FROM intern_students
+    WHERE id NOT IN (SELECT student_id FROM intern_organization_request_assignment WHERE status=0 or status=1)";
   $sql_list_student = mysqli_query($conn, $sql);
 ?>
 <h1>List Registration</h1>

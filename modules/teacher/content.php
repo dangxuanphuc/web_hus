@@ -2,14 +2,14 @@
   <div class="w3-green w3-container w3-quarter left ">
     <a href="layout_teacher.php?status=add_student"><h3>Add student</h3></a>
     <a href="layout_teacher.php?status=add_teacher"><h3>Add teacher</h3></a>
-    <a href="layout_teacher.php?status=add_company"><h3>Add company</h3></a>
+    <a href="layout_teacher.php?status=add_organization"><h3>Add organization</h3></a>
     <a href="layout_teacher.php?status=add_capacity"><h3>Add capacity</h3></a>
     <a href="layout_teacher.php?status=list_request_confirm"><h3>List request confirm</h3></a>
     <a href="layout_teacher.php?status=list_request_unconfimred"><h3>List request unconfirmed</h3></a>
     <a href="layout_teacher.php?status=list_request_cancel"><h3>List request cancel</h3></a>
     <a href="layout_teacher.php?status=list_teacher"><h3>List teacher</h3></a>
     <a href="layout_teacher.php?status=list_student"><h3>List student</h3></a>
-    <a href="layout_teacher.php?status=list_company"><h3>List company</h3></a>
+    <a href="layout_teacher.php?status=list_organization"><h3>List organization</h3></a>
     <a href="layout_teacher.php?status=update_pass_teacher"><h3>Change password</h3></a>
   </div>
 
@@ -22,15 +22,15 @@
       }
       if($temp == "add_student") {
         include("add_student.php");
-      } elseif ($temp == "add_company") {
-        include("add_company.php");
+      } elseif ($temp == "add_organization") {
+        include("add_organization.php");
       } elseif ($temp == "add_teacher") {
         include("add_teacher.php");
       } elseif ($temp == "add_capacity") {
         include("add_capacity.php");
       } elseif ($temp == "list_request_unconfimred") {
         include("list_request_unconfimred.php");
-      } elseif ($temp == "detail_request_company") {
+      } elseif ($temp == "detail_request_organization") {
         include("../server/teacher/detail_request_unconfimred.php");
       } elseif ($temp == "list_request_cancel") {
         include("list_request_cancel.php");
@@ -50,8 +50,8 @@
         include("detail_request_confirm.php");
       } elseif ($temp == "list_student") {
         include("list_student.php");
-      } elseif ($temp == "list_company") {
-        include("list_company.php");
+      } elseif ($temp == "list_organization") {
+        include("list_organization.php");
       } elseif ($temp == "list_teacher") {
         include("list_teacher.php");
       } elseif($temp == "teacher_profile") {
@@ -62,8 +62,8 @@
         include("update_pass_teacher.php");
       } elseif ($temp == "student_profile") {
         include("student_profile.php");
-      } elseif ($temp == "company_profile") {
-        include("company_profile.php");
+      } elseif ($temp == "intern_organization_profile") {
+        include("intern_organization_profile.php");
       }
     ?>
   </div>

@@ -3,13 +3,13 @@
   $request_id = $_GET["request_id"];
   $student_id = $_GET["student_id"];
 
-  $sql = mysqli_query($conn, "SELECT * from student_profile where id=$student_id ");
+  $sql = mysqli_query($conn, "SELECT * from intern_students where id=$student_id ");
   $row = mysqli_fetch_assoc($sql);
-  $sql2 = "SELECT ab.ablity_name, l.ability_rate
-    FROM student_skill_profile l
-    JOIN ablity_dictionary ab on ab.id = l.ability_id
+  $sql2 = "SELECT ab.ability_name, l.ability_rate
+    FROM intern_student_ability l
+    JOIN intern_ability_dictionary ab on ab.id = l.ability_id
     WHERE l.student_id = $student_id";
-  $sql_student_skill_profile = mysqli_query($conn, $sql2);
+  $sql_intern_student_ability = mysqli_query($conn, $sql2);
 ?>
 <div class="w3-col s3" style="margin-top: 30px ;margin-left: 10px ;">
   <img src="../public/uploads/teacher/<?php echo $row['avatar']?> " height="250px" width="200px">
@@ -34,15 +34,15 @@
   <div class="w3-row">
     <div class="w3-col">
       <div class="w3-row"><h3 style="margin-left:5px;">Skill</h3></div>
-      <?php while($row1 = mysqli_fetch_assoc($sql_student_skill_profile)) { ?>
+      <?php while($row1 = mysqli_fetch_assoc($sql_intern_student_ability)) { ?>
         <div class="w3-row">
-          <div class="w3-col s2"><p><?php echo $row1["ablity_name"]?></p></div>
+          <div class="w3-col s2"><p><?php echo $row1["ability_name"]?></p></div>
           <div class="w3-col s8 progres"><progress value="<?php echo $row1['ability_rate']?>" max="10" ></div>
         </div>
       <?php } ?>
     </div>
     <div class="w3-row">
-      <button><a href="layout_company.php?status=showmore&id=<?php echo $request_id;?>"  >Back</a></button>
+      <button><a href="layout_organization.php?status=showmore&id=<?php echo $request_id;?>"  >Back</a></button>
     </div>
   </div>
 </div>
