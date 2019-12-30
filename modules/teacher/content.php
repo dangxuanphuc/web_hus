@@ -62,8 +62,8 @@
         include("update_pass_teacher.php");
       } elseif ($temp == "student_profile") {
         include("student_profile.php");
-      } elseif ($temp == "intern_organization_profile") {
-        include("intern_organization_profile.php");
+      } elseif ($temp == "organization_profile") {
+        include("organization_profile.php");
       }
     ?>
   </div>

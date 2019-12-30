@@ -4,7 +4,7 @@
     $get_page = $_GET["page"];
   } else $get_page = 1;
   $page1 = ($get_page-1)*6;
-  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE statuss='3000' LIMIT $page1,6 ");
+  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests ORDER BY statuss ASC, date_submitted DESC");
 ?>
 
 <?php while($row = mysqli_fetch_assoc($sql)) { ?>

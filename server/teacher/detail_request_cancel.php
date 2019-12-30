@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include("../server/config.php");
   $request_id = $_GET["id"];
   $sql = mysqli_query($conn, "SELECT * from intern_organization_requests where id=$request_id ");
   $row = mysqli_fetch_assoc($sql);

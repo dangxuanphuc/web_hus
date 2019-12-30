@@ -85,10 +85,10 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="date">Birthday</label>
+          <label for="birthday">Birthday</label>
         </div>
         <div class="col-75">
-          <input type="date" name="date" required>
+          <input type="date" name="birthday" required>
         </div>
       </div>
       <div class="row">

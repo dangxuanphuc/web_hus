@@ -112,16 +112,16 @@ CREATE TABLE `intern_organization_profile` (
 --
 
 INSERT INTO `intern_organization_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
-(1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10021, 'Make awesome things that matter.', 'sun*.png', '123456'),
-(2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10034, 'Lorem ipsum dolor sit amet.', 'rikkei.png', '123456'),
-(3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10127, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
-(4, 'FPT Telecom', 550, 420, 'My Dinh, Hanoi', 'https://www.fpt.vn/', 10236, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(5, '2NF', 320, 350, 'My Dinh, Hanoi', 'http://2nf.com.vn/', 10145, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(6, 'Beetsoft', 500, 620, 'My Dinh, Hanoi', 'https://beetsoft.com.vn', 10117, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(7, 'FSS', 440, 540, 'My Dinh, Hanoi', 'https://fss.com.vn/', 10206, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(8, 'Nashtech', 700, 500, 'My Dinh, Hanoi', 'https://www.nashtechglobal.com/', 10256, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(9, 'SmartOSC', 660, 470, 'Handico, Hanoi', 'http://www.smartosc.com/', 10068, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(10, 'FPT Information System', 870, 620, 'Keangnam, Hanoi', 'https://www.fis.vn/', 10115, 'Lorem ipsum dolor sit amet.', 'fis.png', '123456');
+(1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10011, 'Make awesome things that matter.', 'sun*.png', '123456'),
+(2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10012, 'Lorem ipsum dolor sit amet.', 'rikkei.png', '123456'),
+(3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10013, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
+(4, 'FPT Telecom', 550, 420, 'My Dinh, Hanoi', 'https://www.fpt.vn/', 10014, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(5, '2NF', 320, 350, 'My Dinh, Hanoi', 'http://2nf.com.vn/', 10015, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(6, 'Beetsoft', 500, 620, 'My Dinh, Hanoi', 'https://beetsoft.com.vn', 10016, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(7, 'FSS', 440, 540, 'My Dinh, Hanoi', 'https://fss.com.vn/', 10017, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(8, 'Nashtech', 700, 500, 'My Dinh, Hanoi', 'https://www.nashtechglobal.com/', 10018, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(9, 'SmartOSC', 660, 470, 'Handico, Hanoi', 'http://www.smartosc.com/', 10019, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
+(10, 'FPT Information System', 870, 620, 'Keangnam, Hanoi', 'https://www.fis.vn/', 10020, 'Lorem ipsum dolor sit amet.', 'fis.png', '123456');
 
 -- --------------------------------------------------------
 
@@ -256,13 +256,13 @@ CREATE TABLE `intern_student_ability` (
 --
 
 INSERT INTO `intern_student_ability` (`id`, `student_id`, `ability_id`, `ability_rate`) VALUES
-(0, 1, 6, 5),
-(0, 1, 9, 5),
-(0, 2, 3, 5),
-(0, 2, 4, 6),
-(0, 2, 8, 5),
-(0, 6, 7, 5),
-(0, 6, 8, 5);
+(1, 1, 6, 5),
+(2, 1, 9, 5),
+(3, 2, 3, 5),
+(4, 2, 4, 6),
+(5, 2, 8, 5),
+(6, 6, 7, 5),
+(7, 6, 8, 5);
 
 -- --------------------------------------------------------
 

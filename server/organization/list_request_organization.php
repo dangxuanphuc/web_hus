@@ -13,7 +13,7 @@
   $page1 = ($get_page-1)*6;
 
   $organization_id = $_SESSION["organization_id"];
-  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE organization_id= $organization_id limit $page1, 6");
+  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE organization_id = $organization_id ORDER BY date_submitted DESC LIMIT $page1, 6");
 ?>
 <?php while($row = mysqli_fetch_assoc($sql)) { ?>
   <div class="organization">
