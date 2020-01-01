@@ -4,7 +4,6 @@
   $pass = $_POST["pass"];
   $new_pass = $_POST["new_pass"];
   $password = $_POST["password"];
-
   $teacher_id = $_SESSION["id_teacher"];
 
   if($new_pass == $password) {

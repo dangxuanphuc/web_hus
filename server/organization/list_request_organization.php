@@ -7,13 +7,8 @@
 
 <?php
   include("../server/config.php");
-  if(isset($_GET['page'])){
-    $get_page = $_GET['page'];
-  } else $get_page = 1;
-  $page1 = ($get_page-1)*6;
-
   $organization_id = $_SESSION["organization_id"];
-  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE organization_id = $organization_id ORDER BY date_submitted DESC LIMIT $page1, 6");
+  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE organization_id = $organization_id ORDER BY date_submitted DESC");
 ?>
 <?php while($row = mysqli_fetch_assoc($sql)) { ?>
   <div class="organization">
@@ -22,21 +17,10 @@
     <p>Amount can tuyen: <?php echo $row["amount"];?></p>
     <p>Number of registration: <?php number_of_registrations($row["id"]);?> </p>
     <p>Number of assigned: <?php number_of_assigned($row["id"]);?>  </p>
-    <p>Status: <?php check_status($row["statuss"]);?></p>
+    <p>Status: <?php check_status($row["status"]);?></p>
     <a href="layout_organization.php?status=showmore&id=<?php echo $row["id"];?>">Show more</a>
   </div>
 <?php } ?>
-<div class="w3-row">
-  <?php
-    $sql_page = mysqli_query($conn, "SELECT * from intern_organization_requests where organization_id= $organization_id ");
-    $count = mysqli_num_rows($sql_page);
-    $page = ceil($count/6);
-    echo "page:";
-    for($b=1; $b<=$page; $b++){
-      echo '<a href="?status=list_request_organization&page='.$b.'" > '.$b . '</a>';
-    }
-  ?>
-</div>
 <?php
   function name_organization($organization_id){
     global $conn;

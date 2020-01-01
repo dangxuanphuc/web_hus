@@ -11,8 +11,8 @@
     WHERE l.student_id = $student_id";
   $sql_intern_student_ability = mysqli_query($conn, $sql2);
 ?>
-<div class="w3-col s3" style="margin-top: 30px ;margin-left: 10px ;">
-  <img src="../public/uploads/teacher/<?php echo $row['avatar']?> " height="250px" width="200px">
+<div class="w3-col s3" style="margin-top: 30px;margin-left: 10px;">
+  <img src="<?php echo $row['avatar']?>" height="200px" width="200px">
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">

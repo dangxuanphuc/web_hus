@@ -103,7 +103,7 @@ CREATE TABLE `intern_organization_profile` (
   `home_page` varchar(200) NOT NULL,
   `tax_number` int(11) NOT NULL,
   `description` text DEFAULT NULL,
-  `avatar` varchar(15) DEFAULT NULL,
+  `avatar` varchar(100) DEFAULT NULL,
   `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -112,16 +112,16 @@ CREATE TABLE `intern_organization_profile` (
 --
 
 INSERT INTO `intern_organization_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
-(1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10011, 'Make awesome things that matter.', 'sun*.png', '123456'),
-(2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10012, 'Lorem ipsum dolor sit amet.', 'rikkei.png', '123456'),
-(3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10013, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
-(4, 'FPT Telecom', 550, 420, 'My Dinh, Hanoi', 'https://www.fpt.vn/', 10014, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(5, '2NF', 320, 350, 'My Dinh, Hanoi', 'http://2nf.com.vn/', 10015, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(6, 'Beetsoft', 500, 620, 'My Dinh, Hanoi', 'https://beetsoft.com.vn', 10016, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(7, 'FSS', 440, 540, 'My Dinh, Hanoi', 'https://fss.com.vn/', 10017, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(8, 'Nashtech', 700, 500, 'My Dinh, Hanoi', 'https://www.nashtechglobal.com/', 10018, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(9, 'SmartOSC', 660, 470, 'Handico, Hanoi', 'http://www.smartosc.com/', 10019, 'Lorem ipsum dolor sit amet.', 'fpttele.png', '123456'),
-(10, 'FPT Information System', 870, 620, 'Keangnam, Hanoi', 'https://www.fis.vn/', 10020, 'Lorem ipsum dolor sit amet.', 'fis.png', '123456');
+(1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10011, 'Make awesome things that matter.', '../public/uploads/sun.jpg', '123456'),
+(2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10012, 'Lorem ipsum dolor sit amet.', '../public/uploads/rikkeisoft.png', '123456'),
+(3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10013, 'Lorem ipsum dolor sit amet.', '../public/uploads/fsoft.png', '123456'),
+(4, 'FPT Telecom', 550, 420, 'My Dinh, Hanoi', 'https://www.fpt.vn/', 10014, 'Lorem ipsum dolor sit amet.', '../public/uploads/ftel.jpg', '123456'),
+(5, '2NF', 320, 350, 'My Dinh, Hanoi', 'http://2nf.com.vn/', 10015, 'Lorem ipsum dolor sit amet.', '../public/uploads/2nf.png', '123456'),
+(6, 'Beetsoft', 500, 620, 'My Dinh, Hanoi', 'https://beetsoft.com.vn', 10016, 'Lorem ipsum dolor sit amet.', '../public/uploads/beetsoft.png', '123456'),
+(7, 'FSS', 440, 540, 'My Dinh, Hanoi', 'https://fss.com.vn/', 10017, 'Lorem ipsum dolor sit amet.', '../public/uploads/fss.jpg', '123456'),
+(8, 'Nashtech', 700, 500, 'My Dinh, Hanoi', 'https://www.nashtechglobal.com/', 10018, 'Lorem ipsum dolor sit amet.', '../public/uploads/nashtech.png', '123456'),
+(9, 'SmartOSC', 660, 470, 'Handico, Hanoi', 'http://www.smartosc.com/', 10019, 'Lorem ipsum dolor sit amet.', '../public/uploads/smartosc.png', '123456'),
+(10, 'FPT Information System', 870, 620, 'Keangnam, Hanoi', 'https://www.fis.vn/', 10020, 'Lorem ipsum dolor sit amet.', '../public/uploads/fis.jpg', '123456');
 
 -- --------------------------------------------------------
 
@@ -133,17 +133,17 @@ CREATE TABLE `intern_organization_requests` (
   `id` int(5) NOT NULL,
   `request_name` varchar(250) NOT NULL,
   `organization_id` int(11) NOT NULL,
-  `short_description` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
   `amount` int(11) NOT NULL,
   `date_submitted` date DEFAULT NULL,
-  `statuss` int(11) DEFAULT NULL
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `intern_organization_requests`
 --
 
-INSERT INTO `intern_organization_requests` (`id`, `request_name`, `organization_id`, `short_description`, `amount`, `date_submitted`, `statuss`) VALUES
+INSERT INTO `intern_organization_requests` (`id`, `request_name`, `organization_id`, `description`, `amount`, `date_submitted`, `status`) VALUES
 (1, 'Ruby Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
 (2, 'Senior Android Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
 (3, 'QC Leader', 1, 'Lorem ipsum', 1, '2019-11-15', 4000),
@@ -198,7 +198,7 @@ CREATE TABLE `intern_students` (
   `date_of_birth` date NOT NULL,
   `join_date` date NOT NULL,
   `class_name` varchar(20) NOT NULL,
-  `avatar` varchar(15) DEFAULT NULL,
+  `avatar` varchar(100) DEFAULT NULL,
   `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -207,16 +207,16 @@ CREATE TABLE `intern_students` (
 --
 
 INSERT INTO `intern_students` (`id`, `student_code`, `name`, `date_of_birth`, `join_date`, `class_name`, `avatar`, `password`) VALUES
-(1, 's001', 'XuanPhuc', '1999-12-11', '2019-11-15', 'k61a3', 'index.png', '123456'),
-(2, 's002', 'user2', '2001-02-02', '2019-12-03', 'k63a2', 'index.png', '123456'),
-(3, 's003', 'user3', '1998-11-28', '2019-12-01', 'k61a2', 'index.png', '123456'),
-(4, 's004', 'user4', '1996-07-09', '2019-12-02', 'k62a3', 'index.png', '123456'),
-(5, 's005', 'user5', '1995-02-05', '2019-12-02', 'k59a5', 'index.png', '123456'),
-(6, 's006', 'user6', '1996-04-07', '2019-12-02', 'k61a3', 'index.png', '123456'),
-(7, 's007', 'user7', '1999-11-19', '2019-12-02', 'k63a3', 'index.png', '123456'),
-(8, 's008', 'user8', '2000-13-06', '2019-12-02', 'k62a3', 'index.png', '123456'),
-(9, 's009', 'user9', '1999-01-09', '2019-12-02', 'k62a1', 'index.png', '123456'),
-(10, 's0010', 'user10', '1997-05-12', '2019-12-02', 'k62a3', 'index.png', '123456');
+(1, 's001', 'XuanPhuc', '1999-12-11', '2019-11-15', 'k61a3', '../public/uploads/blank_avatar.jpg', '123456'),
+(2, 's002', 'user2', '2001-02-02', '2019-12-03', 'k63a2', '../public/uploads/blank_avatar.jpg', '123456'),
+(3, 's003', 'user3', '1998-11-28', '2019-12-01', 'k61a2', '../public/uploads/blank_avatar.jpg', '123456'),
+(4, 's004', 'user4', '1996-07-09', '2019-12-02', 'k62a3', '../public/uploads/blank_avatar.jpg', '123456'),
+(5, 's005', 'user5', '1995-02-05', '2019-12-02', 'k59a5', '../public/uploads/blank_avatar.jpg', '123456'),
+(6, 's006', 'user6', '1996-04-07', '2019-12-02', 'k61a3', '../public/uploads/blank_avatar.jpg', '123456'),
+(7, 's007', 'user7', '1999-11-19', '2019-12-02', 'k63a3', '../public/uploads/blank_avatar.jpg', '123456'),
+(8, 's008', 'user8', '2000-13-06', '2019-12-02', 'k62a3', '../public/uploads/blank_avatar.jpg', '123456'),
+(9, 's009', 'user9', '1999-01-09', '2019-12-02', 'k62a1', '../public/uploads/blank_avatar.jpg', '123456'),
+(10, 's0010', 'user10', '1997-05-12', '2019-12-02', 'k62a3', '../public/uploads/blank_avatar.jpg', '123456');
 
 -- --------------------------------------------------------
 
@@ -284,16 +284,16 @@ CREATE TABLE `intern_teachers` (
 --
 
 INSERT INTO `intern_teachers` (`id`, `full_name`, `teacher_code`, `sex`, `avatar`, `password`) VALUES
-(1, 'Vũ Trịnh Hà Minh', 't001', '1', 'index.png', '123456'),
-(2, 'Hoàng Thị Hiền', 't002', '1', 'index.png', '123456'),
-(3, 'Nguyễn Thị Phương', 't003', '1', 'index.png', '123456'),
-(4, 'Đoàn Thanh Vân', 't004', '1', 'index.png', '123456'),
-(5, 'Nguyễn Văn Toản', 't005', '2', 'index.png', '123456'),
-(6, 'Đoàn Thanh Vân', 't006', '1', 'index.png', '123456'),
-(7, 'Vũ Quang Tùng', 't007', '2', 'index.png', '123456'),
-(8, 'Nguyễn Tá Tuấn', 't008', '2', 'index.png', '123456'),
-(9, 'Đoàn Thanh Vân', 't009', '1', 'index.png', '123456'),
-(10, 'Đỗ Minh Duyên', 't0010', '1', 'index.png', '123456');
+(1, 'Vũ Trịnh Hà Minh', 't001', '1', '../public/uploads/blank_avatar.jpg', '123456'),
+(2, 'Hoàng Thị Hiền', 't002', '1', '../public/uploads/blank_avatar.jpg', '123456'),
+(3, 'Nguyễn Thị Phương', 't003', '1', '../public/uploads/blank_avatar.jpg', '123456'),
+(4, 'Đoàn Thanh Vân', 't004', '1', '../public/uploads/blank_avatar.jpg', '123456'),
+(5, 'Nguyễn Văn Toản', 't005', '2', '../public/uploads/blank_avatar.jpg', '123456'),
+(6, 'Đoàn Thanh Vân', 't006', '1', '../public/uploads/blank_avatar.jpg', '123456'),
+(7, 'Vũ Quang Tùng', 't007', '2', '../public/uploads/blank_avatar.jpg', '123456'),
+(8, 'Nguyễn Tá Tuấn', 't008', '2', '../public/uploads/blank_avatar.jpg', '123456'),
+(9, 'Đoàn Thanh Vân', 't009', '1', '../public/uploads/blank_avatar.jpg', '123456'),
+(10, 'Đỗ Minh Duyên', 't0010', '1', '../public/uploads/blank_avatar.jpg', '123456');
 
 --
 -- Indexes for dumped tables

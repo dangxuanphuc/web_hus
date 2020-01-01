@@ -3,7 +3,7 @@
   session_start();
   $current = $_POST["current_pwd"];
   $new_pass = $_POST["new_pass"];
-  $password = $_POST["re_type"];
+  $re_type = $_POST["re_type"];
 
   $organization_id = $_SESSION["organization_id"];
 

@@ -35,7 +35,7 @@
     <p>Number of assigned: <?php number_of_assigned($row["organization_id"]);?>  </p>
   </div>
   <div class="w3-row">
-    <p>Status: <?php check_status($row["statuss"]);?></p>
+    <p>Status: <?php check_status($row["status"]);?></p>
   </div>
 </div>
 <div class="w3-col s6">

@@ -29,7 +29,7 @@
     <div class="w3-row">
       <button> <a href="layout_student.php?status=list_organization_request">Back</a></button>
       <?php
-        if($status_request_assigned["status"] == "0" || $status_request_assigned["status"] == "1" ||$status_intern_organization_requests["statuss"] == "4000" ){?>
+        if($status_request_assigned["status"] == "0" || $status_request_assigned["status"] == "1" ||$status_intern_organization_requests["status"] == "4000" ){?>
           <button type="button" disabled>Register</button>
       <?php } else { ?>
         <button><a href="../server/student/request_registration_organization.php?id=<?php echo $request_id;?>&student_id=<?php echo $_SESSION['student_id']?>&date=<?php echo date('Y/m/d');?>">Register</a></button>

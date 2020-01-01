@@ -5,7 +5,7 @@ $row = mysqli_fetch_assoc($result);
 ?>
 
 <div class="w3-col s3" style="margin-top: 30px; margin-left: 10px;">
-  <img src="teacher/modules/uploads/<?php echo $row['avatar']?> alt=" height="100px" width="80px">
+  <img src="<?php echo $row['avatar']?> alt=" height="200px" width="200px">
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
@@ -24,7 +24,7 @@ $row = mysqli_fetch_assoc($result);
     <p>Number of assigned: <?php number_of_assigned($row["organization_id"]);?></p>
   </div>
   <div class="w3-row">
-    <p>Status: <?php check_status($row["statuss"]);?></p>
+    <p>Status: <?php check_status($row["status"]);?></p>
   </div>
 </div>
 

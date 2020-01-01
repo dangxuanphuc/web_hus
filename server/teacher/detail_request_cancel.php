@@ -32,11 +32,11 @@
   </div>
   <div class="w3-row">
     <div class="w3-col s3"><h3>Status: </h3></div>
-    <div class="w3-col s8"><p><?php check_status($row["statuss"]);?></p></div>
+    <div class="w3-col s8"><p><?php check_status($row["status"]);?></p></div>
   </div>
   <div class="w3-row">
     <div class="w3-col s2"><h3>Description: </h3></div>
-    <div class="w3-col s9"><p><?php echo $row["short_description"]?></p></div>
+    <div class="w3-col s9"><p><?php echo $row["description"]?></p></div>
   </div>
 </div>
 <div class="w3-col s6">

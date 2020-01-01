@@ -5,7 +5,6 @@
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($conn, $_POST["txtUsername"]);
     $pass = mysqli_real_escape_string($conn, $_POST["txtPassword"]);
-
     $sql = "SELECT * FROM intern_organization_profile WHERE tax_number = '$myusername' and password='$pass'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);

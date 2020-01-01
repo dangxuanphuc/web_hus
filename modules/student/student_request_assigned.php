@@ -22,7 +22,7 @@
       <form action="../server/student/request_assigned.php?request_id=<?php echo $followingdataOrganizationRequest['id']?>" method="POST" >
         <div class="w3-panel w3-card" style="width: 400px; display: block; height: 30%; margin-left: 300px">
           <p>Subject: <?php echo $followingdataOrganizationRequest["request_name"] ?></p>
-          <p>Description: <?php echo $followingdataOrganizationRequest["short_description"] ?></p>
+          <p>Description: <?php echo $followingdataOrganizationRequest["description"] ?></p>
           <label for="uname"><b>Start date: </b></label>
           <input type="date" name="start_date" value="<?php echo $followingdataDate["start_date"] ?>" required>
           <br>

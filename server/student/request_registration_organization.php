@@ -26,7 +26,7 @@
     echo $num;
     echo $amount;
     if ($num >= $amount) {
-      $sql = "UPDATE intern_organization_requests SET statuss='4000' WHERE id=$request_id";
+      $sql = "UPDATE intern_organization_requests SET status='4000' WHERE id=$request_id";
       if(mysqli_query($conn, $sql))
         echo "dhi";
     } else {

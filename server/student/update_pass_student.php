@@ -1,7 +1,6 @@
 <?php
   include("../server/config.php");
   session_start();
-  // student registration
   $pass = $_POST["pass"];
   $new_pass = $_POST["new_pass"];
   $password = $_POST["password"];
