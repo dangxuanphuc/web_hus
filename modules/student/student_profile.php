@@ -8,48 +8,27 @@
     JOIN intern_ability_dictionary ab on ab.id=l.ability_id
     WHERE l.student_id=$student_id");
 ?>
-<div class="w3-col s3" style="margin-top: 30px;margin-left: 10px;">
-  <img src="<?php echo $row['avatar']?>" height="200px" width="200px">
-</div>
-<div class="w3-col s8" style="margin-left: 40px">
-  <div class="w3-row">
-    <div class="w3-col w3-center"><h1 class="w3-card"><?php echo $row["name"];?></h1></div>
+<div class="w3-container">
+  <div class="w3-third w3-center" style="margin-top:30px;">
+    <img src="../public/uploads/<?php echo $row['avatar']?>" style="height:200px;width:200px" class="w3-circle">
+    <p class="w3-large"><?php echo $row["name"];?></p>
   </div>
-  <div class="w3-row">
-    <div class="w3-col s2">
-      <i class="fa fa-map-marker" style="font-size:30px;color: red;margin-top: 10px"></i>
-    </div>
-    <div class="w3-col s9">
-      <p>Class: <?php echo $row["class_name"];?> </p>
-    </div>
-  </div>
-  <div class="w3-row">
-    <p>Birthday: <?php echo $row["date_of_birth"];?> </p>
-  </div>
-</div>
-
-<div class="w3-col s6">
-  <div class="w3-row">
-    <div class="w3-col">
-      <div class="w3-row">  <h3 style="margin-left:5px;">Skills</h3></div>
-      <?php while($row1=mysqli_fetch_assoc($sql_intern_student_ability)) { ?>
-        <div class="w3-row">
-          <div class="w3-col s2"><p><?php echo $row1["ability_name"]?></p></div>
-          <div class="w3-col s8 progres"><progress value="<?php echo $row1['ability_rate']?>" max="10"></div>
+  <div class="w3-twothird" style="margin-top:20px;">
+    <h3>THÔNG TIN CÁ NHÂN</h3>
+    <p>Lớp: <?php echo $row["class_name"];?></p>
+    <p>Ngày sinh: <?php echo $row["date_of_birth"];?></p>
+    <h3>NĂNG LỰC</h3>
+    <?php while($row1 = mysqli_fetch_assoc($sql_intern_student_ability)) { ?>
+      <div class="w3-row">
+        <div class="w3-col s1" style="margin-bottom: 5px;"><?php echo $row1["ability_name"]?></div>
+        <div class="w3-col s7 w3-light-grey w3-round">
+          <div class="w3-green w3-center w3-round" style="width:<?php echo $row1['ability_rate']*10?>%"><?php echo $row1['ability_rate']*10?>%</div>
         </div>
-      <?php }?>
-    </div>
-    <div class="w3-row">
-      <button> <a href="layout_student.php?status=update_student_profile">Update information</a></button>
-    </div>
-    <div class="w3-row">
-      <button> <a href="layout_student.php?status=update_pass_student">Update password</a></button>
-    </div>
-    <div class="w3-row">
-      <button> <a href="layout_student.php?status=add_capacity_student">Add skill</a></button>
-    </div>
-    <div class="w3-row">
-      <button> <a href="layout_student.php?status=list_organization_request">Back</a></button>
-    </div>
+      </div>
+    <?php }?>
+    <p><button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="student.php?status=update_student_profile">Cập nhật thông tin</a></button>
+    <button class="w3-button w3-white w3-border w3-border-deep-orange w3-round-large"><a href="student.php?status=update_pass_student">Cập nhật mật khẩu</a></button>
+    <button class="w3-button w3-white w3-border w3-border-green w3-round-large"><a href="student.php?status=add_capacity_student">Thêm năng lực</a></button>
+    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="student.php?status=list_organization_request">Quay lại</a></button></p>
   </div>
 </div>

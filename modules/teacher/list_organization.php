@@ -11,7 +11,7 @@
   <?php while($row1 = mysqli_fetch_assoc($sql_organization)){?>
     <tr>
       <td><?php echo $row1["organization_name"] ?></td>
-      <td><a href="layout_teacher.php?status=organization_profile&organization_id=<?php echo $row1['id'] ?>">Show info</a></td>
+      <td><a href="teacher.php?status=organization_profile&organization_id=<?php echo $row1['id'] ?>">Show info</a></td>
     </tr>
   <?php } ?>
 </table>

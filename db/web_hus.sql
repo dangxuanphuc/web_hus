@@ -81,12 +81,16 @@ CREATE TABLE `intern_organization_request_assignment` (
 --
 
 INSERT INTO `intern_organization_request_assignment` (`organization_request_id`, `student_id`, `start_date`, `end_date`, `status`, `create_date`) VALUES
-(5, 1, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
-(5, 2, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
-(0, 3, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
-(5, 4, '2019-11-12', '2102-02-18', 2, '2019-11-05'),
-(5, 5, '0000-00-00', '0000-00-00', 1, '0000-00-00'),
-(1, 6, '2019-11-12', '2019-11-13', 0, '2019-11-05');
+(2, 1, '2019-07-12', '2019-12-10', 2, '2019-07-06'),
+(7, 2, '2019-12-25', '2020-04-20', 0, '2019-12-18'),
+(5, 3, '2019-07-08', '2019-12-15', 2, '2019-07-07'),
+(8, 4, '2019-07-15', '2019-04-20', 2, '2019-07-10'),
+(2, 5, '2019-08-20', '2019-12-06', 2, '2019-08-06'),
+(4, 6, '2019-12-15', '2019-04-20', 1, '2019-12-10'),
+(5, 7, '2019-12-10', '2019-04-20', 1, '2019-12-06'),
+(2, 8, '2019-12-14', '2019-04-20', 1, '2019-12-09'),
+(1, 9, '2019-08-18', '2019-12-26', 2, '2019-08-12'),
+(9, 10, '2019-12-28', '2020-04-20', 0, '2019-12-11');
 
 -- --------------------------------------------------------
 
@@ -100,7 +104,7 @@ CREATE TABLE `intern_organization_profile` (
   `employee_count` int(11) NOT NULL,
   `gross_revenue` int(11) NOT NULL,
   `address` varchar(200) NOT NULL,
-  `home_page` varchar(200) NOT NULL,
+  `url` varchar(200) NOT NULL,
   `tax_number` int(11) NOT NULL,
   `description` text DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
@@ -111,17 +115,17 @@ CREATE TABLE `intern_organization_profile` (
 -- Dumping data for table `intern_organization_profile`
 --
 
-INSERT INTO `intern_organization_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `home_page`, `tax_number`, `description`, `avatar`, `password`) VALUES
-(1, 'Sun*', 1500, 1000, 'Keangnam, Hanoi', 'https://sun-asterisk.com', 10011, 'Make awesome things that matter.', '../public/uploads/sun.jpg', '123456'),
-(2, 'RikkeiSoft', 700, 550, 'SongDa Tower, Hanoi', 'https://rikkeisoft.com', 10012, 'Lorem ipsum dolor sit amet.', '../public/uploads/rikkeisoft.png', '123456'),
-(3, 'FPT Software', 1870, 720, 'Hoa Lac, Hanoi', 'https://www.fpt-software.com/', 10013, 'Lorem ipsum dolor sit amet.', '../public/uploads/fsoft.png', '123456'),
-(4, 'FPT Telecom', 550, 420, 'My Dinh, Hanoi', 'https://www.fpt.vn/', 10014, 'Lorem ipsum dolor sit amet.', '../public/uploads/ftel.jpg', '123456'),
-(5, '2NF', 320, 350, 'My Dinh, Hanoi', 'http://2nf.com.vn/', 10015, 'Lorem ipsum dolor sit amet.', '../public/uploads/2nf.png', '123456'),
-(6, 'Beetsoft', 500, 620, 'My Dinh, Hanoi', 'https://beetsoft.com.vn', 10016, 'Lorem ipsum dolor sit amet.', '../public/uploads/beetsoft.png', '123456'),
-(7, 'FSS', 440, 540, 'My Dinh, Hanoi', 'https://fss.com.vn/', 10017, 'Lorem ipsum dolor sit amet.', '../public/uploads/fss.jpg', '123456'),
-(8, 'Nashtech', 700, 500, 'My Dinh, Hanoi', 'https://www.nashtechglobal.com/', 10018, 'Lorem ipsum dolor sit amet.', '../public/uploads/nashtech.png', '123456'),
-(9, 'SmartOSC', 660, 470, 'Handico, Hanoi', 'http://www.smartosc.com/', 10019, 'Lorem ipsum dolor sit amet.', '../public/uploads/smartosc.png', '123456'),
-(10, 'FPT Information System', 870, 620, 'Keangnam, Hanoi', 'https://www.fis.vn/', 10020, 'Lorem ipsum dolor sit amet.', '../public/uploads/fis.jpg', '123456');
+INSERT INTO `intern_organization_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `url`, `tax_number`, `description`, `avatar`, `password`) VALUES
+(1, 'Sun*', 1500, 1000, 'Nam Từ Liêm, Hà Nội', 'https://sun-asterisk.com', 10011, 'Make awesome things that matter.', 'sun.jpg', '123456'),
+(2, 'RikkeiSoft', 700, 550, 'Nam Từ Liêm, Hà Nội', 'https://rikkeisoft.com', 10012, 'Lorem ipsum dolor sit amet.', 'rikkeisoft.png', '123456'),
+(3, 'FPT Software', 1870, 720, 'Hòa Lạc, Hà Nội', 'https://www.fpt-software.com/', 10013, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
+(4, 'FPT Telecom', 550, 420, 'Cầu Giấy, Hà Nội', 'https://www.fpt.vn/', 10014, 'Lorem ipsum dolor sit amet.', 'ftel.jpg', '123456'),
+(5, '2NF', 320, 350, 'Cầu Giấy, Hà Nội', 'http://2nf.com.vn/', 10015, 'Lorem ipsum dolor sit amet.', '2nf.png', '123456'),
+(6, 'Beetsoft', 500, 620, 'Nam Từ Liêm, Hà Nội', 'https://beetsoft.com.vn', 10016, 'Lorem ipsum dolor sit amet.', 'beetsoft.png', '123456'),
+(7, 'FSS', 440, 540, 'Cầu Giấy, Hà Nội', 'https://fss.com.vn/', 10017, 'Lorem ipsum dolor sit amet.', 'fss.jpg', '123456'),
+(8, 'Nashtech', 700, 500, 'Cầu Giấy, Hà Nội', 'https://www.nashtechglobal.com/', 10018, 'Lorem ipsum dolor sit amet.', 'nashtech.png', '123456'),
+(9, 'SmartOSC', 660, 470, 'Nam Từ Liêm, Hà Nội', 'http://www.smartosc.com/', 10019, 'Lorem ipsum dolor sit amet.', 'smartosc.png', '123456'),
+(10, 'FPT Information System', 870, 620, 'Nam Từ Liêm, Hà Nội', 'https://www.fis.vn/', 10020, 'Lorem ipsum dolor sit amet.', 'fis.jpg', '123456');
 
 -- --------------------------------------------------------
 
@@ -144,16 +148,16 @@ CREATE TABLE `intern_organization_requests` (
 --
 
 INSERT INTO `intern_organization_requests` (`id`, `request_name`, `organization_id`, `description`, `amount`, `date_submitted`, `status`) VALUES
-(1, 'Ruby Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
-(2, 'Senior Android Developer', 1, 'Lorem ipsum', 1, '2019-11-12', 4000),
-(3, 'QC Leader', 1, 'Lorem ipsum', 1, '2019-11-15', 4000),
-(4, 'Java Developer', 1, 'Lorem ipsum', 5, '2019-11-19', 1000),
-(5, 'Frontend ReactJS, VueJS', 2, 'Lorem ipsum', 12, '2019-11-19', 2000),
-(6, 'Java Internship', 4, 'Lorem ipsum', 7, '2019-11-19', 3000),
-(7, 'Swift Developer', 7, 'Lorem ipsum', 8, '2019-11-20', 4000),
-(8, 'Senior iOS Developer', 3, 'Lorem ipsum', 4, '2019-11-23', 3000),
-(9, 'Tester', 3, 'Lorem ipsum', 9, '2019-11-25', 2000),
-(10, 'Senior Business Analysit', 4, 'Lorem ipsum', 4, '2019-11-25', 4000);
+(1, 'Ruby Developer', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-12', 4000),
+(2, 'Senior Android Developer', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-12', 4000),
+(3, 'QC Leader', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-15', 4000),
+(4, 'Java Developer', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 5, '2019-11-19', 1000),
+(5, 'Frontend ReactJS, VueJS', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 12, '2019-11-19', 2000),
+(6, 'Java Internship', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 7, '2019-11-19', 3000),
+(7, 'Swift Developer', 7, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 8, '2019-11-20', 4000),
+(8, 'Senior iOS Developer', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-23', 3000),
+(9, 'Tester', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 9, '2019-11-25', 2000),
+(10, 'Senior Business Analysit', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-25', 4000);
 
 -- --------------------------------------------------------
 
@@ -166,7 +170,7 @@ CREATE TABLE `intern_organization_request_abilities` (
   `organization_request_id` int(5) NOT NULL,
   `ability_id` int(11) NOT NULL,
   `ability_required` int(11) NOT NULL,
-  `note` varchar(20) NOT NULL
+  `note` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -207,16 +211,16 @@ CREATE TABLE `intern_students` (
 --
 
 INSERT INTO `intern_students` (`id`, `student_code`, `name`, `date_of_birth`, `join_date`, `class_name`, `avatar`, `password`) VALUES
-(1, 's001', 'XuanPhuc', '1999-12-11', '2019-11-15', 'k61a3', '../public/uploads/blank_avatar.jpg', '123456'),
-(2, 's002', 'user2', '2001-02-02', '2019-12-03', 'k63a2', '../public/uploads/blank_avatar.jpg', '123456'),
-(3, 's003', 'user3', '1998-11-28', '2019-12-01', 'k61a2', '../public/uploads/blank_avatar.jpg', '123456'),
-(4, 's004', 'user4', '1996-07-09', '2019-12-02', 'k62a3', '../public/uploads/blank_avatar.jpg', '123456'),
-(5, 's005', 'user5', '1995-02-05', '2019-12-02', 'k59a5', '../public/uploads/blank_avatar.jpg', '123456'),
-(6, 's006', 'user6', '1996-04-07', '2019-12-02', 'k61a3', '../public/uploads/blank_avatar.jpg', '123456'),
-(7, 's007', 'user7', '1999-11-19', '2019-12-02', 'k63a3', '../public/uploads/blank_avatar.jpg', '123456'),
-(8, 's008', 'user8', '2000-13-06', '2019-12-02', 'k62a3', '../public/uploads/blank_avatar.jpg', '123456'),
-(9, 's009', 'user9', '1999-01-09', '2019-12-02', 'k62a1', '../public/uploads/blank_avatar.jpg', '123456'),
-(10, 's0010', 'user10', '1997-05-12', '2019-12-02', 'k62a3', '../public/uploads/blank_avatar.jpg', '123456');
+(1, 's001', 'XuanPhuc', '1999-12-11', '2019-11-15', 'k61a3', 'blank_avatar.jpg', '123456'),
+(2, 's002', 'user2', '2001-02-02', '2019-12-03', 'k63a2', 'blank_avatar.jpg', '123456'),
+(3, 's003', 'user3', '1998-11-28', '2019-12-01', 'k61a2', 'blank_avatar.jpg', '123456'),
+(4, 's004', 'user4', '1996-07-09', '2019-12-02', 'k62a3', 'blank_avatar.jpg', '123456'),
+(5, 's005', 'user5', '1995-02-05', '2019-12-02', 'k59a5', 'blank_avatar.jpg', '123456'),
+(6, 's006', 'user6', '1996-04-07', '2019-12-02', 'k61a3', 'blank_avatar.jpg', '123456'),
+(7, 's007', 'user7', '1999-11-19', '2019-12-02', 'k63a3', 'blank_avatar.jpg', '123456'),
+(8, 's008', 'user8', '2000-13-06', '2019-12-02', 'k62a3', 'blank_avatar.jpg', '123456'),
+(9, 's009', 'user9', '1999-01-09', '2019-12-02', 'k62a1', 'blank_avatar.jpg', '123456'),
+(10, 's0010', 'user10', '1997-05-12', '2019-12-02', 'k62a3', 'blank_avatar.jpg', '123456');
 
 -- --------------------------------------------------------
 
@@ -228,7 +232,10 @@ CREATE TABLE `intern_student_register` (
   `id` int(11) DEFAULT NULL,
   `student_id` int(11) NOT NULL,
   `request_id` int(11) NOT NULL,
-  `submit_date` date DEFAULT NULL
+  `submit_date` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `student_id` (`student_id`),
+  KEY `request_id` (`request_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -236,7 +243,11 @@ CREATE TABLE `intern_student_register` (
 --
 
 INSERT INTO `intern_student_register` (`id`, `student_id`, `request_id`, `submit_date`) VALUES
-(NULL, 4, 8, '0000-00-00');
+(1, 4, 8, '2019-12-12'),
+(2, 2, 3, '2019-12-14'),
+(3, 5, 2, '2019-12-17'),
+(4, 3, 7, '2019-12-20'),
+(5, 8, 5, '2019-12-25');
 
 -- --------------------------------------------------------
 
@@ -284,16 +295,16 @@ CREATE TABLE `intern_teachers` (
 --
 
 INSERT INTO `intern_teachers` (`id`, `full_name`, `teacher_code`, `sex`, `avatar`, `password`) VALUES
-(1, 'Vũ Trịnh Hà Minh', 't001', '1', '../public/uploads/blank_avatar.jpg', '123456'),
-(2, 'Hoàng Thị Hiền', 't002', '1', '../public/uploads/blank_avatar.jpg', '123456'),
-(3, 'Nguyễn Thị Phương', 't003', '1', '../public/uploads/blank_avatar.jpg', '123456'),
-(4, 'Đoàn Thanh Vân', 't004', '1', '../public/uploads/blank_avatar.jpg', '123456'),
-(5, 'Nguyễn Văn Toản', 't005', '2', '../public/uploads/blank_avatar.jpg', '123456'),
-(6, 'Đoàn Thanh Vân', 't006', '1', '../public/uploads/blank_avatar.jpg', '123456'),
-(7, 'Vũ Quang Tùng', 't007', '2', '../public/uploads/blank_avatar.jpg', '123456'),
-(8, 'Nguyễn Tá Tuấn', 't008', '2', '../public/uploads/blank_avatar.jpg', '123456'),
-(9, 'Đoàn Thanh Vân', 't009', '1', '../public/uploads/blank_avatar.jpg', '123456'),
-(10, 'Đỗ Minh Duyên', 't0010', '1', '../public/uploads/blank_avatar.jpg', '123456');
+(1, 'Vũ Trịnh Hà Minh', 't001', '1', 'blank_avatar.jpg', '123456'),
+(2, 'Hoàng Thị Hiền', 't002', '1', 'blank_avatar.jpg', '123456'),
+(3, 'Nguyễn Thị Phương', 't003', '1', 'blank_avatar.jpg', '123456'),
+(4, 'Đoàn Thanh Vân', 't004', '1', 'blank_avatar.jpg', '123456'),
+(5, 'Nguyễn Văn Toản', 't005', '2', 'blank_avatar.jpg', '123456'),
+(6, 'Đoàn Thanh Vân', 't006', '1', 'blank_avatar.jpg', '123456'),
+(7, 'Vũ Quang Tùng', 't007', '2', 'blank_avatar.jpg', '123456'),
+(8, 'Nguyễn Tá Tuấn', 't008', '2', 'blank_avatar.jpg', '123456'),
+(9, 'Đoàn Thanh Vân', 't009', '1', 'blank_avatar.jpg', '123456'),
+(10, 'Đỗ Minh Duyên', 't0010', '1', 'blank_avatar.jpg', '123456');
 
 --
 -- Indexes for dumped tables
@@ -339,17 +350,11 @@ ALTER TABLE `intern_students`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `intern_student_register`
---
-ALTER TABLE `intern_student_register`
-  ADD PRIMARY KEY (`student_id`,`request_id`),
-  ADD KEY `request_id` (`request_id`);
-
---
 -- Indexes for table `intern_student_ability`
 --
 ALTER TABLE `intern_student_ability`
-  ADD PRIMARY KEY (`student_id`,`ability_id`),
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `student_id` (`student_id`),
   ADD KEY `ability_id` (`ability_id`);
 
 --
@@ -393,9 +398,21 @@ ALTER TABLE `intern_students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `intern_students`
+--
+ALTER TABLE `intern_student_ability`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `intern_teachers`
 --
 ALTER TABLE `intern_teachers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `intern_student_register`
+--
+ALTER TABLE `intern_student_register`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -419,8 +436,8 @@ ALTER TABLE `intern_organization_request_abilities`
 -- Constraints for table `intern_student_register`
 --
 ALTER TABLE `intern_student_register`
-  ADD CONSTRAINT `intern_student_register_ibfk_2` FOREIGN KEY (`request_id`) REFERENCES `intern_organization_requests` (`id`),
-  ADD CONSTRAINT `intern_student_register_ibfk_3` FOREIGN KEY (`student_id`) REFERENCES `intern_students` (`id`);
+  ADD CONSTRAINT `intern_student_register_ibfk_1` FOREIGN KEY (`request_id`) REFERENCES `intern_organization_requests` (`id`),
+  ADD CONSTRAINT `intern_student_register_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `intern_students` (`id`);
 
 --
 -- Constraints for table `intern_student_ability`

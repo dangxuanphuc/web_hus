@@ -18,7 +18,7 @@
     <p>Number of registration: <?php number_of_registrations($row["id"]);?> </p>
     <p>Number of assigned: <?php number_of_assigned($row["id"]);?>  </p>
     <p>Status: <?php check_status($row["status"]);?></p>
-    <a href="layout_organization.php?status=showmore&id=<?php echo $row["id"];?>">Show more</a>
+    <a href="organization.php?status=showmore&id=<?php echo $row["id"];?>">Show more</a>
   </div>
 <?php } ?>
 <?php

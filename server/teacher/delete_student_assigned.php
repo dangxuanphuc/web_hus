@@ -8,7 +8,7 @@
     $submit_date = date("y-m-d");
     $sql_student_register = "INSERT INTO intern_student_register (student_id, request_id, submit_date) VALUES ($student_id, $request_id, $submit_date)";
     if (mysqli_query($conn, $sql_student_register)) {
-      header("location: ../../dashboard/layout_teacher.php?status=list_assigned&id=".$request_id);
+      header("location: ../../dashboard/teacher.php?status=list_assigned&id=".$request_id);
     } else {
       echo("Failed");
     }

@@ -19,7 +19,7 @@ $sql = "UPDATE `intern_organization_request_assignment`
   WHERE `intern_organization_request_assignment`.`student_id` = $student_id";
 
 if(mysqli_query($conn, $sql))
-  header("location: ../../dashboard/layout_student.php?status=list_organization_request");
+  header("location: ../../dashboard/student.php?status=list_organization_request");
 else echo "Error deleting record: " . mysqli_error($conn);
 
 mysqli_close($conn);

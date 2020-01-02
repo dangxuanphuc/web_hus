@@ -8,7 +8,7 @@
     <p><?php echo $row["request_name"]?></p>
     <p>Amount: <?php echo $row["amount"];?></p>
     <p>Status: <?php check_status($row["status"]);?></p>
-    <a href="layout_teacher.php?status=detail_request_cancel&id=<?php echo $row['id'];?>&organization_id=<?php echo $row['organization_id'];?>">Show more</a>
+    <a href="teacher.php?status=detail_request_cancel&id=<?php echo $row['id'];?>&organization_id=<?php echo $row['organization_id'];?>">Show more</a>
   </div>
 <?php } ?>
 <?php

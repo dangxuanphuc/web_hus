@@ -1,16 +1,16 @@
 <div class="w3-row">
   <div class="w3-green w3-container w3-quarter left ">
-    <a href="layout_teacher.php?status=add_student"><h3>Add student</h3></a>
-    <a href="layout_teacher.php?status=add_teacher"><h3>Add teacher</h3></a>
-    <a href="layout_teacher.php?status=add_organization"><h3>Add organization</h3></a>
-    <a href="layout_teacher.php?status=add_capacity"><h3>Add capacity</h3></a>
-    <a href="layout_teacher.php?status=list_request_confirm"><h3>List request confirm</h3></a>
-    <a href="layout_teacher.php?status=list_request_unconfimred"><h3>List request unconfirmed</h3></a>
-    <a href="layout_teacher.php?status=list_request_cancel"><h3>List request cancel</h3></a>
-    <a href="layout_teacher.php?status=list_teacher"><h3>List teacher</h3></a>
-    <a href="layout_teacher.php?status=list_student"><h3>List student</h3></a>
-    <a href="layout_teacher.php?status=list_organization"><h3>List organization</h3></a>
-    <a href="layout_teacher.php?status=update_pass_teacher"><h3>Change password</h3></a>
+    <a href="teacher.php?status=add_student"><h3>Add student</h3></a>
+    <a href="teacher.php?status=add_teacher"><h3>Add teacher</h3></a>
+    <a href="teacher.php?status=add_organization"><h3>Add organization</h3></a>
+    <a href="teacher.php?status=add_capacity"><h3>Add capacity</h3></a>
+    <a href="teacher.php?status=list_request_confirm"><h3>List request confirm</h3></a>
+    <a href="teacher.php?status=list_request_unconfimred"><h3>List request unconfirmed</h3></a>
+    <a href="teacher.php?status=list_request_cancel"><h3>List request cancel</h3></a>
+    <a href="teacher.php?status=list_teacher"><h3>List teacher</h3></a>
+    <a href="teacher.php?status=list_student"><h3>List student</h3></a>
+    <a href="teacher.php?status=list_organization"><h3>List organization</h3></a>
+    <a href="teacher.php?status=update_pass_teacher"><h3>Change password</h3></a>
   </div>
 
   <div class="w3-container w3-threequarter right">

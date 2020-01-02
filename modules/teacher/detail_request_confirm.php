@@ -10,7 +10,7 @@
     <p>Number of registration: <?php number_of_registrations($row["organization_id"]);?> </p>
     <p>Number of assigned: <?php number_of_assigned($row["organization_id"]);?>  </p>
     <p>Status: <?php check_status($row["status"]);?></p>
-    <a href="layout_teacher.php?status=detail_request_confirm&id=<?php echo $row["id"];?>&organization_id=<?php echo $row["organization_id"];?>">Show more</a>
+    <a href="teacher.php?status=detail_request_confirm&id=<?php echo $row["id"];?>&organization_id=<?php echo $row["organization_id"];?>">Show more</a>
   </div>
 <?php } ?>
 <?php

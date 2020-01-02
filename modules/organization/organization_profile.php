@@ -27,15 +27,15 @@
   </div>
   <div class="w3-row">
     <button>
-      <a class="w3-button w3-light-green" href="layout_organization.php?status=update_organization_profile" style="width: 200px; margin:10px 0px;border-radius: 5px; box-shadow: 2px 2px 2px gray;">Update information</a>
+      <a class="w3-button w3-light-green" href="organization.php?status=update_organization_profile" style="width: 200px; margin:10px 0px;border-radius: 5px; box-shadow: 2px 2px 2px gray;">Update information</a>
     </button>
   </div>
   <div class="w3-row">
     <button>
-      <a class="w3-button w3-light-green" href="layout_organization.php?status=update_pass_organization" style="width: 200px; margin:10px 0px;border-radius: 5px; box-shadow: 2px 2px 2px gray;">Update password</a>
+      <a class="w3-button w3-light-green" href="organization.php?status=update_pass_organization" style="width: 200px; margin:10px 0px;border-radius: 5px; box-shadow: 2px 2px 2px gray;">Update password</a>
     </button>
   </div>
 </div>
 <div class="w3-row">
-  <button><a class="w3-button w3-red" href="layout_organization.php?status=list_request_organization">Back</a></button>
+  <button><a class="w3-button w3-red" href="organization.php?status=list_request_organization">Back</a></button>
 </div>

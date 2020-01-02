@@ -42,7 +42,7 @@
       <?php } ?>
     </div>
     <div class="w3-row">
-      <button><a href="layout_organization.php?status=showmore&id=<?php echo $request_id;?>"  >Back</a></button>
+      <button><a href="organization.php?status=showmore&id=<?php echo $request_id;?>"  >Back</a></button>
     </div>
   </div>
 </div>

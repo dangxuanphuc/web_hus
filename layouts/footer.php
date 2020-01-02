@@ -22,7 +22,7 @@
         <a href="#"><img src="assets/images/android.png" alt="Android" style="width: 120px;"></a>
       </div>
       <p>Chứng nhận bởi</p>
-      <a href="#"><img src="assets/images/registered.png" alt="Registered" style="width: 124px;"></a>
+      <a href="#"><img src="assets/images/bct.png" alt="Registered" style="width: 124px;"></a>
     </div>
   </div>
 

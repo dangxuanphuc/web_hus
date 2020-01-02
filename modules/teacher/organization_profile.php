@@ -25,5 +25,5 @@
   </div>
 </div>
 <div class="w3-row">
-  <button><a href="layout_teacher.php?status=list_organization">Back</a></button>
+  <button><a href="teacher.php?status=list_organization">Back</a></button>
 </div>

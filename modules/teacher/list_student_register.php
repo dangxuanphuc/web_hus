@@ -16,7 +16,7 @@ $sql_student_register = mysqli_query($conn, $sql);
   <?php while($row1 = mysqli_fetch_assoc($sql_student_register)) { ?>
     <tr>
       <td> <?php echo $row1["name"] ?></td>
-      <td><a href="layout_teacher.php?status=student_profile&student_id=<?php echo $row1['id'] ?>">Show more</a></td>
+      <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row1['id'] ?>">Show more</a></td>
       <td> <a href="../server/teacher/add_student_request.php?request_id=<?php echo $request_id?>&student_id=<?php echo $row1['student_id']?>">Select</a></td>
     </tr>
   <?php } ?>

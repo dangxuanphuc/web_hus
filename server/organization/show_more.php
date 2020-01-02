@@ -52,7 +52,7 @@
   <?php while($row1 = mysqli_fetch_assoc($sql_request_assigned)) { ?>
     <tr>
       <td> <?php echo $row1["name"] ?></td>
-      <td><a href="layout_organization.php?status=student_profile&student_id=<?php echo $row1['id']?>&request_id=<?php echo $id?>">Show more</a></td>
+      <td><a href="organization.php?status=student_profile&student_id=<?php echo $row1['id']?>&request_id=<?php echo $id?>">Show more</a></td>
     </tr>
   <?php } ?>
 </table>

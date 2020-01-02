@@ -52,7 +52,7 @@
   </div>
 </div>
 <div class="w3-row">
-  <button> <a href="layout_teacher.php?status=list_assigned&id=<?php echo $request_id?>"  > Show assigned table</a></button>
+  <button> <a href="teacher.php?status=list_assigned&id=<?php echo $request_id?>"  > Show assigned table</a></button>
 </div>
 
 <?php
