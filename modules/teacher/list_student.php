@@ -2,15 +2,17 @@
   include("../server/config.php");
   $sql_student = mysqli_query($conn, "SELECT * from intern_students");
 ?>
-<h1>List Student</h1>
-<table class="w3-table">
-  <tr>
-    <th>Student name</th>
-    <th>Information</th>
-  <?php while($row1 = mysqli_fetch_assoc($sql_student)) { ?>
+<div class="w3-col w3-border w3-round">
+  <h3 class="w3-center">DANH SÁCH SINH VIÊN</h3>
+  <table class="w3-table-all w3-bordered w3-centered">
     <tr>
-      <td><?php echo $row1["name"] ?></td>
-      <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row1['id'] ?>">Show info</a></td>
-    </tr>
-  <?php } ?>
-</table>
+      <th>Tên Sinh Viên</th>
+      <th>Thông Tin Cá Nhân</th>
+    <?php while($row = mysqli_fetch_assoc($sql_student)) { ?>
+      <tr>
+        <td><?php echo $row["name"] ?></td>
+        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+      </tr>
+    <?php } ?>
+  </table>
+</div>

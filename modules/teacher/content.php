@@ -1,19 +1,15 @@
-<div class="w3-row">
-  <div class="w3-green w3-container w3-quarter left ">
-    <a href="teacher.php?status=add_student"><h3>Add student</h3></a>
-    <a href="teacher.php?status=add_teacher"><h3>Add teacher</h3></a>
-    <a href="teacher.php?status=add_organization"><h3>Add organization</h3></a>
-    <a href="teacher.php?status=add_capacity"><h3>Add capacity</h3></a>
-    <a href="teacher.php?status=list_request_confirm"><h3>List request confirm</h3></a>
-    <a href="teacher.php?status=list_request_unconfimred"><h3>List request unconfirmed</h3></a>
-    <a href="teacher.php?status=list_request_cancel"><h3>List request cancel</h3></a>
-    <a href="teacher.php?status=list_teacher"><h3>List teacher</h3></a>
-    <a href="teacher.php?status=list_student"><h3>List student</h3></a>
-    <a href="teacher.php?status=list_organization"><h3>List organization</h3></a>
-    <a href="teacher.php?status=update_pass_teacher"><h3>Change password</h3></a>
+<div class="container" style="margin-top:50px;">
+  <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%;margin-top:2px;">
+    <a href="teacher.php?status=add_student" class="w3-bar-item w3-button"><h5>Thêm sinh viên</h5></a>
+    <a href="teacher.php?status=add_teacher" class="w3-bar-item w3-button"><h5>Thêm giảng viên</h5></a>
+    <a href="teacher.php?status=add_organization" class="w3-bar-item w3-button"><h5>Thêm doanh nghiệp</h5></a>
+    <a href="teacher.php?status=add_capacity" class="w3-bar-item w3-button"><h5>Thêm năng lực</h5></a>
+    <a href="teacher.php?status=list_request" class="w3-bar-item w3-button"><h5>Danh sách phiếu tuyển dụng</h5></a>
+    <a href="teacher.php?status=list_student" class="w3-bar-item w3-button"><h5>Danh sách sinh viên</h5></a>
+    <a href="teacher.php?status=list_teacher" class="w3-bar-item w3-button"><h5>Danh sách giảng viên</h5></a>
+    <a href="teacher.php?status=list_organization" class="w3-bar-item w3-button"><h5>Danh sách doanh nghiệp</h5></a>
   </div>
-
-  <div class="w3-container w3-threequarter right">
+  <div style="margin-left:25%;">
     <?php
       if(isset($_GET["status"])) {
       $temp = $_GET["status"];
@@ -28,16 +24,12 @@
         include("add_teacher.php");
       } elseif ($temp == "add_capacity") {
         include("add_capacity.php");
-      } elseif ($temp == "list_request_unconfimred") {
-        include("list_request_unconfimred.php");
       } elseif ($temp == "detail_request_organization") {
         include("../server/teacher/detail_request_unconfimred.php");
-      } elseif ($temp == "list_request_cancel") {
-        include("list_request_cancel.php");
       } elseif ($temp == "detail_request_cancel") {
         include("../server/teacher/detail_request_cancel.php");
-      } elseif ($temp == "list_request_confirm") {
-        include("list_request_confirm.php");
+      } elseif ($temp == "list_request") {
+        include("list_request.php");
       } elseif ($temp == "detail_request_confirm") {
         include("../server/teacher/detail_request_confirm.php");
       } elseif ($temp == "list_assigned") {
@@ -46,8 +38,6 @@
         include("list_student_register.php");
       } elseif ($temp == "add_student_request") {
         include("../server/teacher/add_student_request.php");
-      } elseif ($temp == "detail_request_confirm") {
-        include("detail_request_confirm.php");
       } elseif ($temp == "list_student") {
         include("list_student.php");
       } elseif ($temp == "list_organization") {
@@ -64,6 +54,10 @@
         include("student_profile.php");
       } elseif ($temp == "organization_profile") {
         include("organization_profile.php");
+      } elseif ($temp == "update_teacher_profile") {
+        include("update_teacher_profile.php");
+      } elseif ($temp == "teacher_profile") {
+        include("teacher_profile.php");
       }
     ?>
   </div>

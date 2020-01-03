@@ -1,132 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    input[type=text], select, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: vertical;
-    }
-    label {
-      padding: 12px 12px 12px 0;
-      display: inline-block;
-    }
-    input[type=submit] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      float: right;
-    }
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-    .container {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-    }
-    .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-    }
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    @media screen and (max-width: 600px) {
-      .col-25, .col-75, input[type=submit] {
-        width: 100%;
-        margin-top: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <form action="../server/teacher/add_organization.php" method="post" enctype="multipart/form-data">
-      <div class="row">
-        <div class="col-25">
-          <label for="organization_name">Organization name</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="organization_name" name="organization_name">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="organization_id">Organization ID</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="organization_id" name="organization_id">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="empl">Number of Employees</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="empl" name="employee">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="revenue">Revenue</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="revenue" name="revenue">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="address">Address</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="address" name="address">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="home">Home</label>
-        </div>
-        <div class="col-25">
-          <input type="text" id="home" name="home">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="pwd">Password</label>
-        </div>
-        <div class="col-25">
-          <input type="password" id="pwd" name="password">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="subject">Avatar</label>
-        </div>
-        <div class="col-75">
-          <input type="file" name="organization_avatar" required>
-        </div>
-      </div>
-      <div class="row">
-        <input type="submit" value="Submit">
-      </div>
-    </form>
+<div class="w3-container">
+  <div class="w3-row w3-center">
+    <h3>THÊM DOANH NGHIỆP</h3>
   </div>
-</body>
-</html>
+  <form action="../server/teacher/add_organization.php" method="post" enctype="multipart/form-data" class="w3-container w3-light-grey">
+    <div class="w3-row w3-section">
+      <label for="organization_name">Tên doanh nghiệp</label>
+      <input type="text" id="organization_name" class="w3-input w3-border w3-round-large" name="organization_name" placeholder="Công ty TNHH HUS" required>
+    </div>
+    <div class="w3-row w3-section">
+      <label for="organization_id">Mã thuế</label>
+      <input type="text" id="organization_id" class="w3-input w3-border w3-round-large" name="organization_id" placeholder="10000" required>
+    </div>
+    <div class="w3-row w3-section">
+        <label for="empl">Số nhân viên</label>
+        <input type="text" id="empl" class="w3-input w3-border w3-round-large" name="employee" placeholder="575" required>
+    </div>
+    <div class="w3-row w3-section">
+      <label for="revenue">Doanh thu</label>
+      <input type="text" id="revenue" class="w3-input w3-border w3-round-large" name="revenue"  placeholder="1000$" required>
+    </div>
+    <div class="w3-row w3-section">
+      <label for="address">Địa chỉ</label>
+      <input type="text" id="address" class="w3-input w3-border w3-round-large" name="address"  placeholder="Cầu Giấy, Hà Nội" required>
+    </div>
+    <div class="w3-row w3-section">
+      <label for="url">Trang web</label>
+      <input type="text" id="url" class="w3-input w3-border w3-round-large" name="url" placeholder="https://hus.com.vn" required>
+    </div>
+    <div class="w3-row w3-section">
+      <label for="description">Mô tả</label>
+      <input type="text" id="description" class="w3-input w3-border w3-round-large" name="description" placeholder="Lorem ipsum dolor sit amet" required>
+    </div>
+    <div class="w3-row w3-section">
+      <label for="pwd">Password</label>
+      <input type="password" id="pwd" name="password" class="w3-input w3-border w3-round-large" required>
+    </div>
+    <div class="w3-row w3-section">
+      <label for="organization_avatar">Avatar</label>
+      <input type="file" name="organization_avatar" class="w3-input w3-border w3-round-large" required>
+    </div>
+    <input type="submit" class="w3-button w3-white w3-border w3-border-green w3-round-large" value="Lưu">
+  </form>
+</div>

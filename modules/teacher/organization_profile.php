@@ -1,29 +1,24 @@
 <?php
   include("../server/config.php");
+  include("../server/function.php");
   $id = $_GET["organization_id"] ;
-  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_profile WHERE id=$id ");
+  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_profile WHERE id = $id");
   $row = mysqli_fetch_assoc($sql);
 ?>
-<div class="w3-col s3" style="margin-top:30px;margin-left:10px;">
-  <img src="../public/upload/index.png" height="250px" width="200px">
-</div>
-<div class="w3-col s8" style="margin-left: 40px">
-  <div class="w3-row">
-    <div class="w3-col w3-center"><h1 class="w3-card"><?php echo $row["organization_name"];?></h1></div>
+<div class="w3-container w3-card w3-margin">
+  <div class="w3-third">
+    <a href="<?php url_organization($row['id'])?>"><img src="../public/uploads/<?php avatar_organization($row['id'])?>" style="height:200px;width:200px;margin:50px;" class="w3-border w3-hover-shadow w3-round"></a>
   </div>
-  <div class="w3-row">
-    <p>Address: <?php  echo $row["address"];?></p>
+  <div class="w3-twothird" style="line-height:1;margin-top:40px;">
+    <div class="w3-row">
+      <h1><?php echo $row["organization_name"]?></h1>
+    </div>
+    <div class="w3-row">
+      <p><b>Địa chỉ: </b><?php echo $row["address"];?></p>
+      <p><b>Mô tả: </b><?php echo $row["description"];?></p>
+      <p><b>Số lượng nhân viên: </b><?php echo $row["employee_count"];?></p>
+      <p><b>Doanh Thu: </b><?php echo $row["gross_revenue"];?></p>
+    </div>
   </div>
-  <div class="w3-row">
-    <p>Doanh Thu: <?php echo $row["gross_revenue"];?></p>
-  </div>
-  <div class="w3-row">
-    <p>Số lượng nhân viên: <?php echo $row["employee_count"];?></p>
-  </div>
-  <div class="w3-row">
-    <p>Mô tả: <?php echo $row["description"];?></p>
-  </div>
-</div>
-<div class="w3-row">
-  <button><a href="teacher.php?status=list_organization">Back</a></button>
+  <button><a href="teacher.php?status=list_organization" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Quay lại</a></button>
 </div>

@@ -1,59 +1,24 @@
-<style>
-  .scaled:hover {
-    transform: scale(1.2);
-    color: red;
-  }
-</style>
-
 <?php
   include("../server/config.php");
+  include("../server/function.php");
   $organization_id = $_SESSION["organization_id"];
   $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE organization_id = $organization_id ORDER BY date_submitted DESC");
 ?>
 <?php while($row = mysqli_fetch_assoc($sql)) { ?>
-  <div class="organization">
-    <p><?php name_organization($row["organization_id"]);?></p>
-    <p><?php echo $row['request_name']?></p>
-    <p>Amount can tuyen: <?php echo $row["amount"];?></p>
-    <p>Number of registration: <?php number_of_registrations($row["id"]);?> </p>
-    <p>Number of assigned: <?php number_of_assigned($row["id"]);?>  </p>
-    <p>Status: <?php check_status($row["status"]);?></p>
-    <a href="organization.php?status=showmore&id=<?php echo $row["id"];?>">Show more</a>
+  <div class="w3-col w3-border content w3-round">
+    <h3 class="w3-center">PHIẾU TUYỂN DỤNG</h3>
+    <div class="w3-padding" style="height: 180px;">
+      <div class="w3-third w3-padding">
+        <a href="<?php url_organization($row['organization_id'])?>"><img src="../public/uploads/<?php avatar_organization($row['organization_id']);?>" alt="image" style="height:150px;width:150px;margin-top:20px;" class="w3-border w3-round w3-hover-shadow"></a>
+      </div>
+      <div class="w3-twothird w3-padding">
+        <p><b>Công ty: </b><?php name_organization($row["organization_id"]);?></p>
+        <p><b>Vị trí tuyển dụng: </b><?php echo $row["request_name"]?></p>
+        <p><b>Số lượng tuyển: </b><?php echo $row["amount"];?></p>
+        <p><b>Trạng thái: </b><span class="w3-tag w3-round w3-<?php add_label_to_status($row["status"]);?>" style="padding:3px;"><?php check_status($row["status"]);?></span></p>
+        <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="organization.php?status=detail_request_organization&id=<?php echo $row["id"];?>">Xem chi tiết</a></button>
+        <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="organization.php?status=student_assign&id=<?php echo $row["id"];?>">Xem bảng phân công</a></button>
+      </div>
+    </div>
   </div>
 <?php } ?>
-<?php
-  function name_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn,"SELECT * from intern_organization_profile  where id=$organization_id ");
-    $dong = mysqli_fetch_assoc($sql_name);
-    echo $dong["organization_name"];
-  }
-  function number_of_registrations($organization_id){
-    global $conn;
-    $dem  = 0;
-    $sql_number =  mysqli_query($conn,"SELECT * from intern_student_register  where request_id=$organization_id ");
-    while($sl=mysqli_fetch_assoc($sql_number)){
-      $dem++;
-    }
-    echo $dem;
-  }
-  function number_of_assigned($organization_id){
-    global $conn;
-    $dem = 0;
-    $sql_number = mysqli_query($conn,"SELECT * from intern_organization_request_assignment  where organization_request_id=$organization_id ");
-    while($sl=mysqli_fetch_assoc($sql_number)){
-      $dem++;
-    }
-    echo $dem;
-  }
-  function check_status($status){
-    if($status == 4000)
-      echo "Ngừng nhận đăng kí";
-    elseif($status == 3000)
-      echo "Chờ sinh viên đăng kí";
-    elseif($status == 1000)
-      echo "Bị hủy";
-    elseif($status == 2000)
-      echo "Chờ duyệt";
-  }
-?>

@@ -1,4 +1,3 @@
-<p>Add student from list registration</p>
 <?php
   include("../config.php");
   $request_id = $_GET["request_id"];

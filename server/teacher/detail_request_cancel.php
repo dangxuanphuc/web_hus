@@ -1,5 +1,6 @@
 <?php
   include("../server/config.php");
+  include("../server/function.php");
   $request_id = $_GET["id"];
   $sql = mysqli_query($conn, "SELECT * from intern_organization_requests where id=$request_id ");
   $row = mysqli_fetch_assoc($sql);
@@ -52,28 +53,3 @@
     </div>
   </div>
 </div>
-
-<?php
-  function img_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn,"SELECT * from intern_organization_profile where id=$organization_id ");
-    $dong = mysqli_fetch_assoc($sql_name);
-    echo $dong["avatar"];
-  }
-  function name_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile  where id=$organization_id");
-    $dong = mysqli_fetch_assoc($sql_name);
-    echo $dong["organization_name"];
-  }
-  function address_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile  where id=$organization_id");
-    $dong = mysqli_fetch_assoc($sql_name);
-    echo $dong["address"];
-  }
-  function check_status($status){
-    if($status == 1000)
-    echo "Không phê duyệt ";
-  }
-?>

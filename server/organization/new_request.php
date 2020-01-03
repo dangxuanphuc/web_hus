@@ -5,7 +5,7 @@
   $description = $_POST["description"];
   $amount = $_POST["amount"];
   $date_submit = date("y-m-d");
-  $status = 3000;
+  $status = 2000;
   $organization_id = $_SESSION["organization_id"];
   $sql_intern_ability_dictionary = mysqli_query($conn, "SELECT * from intern_ability_dictionary ");
 
@@ -13,6 +13,6 @@
   if (mysqli_query($conn, $sql)) {
     header("location:../../dashboard/organization.php?status=list_request_organization");
   }else {
-    echo("Faled");
+    echo("Failed");
   }
 ?>

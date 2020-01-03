@@ -157,7 +157,7 @@ INSERT INTO `intern_organization_requests` (`id`, `request_name`, `organization_
 (7, 'Swift Developer', 7, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 8, '2019-11-20', 4000),
 (8, 'Senior iOS Developer', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-23', 3000),
 (9, 'Tester', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 9, '2019-11-25', 2000),
-(10, 'Senior Business Analysit', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-25', 4000);
+(10, 'Senior Business Analyst', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-25', 4000);
 
 -- --------------------------------------------------------
 
@@ -283,9 +283,10 @@ INSERT INTO `intern_student_ability` (`id`, `student_id`, `ability_id`, `ability
 
 CREATE TABLE `intern_teachers` (
   `id` int(11) NOT NULL,
-  `full_name` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `teacher_code` varchar(40) NOT NULL,
   `sex` varchar(40) NOT NULL,
+  `date_of_birth` date NOT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -294,17 +295,17 @@ CREATE TABLE `intern_teachers` (
 -- Dumping data for table `intern_teachers`
 --
 
-INSERT INTO `intern_teachers` (`id`, `full_name`, `teacher_code`, `sex`, `avatar`, `password`) VALUES
-(1, 'Vũ Trịnh Hà Minh', 't001', '1', 'blank_avatar.jpg', '123456'),
-(2, 'Hoàng Thị Hiền', 't002', '1', 'blank_avatar.jpg', '123456'),
-(3, 'Nguyễn Thị Phương', 't003', '1', 'blank_avatar.jpg', '123456'),
-(4, 'Đoàn Thanh Vân', 't004', '1', 'blank_avatar.jpg', '123456'),
-(5, 'Nguyễn Văn Toản', 't005', '2', 'blank_avatar.jpg', '123456'),
-(6, 'Đoàn Thanh Vân', 't006', '1', 'blank_avatar.jpg', '123456'),
-(7, 'Vũ Quang Tùng', 't007', '2', 'blank_avatar.jpg', '123456'),
-(8, 'Nguyễn Tá Tuấn', 't008', '2', 'blank_avatar.jpg', '123456'),
-(9, 'Đoàn Thanh Vân', 't009', '1', 'blank_avatar.jpg', '123456'),
-(10, 'Đỗ Minh Duyên', 't0010', '1', 'blank_avatar.jpg', '123456');
+INSERT INTO `intern_teachers` (`id`, `name`, `teacher_code`, `sex`, `date_of_birth`, `avatar`, `password`) VALUES
+(1, 'Vũ Trịnh Hà Minh', 't001', 'Nữ', '1989-07-15', 'blank_avatar.jpg', '123456'),
+(2, 'Hoàng Thị Hiền', 't002', 'Nữ', '1990-12-11', 'blank_avatar.jpg', '123456'),
+(3, 'Nguyễn Thị Phương', 't003', 'Nữ', '1989-02-11', 'blank_avatar.jpg', '123456'),
+(4, 'Đoàn Thanh Vân', 't004', 'Nữ', '1990-11-19', 'blank_avatar.jpg', '123456'),
+(5, 'Nguyễn Văn Toản', 't005', 'Nam', '1992-10-14', 'blank_avatar.jpg', '123456'),
+(6, 'Đoàn Thanh Vân', 't006', 'Nữ', '1977-03-15', 'blank_avatar.jpg', '123456'),
+(7, 'Vũ Quang Tùng', 't007', 'Nam', '1984-06-24', 'blank_avatar.jpg', '123456'),
+(8, 'Nguyễn Tá Tuấn', 't008', 'Nam', '1975-07-15', 'blank_avatar.jpg', '123456'),
+(9, 'Đoàn Thanh Vân', 't009', 'Nữ', '1981-10-17', 'blank_avatar.jpg', '123456'),
+(10, 'Đỗ Minh Duyên', 't0010', 'Nữ', '1967-04-22', 'blank_avatar.jpg', '123456');
 
 --
 -- Indexes for dumped tables

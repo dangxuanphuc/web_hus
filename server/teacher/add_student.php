@@ -12,7 +12,7 @@
 
   $sql = "INSERT INTO intern_students(student_code, name, date_of_birth, join_date, class_name, avatar, password) VALUES('$code', '$name', '$birthday', '$join_date', '$class', '$image', '$password')";
   if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    header("location: ../../dashboard/teacher.php?status=list_student");
   } else {
     echo "Failed";
   }

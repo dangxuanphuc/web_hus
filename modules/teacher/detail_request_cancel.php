@@ -1,15 +1,16 @@
 <?php
   include("../config.php");
+  include("../function.php");
   $request_id = $_GET["id"];
-  $sql = mysqli_query($conn, "SELECT * from intern_organization_requests where id=$request_id");
+  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE id=$request_id");
   $row = mysqli_fetch_assoc($sql);
   $sql = mysqli_query($conn, "SELECT ab.ability_name, l.ability_required
-    FROM intern_organization_request_abilities  l
+    FROM intern_organization_request_abilities l
     JOIN intern_ability_dictionary ab on ab.id = l.ability_id
     WHERE l.organization_request_id=$request_id ");
 ?>
 <div class="w3-col s3" style="margin-top: 30px ;margin-left: 10px ;">
-  <img src="../public/uploads/teacher/index.png" height="250px" width="200px">
+  <img src="../public/uploads/index.png" height="250px" width="200px">
 </div>
 <div class="w3-col s8" style="margin-left: 40px">
   <div class="w3-row">
@@ -48,28 +49,3 @@
       </div>
   </div>
 </div>
-
-<?php
-  function img_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile  where id=$organization_id");
-    $dong = mysqli_fetch_assoc($sql_name);
-    echo $dong["avatar"];
-  }
-  function name_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile  where id=$organization_id");
-    $dong = mysqli_fetch_assoc($sql_name);
-    echo $dong["organization_name"];
-  }
-  function address_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * from intern_organization_profile where id=$organization_id");
-    $dong = mysqli_fetch_assoc($sql_name);
-    echo $dong["address"];
-  }
-  function check_status($status){
-    if($status == 1000)
-      echo "Không phê duyệt";
-  }
-?>

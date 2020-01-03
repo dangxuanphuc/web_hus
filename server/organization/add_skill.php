@@ -11,7 +11,7 @@
   $sql = "INSERT INTO intern_organization_request_abilities(organization_request_id, ability_id, ability_required, note) VALUES('$id_request', '$ability_id', '$rate', '$note')";
   if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
-    header("location: ../../dashboard/organization.php?status=showmore&id=".$id_request);
+    header("location: ../../dashboard/organization.php?status=detail_request_organization&id=".$id_request);
   } else {
     echo("Failed");
   }

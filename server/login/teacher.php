@@ -12,10 +12,10 @@
 
     $count = mysqli_num_rows($result);
     if ($count > 0) {
-      $_SESSION["teacher_name"] = $row["full_name"];
-      $_SESSION["id_teacher"]= $row["id"];
+      $_SESSION["teacher_name"] = $row["name"];
+      $_SESSION["teacher_id"] = $row["id"];
       $_SESSION["login_user"] = $myusername;
-      header("location: ../../dashboard/teacher.php?status=list_request_confirm");
+      header("location: ../../dashboard/teacher.php?status=list_request");
     } else {
       header("location: ../../public/404.php");
     }

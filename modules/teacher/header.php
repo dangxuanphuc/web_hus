@@ -1,14 +1,16 @@
 <?php session_start();?>
-<div class="w3-green w3-container w3-twothird">
-  <h2></h2>
-</div>
-<div class="w3-container w3-third">
-  <div class="w3-row">
-    <div class="w3-half w3-container w3-green">
-      <h2> <a href="teacher.php?status=teacher_profile"><?php echo $_SESSION["teacher_name"]?></a></h2>
-    </div>
-    <div class="w3-half w3-container">
-      <h2><a href="../login/logout.php">Sign Out</a></h2>
+<div class="w3-top">
+  <div class="w3-bar header-teacher" style="padding: 5px 0">
+    <a href="teacher.php?status=list_request" class="w3-bar-item brand">Trang chủ</a>
+    <div class="w3-right">
+      <span class="w3-left" style="margin-top:10px;">Xin chào</span>
+      <div class="w3-dropdown-hover">
+        <button><?php echo $_SESSION["teacher_name"]?></button>
+        <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0;">
+          <a href="teacher.php?status=teacher_profile" class="w3-bar-item w3-button">Hồ sơ</a>
+          <a href="../login/logout.php" class="w3-bar-item w3-button">Đăng xuất</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

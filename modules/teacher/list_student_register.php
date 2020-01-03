@@ -6,18 +6,21 @@ $sql = "SELECT * from intern_student_register ab
   where request_id = $request_id";
 $sql_student_register = mysqli_query($conn, $sql);
 ?>
-<h1>List Registration</h1>
-<table class="w3-table">
-  <tr>
-    <th>Student name</th>
-    <th>Information</th>
-    <th></th>
-  </tr>
-  <?php while($row1 = mysqli_fetch_assoc($sql_student_register)) { ?>
+<div class="w3-col w3-border w3-round">
+  <h3 class="w3-center">DANH SÁCH ĐĂNG KÝ</h3>
+  <table class="w3-table w3-bordered w3-centered">
     <tr>
-      <td> <?php echo $row1["name"] ?></td>
-      <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row1['id'] ?>">Show more</a></td>
-      <td> <a href="../server/teacher/add_student_request.php?request_id=<?php echo $request_id?>&student_id=<?php echo $row1['student_id']?>">Select</a></td>
+      <th>Tên Sinh Viên</th>
+      <th>Thông Tin Cá Nhân</th>
+      <th>Lựa Chọn</th>
     </tr>
-  <?php } ?>
-</table>
+    <?php while($row = mysqli_fetch_assoc($sql_student_register)) { ?>
+      <tr>
+        <td> <?php echo $row["name"] ?></td>
+        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+        <td> <a href="../server/teacher/add_student_request.php?request_id=<?php echo $request_id?>&student_id=<?php echo $row['student_id']?>" class="w3-button w3-white w3-border w3-border-green w3-round-large">Chọn</a></td>
+      </tr>
+    <?php } ?>
+  </table>
+</div>
+<button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="teacher.php?status=list_assigned&id=<?php echo $request_id?>">Quay lại</a></button>

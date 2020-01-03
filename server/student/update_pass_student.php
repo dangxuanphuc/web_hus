@@ -5,7 +5,6 @@
   $new_pass = $_POST["new_pass"];
   $password = $_POST["password"];
   $student_id = $_SESSION["student_id"];
-
   if ($new_pass == $password) {
     $sql = "UPDATE `intern_students` SET `password`='$password'
       WHERE `password`=$pass AND `id`=$student_id";
