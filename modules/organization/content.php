@@ -4,12 +4,12 @@
   } else {
     $temp = "";
   }
-  if($temp == "list_request_organization") {
-    include("../server/organization/list_request_organization.php");
+  if($temp == "list_requests_organization") {
+    include("list_requests_organization.php");
   } else if($temp == "detail_request_organization") {
-    include("../server/organization/detail_request_organization.php");
-  } else if($temp == "student_assign") {
-    include("../server/organization/student_assign.php");
+    include("detail_request_organization.php");
+  } else if($temp == "student_assigned") {
+    include("../server/organization/student_assigned.php");
   } else if($temp == "new_request") {
     include("new_request.php");
   } else if($temp == "organization_profile") {

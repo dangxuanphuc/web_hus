@@ -2,7 +2,6 @@
   include("../server/config.php");
   $id = $_GET["id"];
   $sql_request_assigned = mysqli_query($conn, "SELECT * FROM intern_organization_request_assignment ab JOIN intern_students sp ON ab.student_id=sp.id WHERE organization_request_id = $id");
-  $row = mysqli_fetch_assoc($sql_request_assigned);
 ?>
 <div class="w3-container">
   <div class="w3-row w3-center">
@@ -13,13 +12,13 @@
       <th>Tên Sinh Viên</th>
       <th>Thông Tin Cá Nhân</th>
     </tr>
-    <?php while($row) { ?>
+    <?php while($temp = mysqli_fetch_assoc($sql_request_assigned)) { ?>
       <tr>
-        <td><?php echo $row["name"]?></td>
-        <td><a href="organization.php?status=student_profile&student_id=<?php echo $row['id']?>&request_id=<?php echo $id?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+        <td><?php echo $temp["name"]?></td>
+        <td><a href="organization.php?status=student_profile&student_id=<?php echo $temp['id']?>&request_id=<?php echo $id?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
       </tr>
     <?php } ?>
   </table>
   <br>
-  <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="organization.php?status=list_request_organization">Quay lại</a></button>
+  <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="organization.php?status=list_requests_organization">Quay lại</a></button>
 </div>

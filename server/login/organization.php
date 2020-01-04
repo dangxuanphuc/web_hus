@@ -13,7 +13,7 @@
     if ($count == 1) {
       $_SESSION["organization_name"]=$row["organization_name"];
       $_SESSION["organization_id"]=$row["id"];
-      header("location: ../../dashboard/organization.php?status=list_request_organization");
+      header("location: ../../dashboard/organization.php?status=list_requests_organization");
     } else {
       header("location: ../../public/404.php");
     }

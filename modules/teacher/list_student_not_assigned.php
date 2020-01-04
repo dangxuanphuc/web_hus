@@ -2,7 +2,7 @@
   include("../server/config.php");
   $request_id = $_GET["id"];
   $sql = "SELECT * FROM intern_students
-    WHERE id NOT IN (SELECT student_id FROM intern_organization_request_assignment WHERE status=0 or status=1)";
+    WHERE id NOT IN (SELECT student_id FROM intern_organization_request_assignment)";
   $sql_list_student = mysqli_query($conn, $sql);
 ?>
 <div class="w3-col w3-border w3-round">
@@ -12,12 +12,12 @@
       <th>Tên Sinh Viên</th>
       <th>Lựa Chọn</th>
     </tr>
-    <?php while($row = mysqli_fetch_assoc($sql_list_student)) { ?>
+    <?php while($temp = mysqli_fetch_assoc($sql_list_student)) { ?>
       <tr>
-        <td><?php echo $row["name"] ?></td>
-        <td><a href="../server/teacher/add_student_not_assigned.php?request_id=<?php echo $request_id?>&id=<?php echo $row['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Chọn</a></td>
+        <td><?php echo $temp["name"] ?></td>
+        <td><a href="../server/teacher/add_student_not_assigned.php?request_id=<?php echo $request_id?>&id=<?php echo $temp['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Thêm</a></td>
       </tr>
     <?php } ?>
   </table>
 </div>
-<button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="teacher.php?status=list_assigned&id=<?php echo $request_id?>">Quay lại</a></button>
+<button class="w3-button w3-white w3-border w3-border-gray w3-round-large w3-margin"><a href="teacher.php?status=list_assigned&id=<?php echo $request_id?>">Quay lại</a></button>

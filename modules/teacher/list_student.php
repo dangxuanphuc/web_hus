@@ -8,10 +8,10 @@
     <tr>
       <th>Tên Sinh Viên</th>
       <th>Thông Tin Cá Nhân</th>
-    <?php while($row = mysqli_fetch_assoc($sql_student)) { ?>
+    <?php while($temp = mysqli_fetch_assoc($sql_student)) { ?>
       <tr>
-        <td><?php echo $row["name"] ?></td>
-        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+        <td><?php echo $temp["name"] ?></td>
+        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $temp['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
       </tr>
     <?php } ?>
   </table>

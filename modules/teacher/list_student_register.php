@@ -14,11 +14,11 @@ $sql_student_register = mysqli_query($conn, $sql);
       <th>Thông Tin Cá Nhân</th>
       <th>Lựa Chọn</th>
     </tr>
-    <?php while($row = mysqli_fetch_assoc($sql_student_register)) { ?>
+    <?php while($temp = mysqli_fetch_assoc($sql_student_register)) { ?>
       <tr>
-        <td> <?php echo $row["name"] ?></td>
-        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
-        <td> <a href="../server/teacher/add_student_request.php?request_id=<?php echo $request_id?>&student_id=<?php echo $row['student_id']?>" class="w3-button w3-white w3-border w3-border-green w3-round-large">Chọn</a></td>
+        <td><?php echo $temp["name"] ?></td>
+        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $temp['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+        <td> <a href="../server/teacher/add_student_request.php?request_id=<?php echo $request_id?>&student_id=<?php echo $temp['student_id']?>" class="w3-button w3-white w3-border w3-border-green w3-round-large">Thêm</a></td>
       </tr>
     <?php } ?>
   </table>

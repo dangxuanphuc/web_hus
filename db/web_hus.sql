@@ -85,10 +85,10 @@ INSERT INTO `intern_organization_request_assignment` (`organization_request_id`,
 (7, 2, '2019-12-25', '2020-04-20', 0, '2019-12-18'),
 (5, 3, '2019-07-08', '2019-12-15', 2, '2019-07-07'),
 (8, 4, '2019-07-15', '2019-04-20', 2, '2019-07-10'),
-(2, 5, '2019-08-20', '2019-12-06', 2, '2019-08-06'),
+(2, 5, '2019-07-12', '2019-12-10', 2, '2019-08-06'),
 (4, 6, '2019-12-15', '2019-04-20', 1, '2019-12-10'),
-(5, 7, '2019-12-10', '2019-04-20', 1, '2019-12-06'),
-(2, 8, '2019-12-14', '2019-04-20', 1, '2019-12-09'),
+(5, 7, '2019-07-08', '2019-12-15', 2, '2019-07-06'),
+(2, 8, '2019-07-12', '2019-12-10', 1, '2019-07-09'),
 (1, 9, '2019-08-18', '2019-12-26', 2, '2019-08-12'),
 (9, 10, '2019-12-28', '2020-04-20', 0, '2019-12-11');
 
@@ -116,16 +116,16 @@ CREATE TABLE `intern_organization_profile` (
 --
 
 INSERT INTO `intern_organization_profile` (`id`, `organization_name`, `employee_count`, `gross_revenue`, `address`, `url`, `tax_number`, `description`, `avatar`, `password`) VALUES
-(1, 'Sun*', 1500, 1000, 'Nam Từ Liêm, Hà Nội', 'https://sun-asterisk.com', 10011, 'Make awesome things that matter.', 'sun.jpg', '123456'),
-(2, 'RikkeiSoft', 700, 550, 'Nam Từ Liêm, Hà Nội', 'https://rikkeisoft.com', 10012, 'Lorem ipsum dolor sit amet.', 'rikkeisoft.png', '123456'),
-(3, 'FPT Software', 1870, 720, 'Hòa Lạc, Hà Nội', 'https://www.fpt-software.com/', 10013, 'Lorem ipsum dolor sit amet.', 'fsoft.png', '123456'),
-(4, 'FPT Telecom', 550, 420, 'Cầu Giấy, Hà Nội', 'https://www.fpt.vn/', 10014, 'Lorem ipsum dolor sit amet.', 'ftel.jpg', '123456'),
-(5, '2NF', 320, 350, 'Cầu Giấy, Hà Nội', 'http://2nf.com.vn/', 10015, 'Lorem ipsum dolor sit amet.', '2nf.png', '123456'),
-(6, 'Beetsoft', 500, 620, 'Nam Từ Liêm, Hà Nội', 'https://beetsoft.com.vn', 10016, 'Lorem ipsum dolor sit amet.', 'beetsoft.png', '123456'),
-(7, 'FSS', 440, 540, 'Cầu Giấy, Hà Nội', 'https://fss.com.vn/', 10017, 'Lorem ipsum dolor sit amet.', 'fss.jpg', '123456'),
-(8, 'Nashtech', 700, 500, 'Cầu Giấy, Hà Nội', 'https://www.nashtechglobal.com/', 10018, 'Lorem ipsum dolor sit amet.', 'nashtech.png', '123456'),
-(9, 'SmartOSC', 660, 470, 'Nam Từ Liêm, Hà Nội', 'http://www.smartosc.com/', 10019, 'Lorem ipsum dolor sit amet.', 'smartosc.png', '123456'),
-(10, 'FPT Information System', 870, 620, 'Nam Từ Liêm, Hà Nội', 'https://www.fis.vn/', 10020, 'Lorem ipsum dolor sit amet.', 'fis.jpg', '123456');
+(1, 'Sun*', 1500, 1000, 'Nam Từ Liêm, Hà Nội', 'https://sun-asterisk.com', 10011, 'Make awesome things that matter.', 'sun.jpg', 'A@123456'),
+(2, 'RikkeiSoft', 700, 550, 'Nam Từ Liêm, Hà Nội', 'https://rikkeisoft.com', 10012, 'Lorem ipsum dolor sit amet.', 'rikkeisoft.png', 'A@123456'),
+(3, 'FPT Software', 1870, 720, 'Hòa Lạc, Hà Nội', 'https://www.fpt-software.com/', 10013, 'Lorem ipsum dolor sit amet.', 'fsoft.png', 'A@123456'),
+(4, 'FPT Telecom', 550, 420, 'Cầu Giấy, Hà Nội', 'https://www.fpt.vn/', 10014, 'Lorem ipsum dolor sit amet.', 'ftel.jpg', 'A@123456'),
+(5, '2NF', 320, 350, 'Cầu Giấy, Hà Nội', 'http://2nf.com.vn/', 10015, 'Lorem ipsum dolor sit amet.', '2nf.png', 'A@123456'),
+(6, 'Beetsoft', 500, 620, 'Nam Từ Liêm, Hà Nội', 'https://beetsoft.com.vn', 10016, 'Lorem ipsum dolor sit amet.', 'beetsoft.png', 'A@123456'),
+(7, 'FSS', 440, 540, 'Cầu Giấy, Hà Nội', 'https://fss.com.vn/', 10017, 'Lorem ipsum dolor sit amet.', 'fss.jpg', 'A@123456'),
+(8, 'Nashtech', 700, 500, 'Cầu Giấy, Hà Nội', 'https://www.nashtechglobal.com/', 10018, 'Lorem ipsum dolor sit amet.', 'nashtech.png', 'A@123456'),
+(9, 'SmartOSC', 660, 470, 'Nam Từ Liêm, Hà Nội', 'http://www.smartosc.com/', 10019, 'Lorem ipsum dolor sit amet.', 'smartosc.png', 'A@123456'),
+(10, 'FPT Information System', 870, 620, 'Nam Từ Liêm, Hà Nội', 'https://www.fis.vn/', 10020, 'Lorem ipsum dolor sit amet.', 'fis.jpg', 'A@123456');
 
 -- --------------------------------------------------------
 
@@ -139,7 +139,7 @@ CREATE TABLE `intern_organization_requests` (
   `organization_id` int(11) NOT NULL,
   `description` text DEFAULT NULL,
   `amount` int(11) NOT NULL,
-  `date_submitted` date DEFAULT NULL,
+  `date_submit` date DEFAULT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -147,17 +147,17 @@ CREATE TABLE `intern_organization_requests` (
 -- Dumping data for table `intern_organization_requests`
 --
 
-INSERT INTO `intern_organization_requests` (`id`, `request_name`, `organization_id`, `description`, `amount`, `date_submitted`, `status`) VALUES
+INSERT INTO `intern_organization_requests` (`id`, `request_name`, `organization_id`, `description`, `amount`, `date_submit`, `status`) VALUES
 (1, 'Ruby Developer', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-12', 4000),
-(2, 'Senior Android Developer', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-12', 4000),
-(3, 'QC Leader', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-15', 4000),
+(2, 'Android Developer', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-12', 4000),
+(3, 'QA Leader', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 1, '2019-11-15', 4000),
 (4, 'Java Developer', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 5, '2019-11-19', 1000),
 (5, 'Frontend ReactJS, VueJS', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 12, '2019-11-19', 2000),
 (6, 'Java Internship', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 7, '2019-11-19', 3000),
 (7, 'Swift Developer', 7, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 8, '2019-11-20', 4000),
 (8, 'Senior iOS Developer', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-23', 3000),
 (9, 'Tester', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 9, '2019-11-25', 2000),
-(10, 'Senior Business Analyst', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-25', 4000);
+(10, 'AI', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius iaculis nulla, at congue felis sollicitudin vel. Nullam dictum cursus dolor a commodo. Quisque quis fermentum dolor. Ut sed metus neque. Nullam placerat massa et lorem consectetur aliquam. Nulla quis tempor felis, eu gravida ipsum. Etiam varius, felis et dapibus scelerisque, mi odio accumsan ex, a tincidunt arcu leo a nisi.', 4, '2019-11-25', 4000);
 
 -- --------------------------------------------------------
 
@@ -211,16 +211,16 @@ CREATE TABLE `intern_students` (
 --
 
 INSERT INTO `intern_students` (`id`, `student_code`, `name`, `date_of_birth`, `join_date`, `class_name`, `avatar`, `password`) VALUES
-(1, 's001', 'XuanPhuc', '1999-12-11', '2019-11-15', 'k61a3', 'blank_avatar.jpg', '123456'),
-(2, 's002', 'user2', '2001-02-02', '2019-12-03', 'k63a2', 'blank_avatar.jpg', '123456'),
-(3, 's003', 'user3', '1998-11-28', '2019-12-01', 'k61a2', 'blank_avatar.jpg', '123456'),
-(4, 's004', 'user4', '1996-07-09', '2019-12-02', 'k62a3', 'blank_avatar.jpg', '123456'),
-(5, 's005', 'user5', '1995-02-05', '2019-12-02', 'k59a5', 'blank_avatar.jpg', '123456'),
-(6, 's006', 'user6', '1996-04-07', '2019-12-02', 'k61a3', 'blank_avatar.jpg', '123456'),
-(7, 's007', 'user7', '1999-11-19', '2019-12-02', 'k63a3', 'blank_avatar.jpg', '123456'),
-(8, 's008', 'user8', '2000-13-06', '2019-12-02', 'k62a3', 'blank_avatar.jpg', '123456'),
-(9, 's009', 'user9', '1999-01-09', '2019-12-02', 'k62a1', 'blank_avatar.jpg', '123456'),
-(10, 's0010', 'user10', '1997-05-12', '2019-12-02', 'k62a3', 'blank_avatar.jpg', '123456');
+(1, 's001', 'Chu Bá Thông', '1999-12-11', '2019-11-15', 'k61a3', 'blank_avatar.jpg', 'A@123456'),
+(2, 's002', 'Doãn Chí Bình', '2001-02-02', '2019-12-03', 'k63a2', 'blank_avatar.jpg', 'A@123456'),
+(3, 's003', 'Âu Dương Phong', '1998-11-28', '2019-12-01', 'k61a2', 'blank_avatar.jpg', 'A@123456'),
+(4, 's004', 'Hồng Thất Công', '1996-07-09', '2019-12-02', 'k62a3', 'blank_avatar.jpg', 'A@123456'),
+(5, 's005', 'Nguyễn Thành Long', '1995-02-05', '2019-12-02', 'k59a5', 'blank_avatar.jpg', 'A@123456'),
+(6, 's006', 'Hoàng Dược Sư', '1996-04-07', '2019-12-02', 'k61a3', 'blank_avatar.jpg', 'A@123456'),
+(7, 's007', 'Quách Tĩnh', '1999-11-19', '2019-12-02', 'k63a3', 'blank_avatar.jpg', 'A@123456'),
+(8, 's008', 'Đoàn Chính Thuần', '2000-13-06', '2019-12-02', 'k62a3', 'blank_avatar.jpg', 'A@123456'),
+(9, 's009', 'Hoàng Dung', '1999-01-09', '2019-12-02', 'k62a1', 'blank_avatar.jpg', 'A@123456'),
+(10, 's0010', 'Dương Khang', '1997-05-12', '2019-12-02', 'k62a3', 'blank_avatar.jpg', 'A@123456');
 
 -- --------------------------------------------------------
 
@@ -232,7 +232,7 @@ CREATE TABLE `intern_student_register` (
   `id` int(11) DEFAULT NULL,
   `student_id` int(11) NOT NULL,
   `request_id` int(11) NOT NULL,
-  `submit_date` date DEFAULT NULL,
+  `date_submit` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   KEY `request_id` (`request_id`)
@@ -242,12 +242,27 @@ CREATE TABLE `intern_student_register` (
 -- Dumping data for table `intern_student_register`
 --
 
-INSERT INTO `intern_student_register` (`id`, `student_id`, `request_id`, `submit_date`) VALUES
+INSERT INTO `intern_student_register` (`id`, `student_id`, `request_id`, `date_submit`) VALUES
 (1, 4, 8, '2019-12-12'),
 (2, 2, 3, '2019-12-14'),
 (3, 5, 2, '2019-12-17'),
 (4, 3, 7, '2019-12-20'),
-(5, 8, 5, '2019-12-25');
+(5, 8, 5, '2019-12-22'),
+(6, 8, 5, '2019-12-22'),
+(7, 8, 5, '2019-12-24'),
+(8, 8, 5, '2019-12-24'),
+(9, 8, 5, '2019-12-27'),
+(10, 8, 5, '2019-12-27'),
+(11, 8, 5, '2019-12-27'),
+(12, 8, 5, '2019-12-27'),
+(13, 8, 5, '2019-12-28'),
+(14, 8, 5, '2019-12-28'),
+(15, 8, 5, '2019-12-30'),
+(16, 8, 5, '2020-01-01'),
+(17, 8, 5, '2020-01-02'),
+(18, 8, 5, '2020-01-02'),
+(19, 8, 5, '2020-01-03'),
+(20, 8, 5, '2020-01-03');
 
 -- --------------------------------------------------------
 
@@ -267,13 +282,26 @@ CREATE TABLE `intern_student_ability` (
 --
 
 INSERT INTO `intern_student_ability` (`id`, `student_id`, `ability_id`, `ability_rate`) VALUES
-(1, 1, 6, 5),
-(2, 1, 9, 5),
-(3, 2, 3, 5),
-(4, 2, 4, 6),
-(5, 2, 8, 5),
-(6, 6, 7, 5),
-(7, 6, 8, 5);
+(1, 1, 1, 5),
+(2, 2, 2, 7),
+(3, 3, 3, 4),
+(4, 4, 4, 6),
+(5, 5, 5, 7),
+(6, 6, 6, 4),
+(7, 7, 7, 5),
+(8, 8, 8, 7),
+(9, 9, 9, 5),
+(10, 10, 10, 7),
+(11, 9, 9, 4),
+(12, 7, 8, 4),
+(13, 6, 7, 7),
+(14, 5, 6, 8),
+(15, 6, 5, 8),
+(16, 3, 4, 4),
+(17, 2, 3, 6),
+(18, 4, 2, 8),
+(19, 2, 1, 5),
+(20, 3, 10, 6);
 
 -- --------------------------------------------------------
 
@@ -296,16 +324,16 @@ CREATE TABLE `intern_teachers` (
 --
 
 INSERT INTO `intern_teachers` (`id`, `name`, `teacher_code`, `sex`, `date_of_birth`, `avatar`, `password`) VALUES
-(1, 'Vũ Trịnh Hà Minh', 't001', 'Nữ', '1989-07-15', 'blank_avatar.jpg', '123456'),
-(2, 'Hoàng Thị Hiền', 't002', 'Nữ', '1990-12-11', 'blank_avatar.jpg', '123456'),
-(3, 'Nguyễn Thị Phương', 't003', 'Nữ', '1989-02-11', 'blank_avatar.jpg', '123456'),
-(4, 'Đoàn Thanh Vân', 't004', 'Nữ', '1990-11-19', 'blank_avatar.jpg', '123456'),
-(5, 'Nguyễn Văn Toản', 't005', 'Nam', '1992-10-14', 'blank_avatar.jpg', '123456'),
-(6, 'Đoàn Thanh Vân', 't006', 'Nữ', '1977-03-15', 'blank_avatar.jpg', '123456'),
-(7, 'Vũ Quang Tùng', 't007', 'Nam', '1984-06-24', 'blank_avatar.jpg', '123456'),
-(8, 'Nguyễn Tá Tuấn', 't008', 'Nam', '1975-07-15', 'blank_avatar.jpg', '123456'),
-(9, 'Đoàn Thanh Vân', 't009', 'Nữ', '1981-10-17', 'blank_avatar.jpg', '123456'),
-(10, 'Đỗ Minh Duyên', 't0010', 'Nữ', '1967-04-22', 'blank_avatar.jpg', '123456');
+(1, 'Vũ Trịnh Hà Minh', 't001', 'Nữ', '1989-07-15', 'blank_avatar.jpg', 'A@123456'),
+(2, 'Hoàng Thị Hiền', 't002', 'Nữ', '1990-12-11', 'blank_avatar.jpg', 'A@123456'),
+(3, 'Nguyễn Thị Phương', 't003', 'Nữ', '1989-02-11', 'blank_avatar.jpg', 'A@123456'),
+(4, 'Đoàn Thanh Vân', 't004', 'Nữ', '1990-11-19', 'blank_avatar.jpg', 'A@12345'),
+(5, 'Nguyễn Văn Toản', 't005', 'Nam', '1992-10-14', 'blank_avatar.jpg', 'A@12345'),
+(6, 'Đoàn Thanh Vân', 't006', 'Nữ', '1977-03-15', 'blank_avatar.jpg', 'A@12345'),
+(7, 'Vũ Quang Tùng', 't007', 'Nam', '1984-06-24', 'blank_avatar.jpg', 'A@12345'),
+(8, 'Nguyễn Tá Tuấn', 't008', 'Nam', '1975-07-15', 'blank_avatar.jpg', 'A@12345'),
+(9, 'Đoàn Thanh Vân', 't009', 'Nữ', '1981-10-17', 'blank_avatar.jpg', 'A@12345'),
+(10, 'Đỗ Minh Duyên', 't0010', 'Nữ', '1967-04-22', 'blank_avatar.jpg', 'A@12345');
 
 --
 -- Indexes for dumped tables

@@ -16,6 +16,6 @@
       <input type="password" class="w3-input w3-border w3-round-large" id="re_type" name="password" required>
     </div>
     <input type="submit" class="w3-button w3-white w3-border w3-border-green w3-round-large" value="Lưu">
-    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="student.php?status=student_profile">Quay lại</a></button>
+    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="organization.php?status=organization_profile">Quay lại</a></button>
   </form>
 </div>

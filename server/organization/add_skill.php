@@ -1,17 +1,13 @@
 <?php
   include("../config.php");
-
-  $id_request = $_GET["id_REQUEST"];
+  $request_id = $_GET["request_id"];
   $ability_id = $_POST["ability_id"];
-  echo $ability_id;
   $rate = $_POST["rate"];
-  $note = $_POST["note"];
-  echo $note;
+  $note = "Lorem ipsum dolor sit amet.";
 
-  $sql = "INSERT INTO intern_organization_request_abilities(organization_request_id, ability_id, ability_required, note) VALUES('$id_request', '$ability_id', '$rate', '$note')";
+  $sql = "INSERT INTO intern_organization_request_abilities(organization_request_id, ability_id, ability_required, note) VALUES('$request_id', '$ability_id', '$rate', '$note')";
   if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
-    header("location: ../../dashboard/organization.php?status=detail_request_organization&id=".$id_request);
+    header("location: ../../dashboard/organization.php?status=detail_request_organization&id=".$request_id);
   } else {
     echo("Failed");
   }

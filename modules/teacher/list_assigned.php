@@ -14,11 +14,11 @@
       <th>Thông Tin Cá Nhân</th>
       <th>Xóa</th>
     </tr>
-    <?php while($row1 = mysqli_fetch_assoc($sql_request_assigned)) { ?>
+    <?php while($temp = mysqli_fetch_assoc($sql_request_assigned)) { ?>
       <tr>
-        <td><?php echo $row1["name"] ?></td>
-        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $row1['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
-        <td><a href="../server/teacher/delete_student_assigned.php?student_id=<?php echo $row1['id'] ?>&request_id=<?php echo $request_id?>" class="w3-button w3-white w3-border w3-border-red w3-round-large" onClick="return confirm('Are you sure?')">Xóa</a></td>
+        <td><?php echo $temp["name"] ?></td>
+        <td><a href="teacher.php?status=student_profile&student_id=<?php echo $temp['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+        <td><a href="../server/teacher/delete_student_assigned.php?student_id=<?php echo $temp['id'] ?>&request_id=<?php echo $request_id?>" class="w3-button w3-white w3-border w3-border-red w3-round-large" onClick="return confirm('Bạn có chắc chắn không?')">Xóa</a></td>
       </tr>
     <?php } ?>
   </table>

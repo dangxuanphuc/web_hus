@@ -1,7 +1,7 @@
 <?php
   include("../server/config.php");
   include("../server/function.php");
-  $sql = "SELECT * from intern_organization_requests where id = $request_id";
+  $sql = "SELECT * FROM intern_organization_requests WHERE id = $request_id";
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
 ?>

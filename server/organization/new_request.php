@@ -9,9 +9,9 @@
   $organization_id = $_SESSION["organization_id"];
   $sql_intern_ability_dictionary = mysqli_query($conn, "SELECT * from intern_ability_dictionary ");
 
-  $sql = "INSERT INTO intern_organization_requests(request_name, organization_id, description, amount, date_submitted, status) VALUES('$request_name', '$organization_id', '$description', '$amount', '$date_submit', '$status')";
+  $sql = "INSERT INTO intern_organization_requests(request_name, organization_id, description, amount, date_submit, status) VALUES('$request_name', '$organization_id', '$description', '$amount', '$date_submit', '$status')";
   if (mysqli_query($conn, $sql)) {
-    header("location:../../dashboard/organization.php?status=list_request_organization");
+    header("location:../../dashboard/organization.php?status=list_requests_organization");
   }else {
     echo("Failed");
   }

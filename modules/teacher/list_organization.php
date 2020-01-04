@@ -10,10 +10,10 @@
       <th>Tên công ty</th>
       <th>Thông tin</th>
     </tr>
-    <?php while($row1 = mysqli_fetch_assoc($sql_organization)){?>
+    <?php while($temp = mysqli_fetch_assoc($sql_organization)){?>
       <tr>
-        <td><?php echo $row1["organization_name"] ?></td>
-        <td><a href="teacher.php?status=organization_profile&organization_id=<?php echo $row1['id'] ?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+        <td><?php echo $temp["organization_name"] ?></td>
+        <td><a href="teacher.php?status=organization_profile&organization_id=<?php echo $temp['id'] ?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
       </tr>
     <?php } ?>
   </table>

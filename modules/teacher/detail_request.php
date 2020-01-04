@@ -5,7 +5,7 @@
   $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE id=$request_id ");
   $row = mysqli_fetch_assoc($sql);
   $sql2 = "SELECT ab.ability_name, l.ability_required
-    FROM intern_organization_request_abilities  l
+    FROM intern_organization_request_abilities l
     JOIN intern_ability_dictionary ab on ab.id = l.ability_id
     WHERE l.organization_request_id = $request_id";
   $sql_intern_ability_dictionary = mysqli_query($conn, $sql2);

@@ -64,8 +64,8 @@
     elseif($status == 3000)
       echo "green";
     elseif($status == 4000)
-      echo "light-grey";
-    elseif($status == 5000)
       echo "gray";
+    elseif($status == 5000)
+      echo "dark-gray";
   }
 ?>

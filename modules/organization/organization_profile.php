@@ -19,7 +19,8 @@
       <p><b>Doanh Thu: </b><?php echo $row["gross_revenue"];?></p>
     </div>
   </div>
-  <button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="organization.php?status=update_organization_profile&organization_id=<?php echo $id;?>">Cập nhật thông tin</a></button>
-  <button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="organization.php?status=update_pass_organization&organization_id=<?php echo $id;?>">Cập nhật mật khẩu</a></button>
-  <button><a href="organization.php?status=list_request_organization" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Quay lại</a></button>
+  <?php if($id == ) ?>
+    <button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="organization.php?status=update_organization_profile&organization_id=<?php echo $id;?>">Cập nhật thông tin</a></button>
+    <button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="organization.php?status=update_pass_organization&organization_id=<?php echo $id;?>">Cập nhật mật khẩu</a></button>
+  <button><a href="organization.php?status=list_requests_organization" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Quay lại</a></button>
 </div>

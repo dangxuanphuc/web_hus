@@ -9,10 +9,10 @@ $sql_teacher = mysqli_query($conn, "SELECT * from intern_teachers");
       <th>Tên Giảng Viên</th>
       <th>Thông Tin Cá Nhân</th>
     </tr>
-    <?php while($row = mysqli_fetch_assoc($sql_teacher)) { ?>
+    <?php while($temp = mysqli_fetch_assoc($sql_teacher)) { ?>
       <tr>
-        <td><?php echo $row["name"] ?></td>
-        <td><a href="teacher.php?status=teacher_profile&teacher_id=<?php echo $row['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
+        <td><?php echo $temp["name"] ?></td>
+        <td><a href="teacher.php?status=teacher_profile&teacher_id=<?php echo $temp['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></td>
       </tr>
     <?php } ?>
   </table>

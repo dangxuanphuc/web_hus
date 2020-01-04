@@ -24,14 +24,10 @@
         include("add_teacher.php");
       } elseif ($temp == "add_capacity") {
         include("add_capacity.php");
-      } elseif ($temp == "detail_request_organization") {
-        include("../server/teacher/detail_request_unconfimred.php");
-      } elseif ($temp == "detail_request_cancel") {
-        include("../server/teacher/detail_request_cancel.php");
       } elseif ($temp == "list_request") {
         include("list_request.php");
-      } elseif ($temp == "detail_request_confirm") {
-        include("../server/teacher/detail_request_confirm.php");
+      } elseif ($temp == "detail_request") {
+        include("detail_request.php");
       } elseif ($temp == "list_assigned") {
         include("list_assigned.php");
       } elseif ($temp == "list_student_register") {

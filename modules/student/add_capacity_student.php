@@ -8,8 +8,8 @@
     <div class="w3-row w3-margin">
       <label for="skill_name">Tên năng lực</label>
       <select class="w3-select w3-round-large" name="ability_id">
-        <?php while ($row = mysqli_fetch_assoc($sql_intern_ability_dictionary)) { ?>
-          <option value="<?php echo $row['id']?>"><?php echo $row["ability_name"]?></option>
+        <?php while ($temp = mysqli_fetch_assoc($sql_intern_ability_dictionary)) { ?>
+          <option value="<?php echo $temp['id']?>"><?php echo $temp["ability_name"]?></option>
         <?php } ?>
       </select>
     </div>
@@ -22,7 +22,7 @@
       </select>
     </div>
     <div class="w3-row w3-margin">
-      <input type="submit" class="w3-button w3-white w3-border w3-border-green w3-round-large" value="Thêm năng lực">
+      <input type="submit" class="w3-button w3-white w3-border w3-border-green w3-round-large" value="Thêm">
       <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="student.php?status=student_profile">Quay lại</a></button>
     </div>
   <form>
