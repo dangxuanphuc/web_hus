@@ -1,50 +1,94 @@
 <?php
-  function name_organization($organization_id){
+  function access_student_table($student_id) {
     global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * FROM intern_organization_profile
-      WHERE id=$organization_id");
-    $name = mysqli_fetch_assoc($sql_name);
+    $sql = mysqli_query($conn, "SELECT * FROM intern_students WHERE id = $student_id");
+    $data = mysqli_fetch_assoc($sql);
+    return $data;
+  }
+  function name_student($student_id) {
+    $name = access_student_table($student_id);
+    echo $name["name"];
+  }
+  function class_student($student_id) {
+    $class = access_student_table($student_id);
+    echo $class["class_name"];
+  }
+  function birthday_student($student_id) {
+    $birthday = access_student_table($student_id);
+    $date = $birthday["date_of_birth"];
+    echo date("Y-m-d", strtotime($date));
+  }
+  function access_teacher_table($teacher_id) {
+    global $conn;
+    $sql = mysqli_query($conn, "SELECT * FROM intern_teachers WHERE id = $teacher_id");
+    $data = mysqli_fetch_assoc($sql);
+    return $data;
+  }
+  function name_teacher($teacher_id) {
+    $name = access_teacher_table($teacher_id);
+    echo $name["name"];
+  }
+  function gender_teacher($teacher_id) {
+    $gender = access_teacher_table($teacher_id);
+    echo $gender["sex"];
+  }
+  function birthday_teacher($teacher_id) {
+    $birthday = access_teacher_table($teacher_id);
+    $date = $birthday["date_of_birth"];
+    echo date("Y-m-d", strtotime($date));
+  }
+  function access_organization_table($organization_id) {
+    global $conn;
+    $sql_organization = mysqli_query($conn, "SELECT * FROM intern_organization_profile
+      WHERE id = $organization_id");
+    $data = mysqli_fetch_assoc($sql_organization);
+    return $data;
+  }
+  function name_organization($organization_id) {
+    $name = access_organization_table($organization_id);
     echo $name["organization_name"];
   }
-  function address_organization($organization_id){
-    global $conn;
-    $sql_name = mysqli_query($conn, "SELECT * FROM intern_organization_profile WHERE id=$organization_id ");
-    $row = mysqli_fetch_assoc($sql_name);
-    echo $row["address"];
+  function address_organization($organization_id) {
+    $address = access_organization_table($organization_id);
+    echo $address["address"];
   }
-  function avatar_organization($organization_id){
-    global $conn;
-    $sql_avatar = mysqli_query($conn, "SELECT * FROM intern_organization_profile
-      WHERE id=$organization_id");
-    $avatar = mysqli_fetch_assoc($sql_avatar);
+  function employee_organization($organization_id) {
+    $employee = access_organization_table($organization_id);
+    echo $employee["employee_count"];
+  }
+  function revenue_organization($organization_id) {
+    $revenue = access_organization_table($organization_id);
+    echo $revenue["gross_revenue"];
+  }
+  function avatar_organization($organization_id) {
+    $avatar = access_organization_table($organization_id);
     echo $avatar["avatar"];
   }
-  function url_organization($organization_id){
-    global $conn;
-    $sql_url = mysqli_query($conn, "SELECT * FROM intern_organization_profile
-      WHERE id=$organization_id");
-    $url = mysqli_fetch_assoc($sql_url);
+  function url_organization($organization_id) {
+    $url = access_organization_table($organization_id);
     echo $url["url"];
   }
-  function number_of_registrations($organization_id){
+  function number_of_registrations($organization_id) {
     global $conn;
-    $dem = 0;
-    $sql_number = mysqli_query($conn, "SELECT * from intern_student_register  where request_id=$organization_id ");
-    while($sl = mysqli_fetch_assoc($sql_number)){
-      $dem++;
+    $count = 0;
+    $sql_number = mysqli_query($conn, "SELECT * FROM intern_student_register
+      WHERE request_id = $organization_id ");
+    while($number = mysqli_fetch_assoc($sql_number)){
+      $count++;
     }
-    echo $dem;
+    echo $count;
   }
-  function number_of_assigned($organization_id){
+  function number_of_assigned($organization_id) {
     global $conn;
-    $dem = 0;
-    $sql_number = mysqli_query($conn, "SELECT * from intern_organization_request_assignment  where organization_request_id=$organization_id ");
-    while($sl = mysqli_fetch_assoc($sql_number)){
-      $dem++;
+    $count = 0;
+    $sql_number = mysqli_query($conn, "SELECT * FROM intern_organization_request_assignment
+      WHERE organization_request_id = $organization_id ");
+    while($number = mysqli_fetch_assoc($sql_number)){
+      $count++;
     }
-    echo $dem;
+    echo $count;
   }
-  function check_status($status){
+  function check_status($status) {
     if($status == 1000)
       echo "Đang soạn";
     elseif($status == 2000)
@@ -67,5 +111,15 @@
       echo "gray";
     elseif($status == 5000)
       echo "dark-gray";
+  }
+  function explode_paragraph($paragraph) {
+    $result = preg_split('/(?<=[.?!;])\s+/', $paragraph, -1, PREG_SPLIT_NO_EMPTY);
+    return $result;
+  }
+  function remove_element($array, $elem) {
+    var i = $array.indexOf($elem);
+    if(i > -1) {
+      $array.splice(i, 1);
+    }
   }
 ?>

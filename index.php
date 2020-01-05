@@ -26,7 +26,6 @@
       padding: 0;
       margin-top: 6px;
     }
-    /* scroll to top */
     #toTop {
       display: none;
       text-decoration: none;
@@ -50,7 +49,6 @@
       -moz-opacity: 0;
       filter: alpha(opacity=0);
     }
-    /* organization block  */
     .organization-block {
       margin: 0 0 18px 18px;
       float: left;

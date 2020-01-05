@@ -19,9 +19,9 @@
       $resultSatusCode = mysqli_query($conn, $sqlSelectStatus);
       $statusRegister = mysqli_fetch_array($resultSatusCode, MYSQLI_ASSOC);
       if($statusRegister["status"] == 0 || $statusRegister["status"] == 1 || $statusRegister["status"] == 2) {
-        header("location: ../../dashboard/student.php?status=student_request_assigned");
+        header("location: ../../dashboard/student.php?status=request_assigned");
       } else {
-        header("location: ../../dashboard/student.php?status=list_organization_request");
+        header("location: ../../dashboard/student.php?status=list_request_organization");
       }
     } else {
       header("location: ../../public/404.php");

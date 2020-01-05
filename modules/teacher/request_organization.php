@@ -32,11 +32,16 @@
     <div class="w3-col">
       <h3>YÊU CẦU CÔNG VIỆC</h3>
       <ul>
-        <li><?php echo $row["description"]?></li>
+        <?php
+          $array_desc = explode_paragraph($row["description"]);
+          foreach($array_desc as $arr) {
+            echo "<li>".$arr."</li>";
+          }
+        ?>
       </ul>
     </div>
   </div>
   <div class="w3-row">
-    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="teacher.php?status=list_request">Quay lại</a></button>
+    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="teacher.php?status=list_request_organization">Quay lại</a></button>
   </div>
 </div>

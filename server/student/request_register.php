@@ -9,7 +9,7 @@
   echo $result_sql;
   if (mysqli_query($conn, $sql)) {
     check_amount($request_id);
-    header("location: ../../dashboard/student.php?status=list_organization_request");
+    header("location: ../../dashboard/student.php?status=list_request_organization");
   } else {
     echo "Bạn đã đăng ký công ty này.";
   }

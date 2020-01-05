@@ -2,7 +2,7 @@
   <div class="w3-row w3-center">
     <h3>CẬP NHẬT MẬT KHẨU</h3>
   </div>
-  <form action="../server/teacher/update_pass_teacher.php" method="post" enctype="multipart/form-data" class="w3-container w3-light-grey">
+  <form action="../server/teacher/update_pass.php" method="POST" enctype="multipart/form-data" class="w3-container w3-light-grey">
   <div class="w3-row w3-section">
       <label for="current">Mật khẩu hiện tại</label>
       <input type="password" class="w3-input w3-border w3-round-large" id="current" name="pass" required>

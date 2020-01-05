@@ -11,7 +11,7 @@
 
   $sql = "INSERT INTO intern_organization_requests(request_name, organization_id, description, amount, date_submit, status) VALUES('$request_name', '$organization_id', '$description', '$amount', '$date_submit', '$status')";
   if (mysqli_query($conn, $sql)) {
-    header("location:../../dashboard/organization.php?status=list_requests_organization");
+    header("location:../../dashboard/organization.php?status=list_requests");
   }else {
     echo("Failed");
   }

@@ -15,7 +15,7 @@
     <div class="w3-panel w3-card w3-round w3-padding" style="display: block;width: 40%;height: 30%; margin-left: 30%">
       <p><b>Công ty: </b><?php name_organization($result_data["organization_request_id"]) ?></p>
       <p><b>Vị trí được phân công: </b><?php echo $request_data["request_name"] ?></p>
-      <p><b>Mô tả: </b><?php echo $request_data["description"] ?></p>
+      <p><b>Mô tả: </b><span class="truncate_description"><?php echo $request_data["description"] ?></span></p>
       <p><b>Ngày bắt đầu: </b>
       <input type="date" class="w3-round" name="start_date" value="<?php echo $result_data["start_date"] ?>" required></p>
       <p><b>Ngày kết thúc: </b>
@@ -25,10 +25,12 @@
         <?php
           if($result_data["status"] == "0"){ ?>
             <option value="<?php echo '0'?>">Chờ thực hiện</option>
+            <option value="<?php echo '1'?>">Đang thực hiện</option>
           <?php } else if($result_data["status"] == "1") { ?>
             <option value="<?php echo '1'?>">Đang thực hiện</option>
+            <option value="<?php echo '2'?>">Đã thực hiện xong</option>
           <?php } else if($result_data["status"] == "2") { ?>
-            <?php header("location: student.php?status=list_organization_request");?>
+            <?php header("location: student.php?status=list_request_organization");?>
           <?php }
         ?>
       </select></p>

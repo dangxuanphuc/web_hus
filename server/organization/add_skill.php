@@ -7,7 +7,7 @@
 
   $sql = "INSERT INTO intern_organization_request_abilities(organization_request_id, ability_id, ability_required, note) VALUES('$request_id', '$ability_id', '$rate', '$note')";
   if (mysqli_query($conn, $sql)) {
-    header("location: ../../dashboard/organization.php?status=detail_request_organization&id=".$request_id);
+    header("location: ../../dashboard/organization.php?status=detail_request&id=".$request_id);
   } else {
     echo("Failed");
   }

@@ -51,11 +51,8 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <?php include("../modules/organization/header.php");?>
-    <?php include("../modules/organization/content.php");?>
-    <?php include "../layouts/footer.php" ?>
-  </div>
+  <?php include "../modules/organization/header.php";?>
+  <?php include "../modules/organization/content.php";?>
   <script type="text/javascript" src="../assets/js/move-top.js"></script>
   <script type="text/javascript" src="../assets/js/easing.js"></script>
   <script type="text/javascript" src="../assets/js/scroll.js"></script>

@@ -1,7 +1,7 @@
 <?php session_start();?>
 <div class="w3-top">
   <div class="w3-bar header-teacher" style="padding: 5px 0">
-    <a href="teacher.php?status=list_request" class="w3-bar-item brand">Trang chủ</a>
+    <a href="teacher.php?status=list_request_organization" class="w3-bar-item brand">Trang chủ</a>
     <div class="w3-right">
       <span class="w3-left" style="margin-top:10px;">Xin chào</span>
       <div class="w3-dropdown-hover">

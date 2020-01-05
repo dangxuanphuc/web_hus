@@ -54,8 +54,8 @@
   </style>
 </head>
 <body>
-  <?php include("../modules/teacher/header.php");?>
-  <?php include("../modules/teacher/content.php");?>
+  <?php include "../modules/teacher/header.php";?>
+  <?php include "../modules/teacher/content.php";?>
   <script type="text/javascript" src="../assets/js/move-top.js"></script>
   <script type="text/javascript" src="../assets/js/easing.js"></script>
   <script type="text/javascript" src="../assets/js/scroll.js"></script>

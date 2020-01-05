@@ -1,4 +1,3 @@
-<?php session_start();?>
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
@@ -9,14 +8,8 @@
     <a href="#about" class="w3-bar-item w3-button w3-hide-small">ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small">PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small">CONTACT</a>
-
     <?php
-      if(isset($_SESSION["username"]) && $_SESSION["username"] != NULL){
-        echo "<a href='./login/logout.php' class='w3-bar-item w3-button w3-hide-small w3-right'>Sign Out</a>";
-        echo "<a href='#' class='w3-bar-item w3-button w3-hide-small w3-right'>".$_SESSION["username"]."</a>";
-      } else {
-        echo "<a href='/web_hus/login/' class='w3-bar-item w3-button w3-hide-small w3-right'>LOGIN</a>";
-      }
+      echo "<a href='/web_hus/login/' class='w3-bar-item w3-button w3-hide-small w3-right'>LOGIN</a>";
     ?>
   </div>
 

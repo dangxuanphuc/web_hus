@@ -1,5 +1,6 @@
 <?php
   include("../server/config.php");
+  // include("../server/function.php");
   $id = $_GET["id"];
   $sql = mysqli_query($conn, "SELECT ab.ability_name, l.ability_required, l.ability_id
     FROM intern_organization_request_abilities l
@@ -23,7 +24,7 @@
         <label for="ability_name">Mức đánh giá</label>
         <select class="w3-select w3-light-gray w3-round" name="rate">
           <?php for($x=1; $x<=10; $x++) { ?>
-            <option value="<?php echo $x?> "><?php echo $x?></option>
+            <option value="<?php echo $x?>"><?php echo $x?></option>
           <?php }?>
         </select>
         </div>

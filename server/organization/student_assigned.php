@@ -20,5 +20,5 @@
     <?php } ?>
   </table>
   <br>
-  <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="organization.php?status=list_requests_organization">Quay lại</a></button>
+  <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="organization.php?status=list_requests">Quay lại</a></button>
 </div>

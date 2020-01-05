@@ -14,11 +14,11 @@
     <div class="w3-col l4 m6 w3-container w3-padding-16">
       <h3>Mobile Apps</h3>
       <div id="mobile-app">
-        <a href="#"><img src="assets/images/apple.png" alt="Apple" style="width: 120px;"></a>
-        <a href="#"><img src="assets/images/android.png" alt="Android" style="width: 120px;"></a>
+        <a href="#"><img src="../assets/images/apple.png" alt="Apple" style="width: 120px;"></a>
+        <a href="#"><img src="../assets/images/android.png" alt="Android" style="width: 120px;"></a>
       </div>
       <p>Chứng nhận bởi</p>
-      <a href="#"><img src="assets/images/bct.png" alt="Registered" style="width: 124px;"></a>
+      <a href="#"><img src="../assets/images/bct.png" alt="Registered" style="width: 124px;"></a>
     </div>
   </div>
   <p class="w3-center">&copy; 2019 by <a href="https://github.com/dangxuanphuc/web_hus" target="_blank" class="w3-hover-text-green">wataridori</a>. All Rights Reserved.</p>

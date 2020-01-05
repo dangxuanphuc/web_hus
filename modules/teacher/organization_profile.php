@@ -5,7 +5,7 @@
   $sql = mysqli_query($conn, "SELECT * FROM intern_organization_profile WHERE id = $id");
   $row = mysqli_fetch_assoc($sql);
 ?>
-<div class="w3-container w3-card w3-margin">
+<div class="w3-container w3-margin">
   <div class="w3-third">
     <a href="<?php url_organization($row['id'])?>"><img src="../public/uploads/<?php avatar_organization($row['id'])?>" style="height:200px;width:200px;margin:50px;" class="w3-border w3-hover-shadow w3-round"></a>
   </div>

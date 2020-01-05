@@ -15,7 +15,7 @@
       $_SESSION["teacher_name"] = $row["name"];
       $_SESSION["teacher_id"] = $row["id"];
       $_SESSION["login_user"] = $myusername;
-      header("location: ../../dashboard/teacher.php?status=list_request");
+      header("location: ../../dashboard/teacher.php?status=list_request_organization");
     } else {
       header("location: ../../public/404.php");
     }

@@ -17,7 +17,7 @@
   <div class="w3-twothird" style="margin-top:20px;">
     <h3>THÔNG TIN CÁ NHÂN</h3>
     <p>Lớp: <?php echo $row["class_name"];?></p>
-    <p>Ngày sinh: <?php echo $row["date_of_birth"];?></p>
+    <p>Ngày sinh: <?php echo date("m-d-Y", strtotime($row["date_of_birth"]));?></p>
     <h3>NĂNG LỰC</h3>
     <?php while($temp = mysqli_fetch_assoc($sql_intern_student_ability)) { ?>
       <div class="w3-row">

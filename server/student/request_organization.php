@@ -5,7 +5,7 @@
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
 ?>
-<div class="w3-container w3-card w3-margin">
+<div class="w3-container w3-margin">
   <div class="w3-third">
     <a href="<?php url_organization($row['organization_id'])?>"><img src="../public/uploads/<?php avatar_organization($row['organization_id'])?>" style="height:200px;width:200px;margin:50px;" class="w3-border w3-hover-shadow w3-round"></a>
   </div>

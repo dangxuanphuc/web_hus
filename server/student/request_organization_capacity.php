@@ -29,21 +29,26 @@
   </div>
   <div class="w3-row">
     <div class="w3-col">
-      <h3>YÊU CẦU CÔNG VIỆC</h3>
+      <h3>MÔ TẢ CÔNG VIỆC</h3>
       <ul>
-        <li><?php echo $row["description"]?></li>
+        <?php
+          $array_desc = explode_paragraph($row["description"]);
+          foreach($array_desc as $arr) {
+            echo "<li>".$arr."</li>";
+          }
+        ?>
       </ul>
     </div>
   </div>
-  <div class="w3-row">
-    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="student.php?status=list_organization_request">Quay lại</a></button>
+  <div class="w3-row w3-margin-bottom">
+    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="student.php?status=list_request_organization">Quay lại</a></button>
     <?php
       if($status_request_assigned["status"] == "0" || $status_request_assigned["status"] == "1" ||$status_intern_organization_requests["status"] == "4000"){?>
         <button type="button" class="w3-button w3-teal w3-round-large" disabled>Đăng ký</button>
     <?php } else if(in_array($student_id, $result_sql3)) { ?>
-      <button type="button" class="w3-button w3-green w3-round-large" disabled>Đã đăng ký</button>
+      <button type="button" class="w3-button w3-red w3-round-large" disabled>Đã đăng ký</button>
     <?php } else { ?>
-      <button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="../server/student/request_registration_organization.php?id=<?php echo $request_id;?>&student_id=<?php echo $_SESSION['student_id']?>&date=<?php echo date('Y-m-d');?>">Đăng ký</a></button>
+      <button class="w3-button w3-white w3-border w3-border-green w3-round-large"><a href="../server/student/request_register.php?id=<?php echo $request_id;?>&student_id=<?php echo $_SESSION['student_id']?>&date=<?php echo date('y-m-d');?>">Đăng ký</a></button>
     <?php } ?>
   </div>
 </div>

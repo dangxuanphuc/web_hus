@@ -1,6 +1,6 @@
 <?php session_start();?>
 <div class="w3-bar w3-light-grey" style="padding: 5px 0">
-  <a href="student.php?status=list_organization_request" class="w3-bar-item brand">Trang chủ</a>
+  <a href="student.php?status=list_request_organization" class="w3-bar-item brand">Trang chủ</a>
   <div class="w3-right">
     <span class="w3-left" style="margin-top:10px;">Xin chào</span>
     <div class="w3-dropdown-hover">

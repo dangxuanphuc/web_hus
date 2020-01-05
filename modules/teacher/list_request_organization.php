@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="w3-row w3-center">
-      <button><a href="teacher.php?status=detail_request&id=<?php echo $temp['id'];?>&organization_id=<?php echo $temp['organization_id'];?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></button>
+      <button><a href="teacher.php?status=request_organization&id=<?php echo $temp['id'];?>&organization_id=<?php echo $temp['organization_id'];?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem chi tiết</a></button>
       <button><a href="teacher.php?status=list_assigned&id=<?php echo $temp['id']?>" class="w3-button w3-white w3-border w3-border-grey w3-round-large">Xem bảng phân công</a></button>
     </div>
   </div>
