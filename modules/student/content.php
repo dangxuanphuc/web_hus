@@ -5,7 +5,7 @@
     $temp = "";
   }
   if($temp == "list_request_organization") {
-    include "../server/student/list_request_organization.php";
+    include "list_request_organization.php";
   } else if ($temp == "request_organization") {
     include "request_organization.php";
   } else if ($temp == "request_assigned") {

@@ -3,7 +3,7 @@
   $request_id = $_GET["request_id"];
   $student_id = $_GET["student_id"];
 
-  $sql = mysqli_query($conn, "SELECT * from intern_students where id=$student_id ");
+  $sql = mysqli_query($conn, "SELECT * from intern_students where id = $student_id ");
   $row = mysqli_fetch_assoc($sql);
   $sql2 = "SELECT ab.ability_name, l.ability_rate
     FROM intern_student_ability l

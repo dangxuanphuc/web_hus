@@ -9,7 +9,7 @@
   } else if($temp == "detail_request") {
     include "detail_request.php";
   } else if($temp == "student_assigned") {
-    include "../server/organization/student_assigned.php";
+    include "student_assigned.php";
   } else if($temp == "new_request") {
     include "new_request.php";
   } else if($temp == "organization_profile") {

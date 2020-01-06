@@ -1,12 +1,12 @@
 <?php
   include "../server/config.php";
-  $request_id = $_GET["id"];
+  $request_id = $_GET["request_id"];
   $sql = "SELECT * FROM intern_organization_request_assignment ab
     JOIN intern_students sp ON ab.student_id = sp.id
     WHERE organization_request_id = $request_id";
   $sql_request_assigned = mysqli_query($conn, $sql);
 ?>
-<div class="w3-col w3-border w3-round">
+<div class="w3-col w3-round">
   <h3 class="w3-center">DANH SÁCH PHÂN CÔNG</h3>
   <table class="w3-table w3-bordered w3-centered">
     <tr>
@@ -24,7 +24,7 @@
   </table>
   <div class="w3-center">
     <h3>THÊM SINH VIÊN</h3>
-    <button><a href="teacher.php?status=list_student_register&id=<?php echo $request_id?>" class="w3-button w3-white w3-border w3-border-green w3-round-large">Danh sách đăng ký</a></button>
-    <button><a href="teacher.php?status=list_student_not_assigned&id=<?php echo $request_id?>" class="w3-button w3-white w3-border w3-border-green w3-round-large">Danh sách chưa được phân công</a></button>
+    <button><a href="teacher.php?status=list_student_register&request_id=<?php echo $request_id?>" class="w3-button w3-white w3-border w3-border-green w3-round-large">Danh sách đăng ký</a></button>
+    <button><a href="teacher.php?status=list_student_not_assigned&request_id=<?php echo $request_id?>" class="w3-button w3-white w3-border w3-border-green w3-round-large">Danh sách chưa được phân công</a></button>
   </div>
 </div>

@@ -2,7 +2,7 @@
 include "../server/config.php";
 $sql_teacher = mysqli_query($conn, "SELECT * from intern_teachers");
 ?>
-<div class="w3-col w3-border w3-round">
+<div class="w3-col w3-round">
   <h3 class="w3-center">DANH SÁCH GIẢNG VIÊN</h3>
   <table class="w3-table-all w3-bordered w3-centered">
     <tr>

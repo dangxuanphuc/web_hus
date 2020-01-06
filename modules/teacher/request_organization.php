@@ -1,8 +1,8 @@
 <?php
   include "../server/config.php";
   include "../server/function.php";
-  $request_id = $_GET["id"];
-  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE id=$request_id ");
+  $request_id = $_GET["request_id"];
+  $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE id = $request_id ");
   $row = mysqli_fetch_assoc($sql);
   $sql2 = "SELECT ab.ability_name, l.ability_required
     FROM intern_organization_request_abilities l

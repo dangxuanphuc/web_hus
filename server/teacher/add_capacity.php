@@ -8,6 +8,6 @@
   if (mysqli_query($conn, $sql)) {
     header("location: ../../dashboard/teacher.php?status=list_request_organization");
   } else {
-  echo("Năng lực này đã tồn tại.");
+    echo("Năng lực này đã tồn tại.");
   }
 ?>

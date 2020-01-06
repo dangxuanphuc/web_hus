@@ -1,6 +1,7 @@
 <?php
   include "../server/config.php";
-  $teacher_id = $_SESSION["teacher_id"];
+  $id = $_SESSION["teacher_id"];
+  $teacher_id = $_GET["teacher_id"];
   $sql = mysqli_query($conn, "SELECT * from intern_teachers where id = $teacher_id");
   $row = mysqli_fetch_assoc($sql);
 ?>
@@ -13,8 +14,10 @@
     <h3>THÔNG TIN CÁ NHÂN</h3>
     <p>Ngày sinh: <?php echo date("m-d-Y", strtotime($row["date_of_birth"]));?></p>
     <p>Giới tính: <?php echo $row["sex"];?></p>
-    <p><button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="teacher.php?status=update_profile">Cập nhật thông tin</a></button>
-    <button class="w3-button w3-white w3-border w3-border-deep-orange w3-round-large"><a href="teacher.php?status=update_pass">Cập nhật mật khẩu</a></button>
-    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="teacher.php?status=list_request_organization">Quay lại</a></button></p>
+    <?php if($id == $teacher_id) { ?>
+      <button class="w3-button w3-white w3-border w3-border-red w3-round-large"><a href="teacher.php?status=update_profile">Cập nhật thông tin</a></button>
+      <button class="w3-button w3-white w3-border w3-border-deep-orange w3-round-large"><a href="teacher.php?status=update_pass">Cập nhật mật khẩu</a></button>
+    <?php } ?>
+    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="teacher.php?status=list_teacher">Quay lại</a></button>
   </div>
 </div>

@@ -1,12 +1,17 @@
 <?php
   include "../server/config.php";
-  // include "../server/function.php";
   $id = $_GET["id"];
-  $sql = mysqli_query($conn, "SELECT ab.ability_name, l.ability_required, l.ability_id
+  $sql = "SELECT ab.ability_name, l.ability_required, l.ability_id
     FROM intern_organization_request_abilities l
     JOIN intern_ability_dictionary ab ON ab.id = l.ability_id
-    WHERE l.organization_request_id = $id");
-  $sql_intern_ability_dictionary = mysqli_query($conn, "SELECT * FROM intern_ability_dictionary");
+    WHERE l.organization_request_id = $id";
+  $result = mysqli_query($conn, $sql);
+  $sql2 = "SELECT * FROM intern_ability_dictionary
+    WHERE id NOT IN (SELECT l.ability_id
+    FROM intern_organization_request_abilities l
+    JOIN intern_ability_dictionary ab ON ab.id = l.ability_id
+    WHERE l.organization_request_id = $id)";
+  $sql_intern_ability_dictionary = mysqli_query($conn, $sql2);
 ?>
 <div class="w3-container">
   <div class="w3-row w3-quarter">
@@ -39,7 +44,7 @@
         <th>Mức Đánh Giá</th>
         <th>Xóa</th>
       </tr>
-      <?php while($temp = mysqli_fetch_assoc($sql)) { ?>
+      <?php while($temp = mysqli_fetch_assoc($result)) { ?>
         <tr>
           <td><?php echo $temp["ability_name"] ?></td>
           <td><?php echo $temp["ability_required"] ?> / 10</td>

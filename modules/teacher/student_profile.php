@@ -1,7 +1,7 @@
 <?php
   include "../server/config.php";
   $student_id = $_GET["student_id"];
-  $sql = mysqli_query($conn, "SELECT * from intern_students where id=$student_id");
+  $sql = mysqli_query($conn, "SELECT * FROM intern_students WHERE id = $student_id");
   $row = mysqli_fetch_assoc($sql);
   $sql2 = "SELECT ab.ability_name, l.ability_rate
     FROM intern_student_ability l
@@ -27,6 +27,5 @@
         </div>
       </div>
     <?php }?>
-    <button class="w3-button w3-white w3-border w3-border-gray w3-round-large"><a href="teacher.php?status=list_student">Quay lại</a></button></p>
   </div>
 </div>
