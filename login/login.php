@@ -1,17 +1,17 @@
 <div class="w3-cell-row w3-margin-top" style="height: 100%">
   <div class="w3-container w3-center w3-cell w3-cell-middle">
-    <h1 class="w3-xxxlarge">Log In</h1>
+    <h1 class="w3-xxxlarge">Đăng nhập</h1>
     <div id="error" class="w3-margin w3-padding-small"></div>
     <div class="w3-container" style="margin: auto; width: 600px">
       <div class="w3-row">
         <a href="javascript:void(0)" onclick="openTab(event, 'student');">
-          <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-green">Student</div>
+          <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-green">Sinh viên</div>
         </a>
         <a href="javascript:void(0)" onclick="openTab(event, 'teacher');">
-          <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Teacher</div>
+          <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Giảng viên</div>
         </a>
         <a href="javascript:void(0)" onclick="openTab(event, 'organization');">
-          <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Organization</div>
+          <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Doanh nghiệp</div>
         </a>
       </div>
 
