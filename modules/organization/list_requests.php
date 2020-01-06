@@ -1,6 +1,6 @@
 <?php
-  include("../server/config.php");
-  include("../server/function.php");
+  include "../server/config.php";
+  include "../server/function.php";
   $organization_id = $_SESSION["organization_id"];
   $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE organization_id = $organization_id ORDER BY date_submit DESC");
 ?>

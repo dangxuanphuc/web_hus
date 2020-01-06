@@ -116,10 +116,22 @@
     $result = preg_split('/(?<=[.?!;])\s+/', $paragraph, -1, PREG_SPLIT_NO_EMPTY);
     return $result;
   }
-  function remove_element($array, $elem) {
-    var i = $array.indexOf($elem);
-    if(i > -1) {
-      $array.splice(i, 1);
+  function check_amount($request_id) {
+    global $conn;
+    $sql_amount = mysqli_query($conn, "SELECT * FROM intern_student_register l
+      WHERE l.request_id=$request_id");
+    $num = mysqli_num_rows($sql_amount);
+    $sql_request_amount = mysqli_query($conn, "SELECT *
+      FROM intern_organization_requests l
+      WHERE l.id = $request_id");
+    $row = mysqli_fetch_assoc($sql_request_amount);
+    $amount = $row["amount"];
+    if ($num >= $amount) {
+      $sql = "UPDATE intern_organization_requests SET status='4000' WHERE id = $request_id";
+      if(mysqli_query($conn, $sql))
+        echo "Done!";
+    } else {
+      echo "Error deleting record: ".mysqli_error($conn);
     }
   }
 ?>

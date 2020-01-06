@@ -1,5 +1,5 @@
 <?php
-  include("../server/config.php");
+  include "../server/config.php";
   $request_id = $_GET["id"];
   $sql = "SELECT * FROM intern_students
     WHERE id NOT IN (SELECT student_id FROM intern_organization_request_assignment)";

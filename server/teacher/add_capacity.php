@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include "../config.php";
   $name = $_POST["capacity_name"];
   $type = $_POST["capacity_type"];
   $note = $_POST["capacity_note"];

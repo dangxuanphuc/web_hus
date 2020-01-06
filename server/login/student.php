@@ -24,7 +24,7 @@
         header("location: ../../dashboard/student.php?status=list_request_organization");
       }
     } else {
-      header("location: ../../public/404.php");
+      header("location: ../../login/index.php");
     }
   }
 ?>

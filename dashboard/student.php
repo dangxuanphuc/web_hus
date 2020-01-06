@@ -56,7 +56,6 @@
     <?php include "../modules/student/content.php";?>
   </div>
   <?php include "footer.php"?>
-  <script type="text/javascript" src="../assets/js/truncate_text.js"></script>
   <script type="text/javascript" src="../assets/js/move-top.js"></script>
   <script type="text/javascript" src="../assets/js/easing.js"></script>
   <script type="text/javascript" src="../assets/js/scroll.js"></script>

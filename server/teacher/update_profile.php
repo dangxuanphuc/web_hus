@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include "../config.php";
   session_start();
   $name = $_POST["teacher_name"];
   $sex = $_POST["sex"];

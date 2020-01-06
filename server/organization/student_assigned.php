@@ -1,5 +1,5 @@
 <?php
-  include("../server/config.php");
+  include "../server/config.php";
   $id = $_GET["id"];
   $sql_request_assigned = mysqli_query($conn, "SELECT * FROM intern_organization_request_assignment ab JOIN intern_students sp ON ab.student_id=sp.id WHERE organization_request_id = $id");
 ?>

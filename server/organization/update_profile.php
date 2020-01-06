@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include "../config.php";
   session_start();
   $organization_id = $_SESSION["organization_id"];
   $name = $_POST["organization_name"];

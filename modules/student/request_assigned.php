@@ -1,6 +1,6 @@
 <?php
-  include_once("../server/config.php");
-  include_once("../server/function.php");
+  include "../server/config.php";
+  include "../server/function.php";
   $sql = "SELECT * FROM intern_organization_requests";
   $result_request = mysqli_query($conn, $sql);
   $request_data = $result_request->fetch_array(MYSQLI_ASSOC);
@@ -38,3 +38,4 @@
     </div>
   </form>
 </div>
+<script type="text/javascript" src="../assets/js/truncate_text.js"></script>

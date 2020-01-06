@@ -17,43 +17,43 @@
         $temp = "";
       }
       if($temp == "add_student") {
-        include("add_student.php");
+        include "add_student.php";
       } elseif ($temp == "add_organization") {
-        include("add_organization.php");
+        include "add_organization.php";
       } elseif ($temp == "add_teacher") {
-        include("add_teacher.php");
+        include "add_teacher.php";
       } elseif ($temp == "add_capacity") {
-        include("add_capacity.php");
+        include "add_capacity.php";
       } elseif ($temp == "list_request_organization") {
-        include("list_request_organization.php");
+        include "list_request_organization.php";
       } elseif ($temp == "request_organization") {
-        include("request_organization.php");
+        include "request_organization.php";
       } elseif ($temp == "list_assigned") {
-        include("list_assigned.php");
+        include "list_assigned.php";
       } elseif ($temp == "list_student_register") {
-        include("list_student_register.php");
+        include "list_student_register.php";
       } elseif ($temp == "add_student_request") {
-        include("../server/teacher/add_student_request.php");
+        include "../server/teacher/add_student_request.php";
       } elseif ($temp == "list_student") {
-        include("list_student.php");
+        include "list_student.php";
       } elseif ($temp == "list_organization") {
-        include("list_organization.php");
+        include "list_organization.php";
       } elseif ($temp == "list_teacher") {
-        include("list_teacher.php");
+        include "list_teacher.php";
       } elseif($temp == "teacher_profile") {
-        include("teacher_profile.php");
+        include "teacher_profile.php";
       } elseif ($temp == "list_student_not_assigned") {
-        include("list_student_not_assigned.php");
+        include "list_student_not_assigned.php";
       } elseif ($temp == "update_pass") {
-        include("update_pass.php");
+        include "update_pass.php";
       } elseif ($temp == "student_profile") {
-        include("student_profile.php");
+        include "student_profile.php";
       } elseif ($temp == "organization_profile") {
-        include("organization_profile.php");
+        include "organization_profile.php";
       } elseif ($temp == "update_profile") {
-        include("update_profile.php");
+        include "update_profile.php";
       } elseif ($temp == "teacher_profile") {
-        include("teacher_profile.php");
+        include "teacher_profile.php";
       }
     ?>
   </div>

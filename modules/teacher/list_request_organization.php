@@ -1,6 +1,6 @@
 <?php
-  include("../server/config.php");
-  include("../server/function.php");
+  include "../server/config.php";
+  include "../server/function.php";
   $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests ORDER BY status ASC, date_submit DESC");
 ?>
 <?php while($temp = mysqli_fetch_assoc($sql)) { ?>

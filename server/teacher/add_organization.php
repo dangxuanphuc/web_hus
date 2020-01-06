@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include "../config.php";
   $name = $_POST["organization_name"];
   $code = $_POST["organization_id"];
   $employee = $_POST["employee"];

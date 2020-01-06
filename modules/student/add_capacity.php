@@ -1,5 +1,5 @@
 <?php
-  include("../server/config.php");
+  include "../server/config.php";
   $sql_intern_ability_dictionary = mysqli_query($conn, "SELECT * from intern_ability_dictionary");
 ?>
 <div class="w3-container">

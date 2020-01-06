@@ -1,6 +1,6 @@
 <?php
-  include("../server/config.php");
-  include("../server/function.php");
+  include "../server/config.php";
+  include "../server/function.php";
   $request_id = $_GET["id"];
   $sql = mysqli_query($conn, "SELECT * FROM intern_organization_requests WHERE id=$request_id ");
   $row = mysqli_fetch_assoc($sql);

@@ -1,6 +1,6 @@
 <?php
-  include("../server/config.php");
-  include("../server/function.php");
+  include "../server/config.php";
+  include "../server/function.php";
   $student_id = $_SESSION["student_id"];
   $sql = mysqli_query($conn, "SELECT * from intern_students where id=$student_id ");
   $row = mysqli_fetch_assoc($sql);

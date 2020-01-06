@@ -1,5 +1,5 @@
 <?php
-  include("../server/config.php");
+  include "../server/config.php";
   $sql_organization = mysqli_query($conn, "SELECT * FROM intern_organization_profile");
 ?>
 <h1></h1>

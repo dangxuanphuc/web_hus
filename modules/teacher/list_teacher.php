@@ -1,5 +1,5 @@
 <?php
-include("../server/config.php");
+include "../server/config.php";
 $sql_teacher = mysqli_query($conn, "SELECT * from intern_teachers");
 ?>
 <div class="w3-col w3-border w3-round">

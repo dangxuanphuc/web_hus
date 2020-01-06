@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include "../config.php";
   $request_id = $_GET["request_id"];
   $ability_id = $_POST["ability_id"];
   $rate = $_POST["rate"];

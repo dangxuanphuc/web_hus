@@ -1,5 +1,5 @@
 <?php
-include("../server/config.php");
+include "../server/config.php";
 $request_id = $_GET["id"];
 $sql = "SELECT * from intern_student_register ab
   join intern_students sp on ab.student_id = sp.id

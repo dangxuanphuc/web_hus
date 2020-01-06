@@ -1,5 +1,5 @@
 <?php
-  include("../server/config.php");
+  include "../server/config.php";
   $teacher_id = $_SESSION["teacher_id"];
   $sql = mysqli_query($conn, "SELECT * from intern_teachers where id = $teacher_id");
   $row = mysqli_fetch_assoc($sql);

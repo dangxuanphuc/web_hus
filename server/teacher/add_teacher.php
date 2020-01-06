@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include "../config.php";
   $name = $_POST["teacher_name"];
   $code = $_POST["teacher_id"];
   $gender = $_POST["gender"];

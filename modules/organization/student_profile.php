@@ -1,5 +1,5 @@
 <?php
-  include("../server/config.php");
+  include "../server/config.php";
   $request_id = $_GET["request_id"];
   $student_id = $_GET["student_id"];
 

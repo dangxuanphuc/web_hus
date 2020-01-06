@@ -8,14 +8,13 @@
     $sql = "SELECT * FROM intern_organization_profile WHERE tax_number = '$myusername' and password='$pass'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-
     $count = mysqli_num_rows($result);
     if ($count == 1) {
-      $_SESSION["organization_name"]=$row["organization_name"];
-      $_SESSION["organization_id"]=$row["id"];
+      $_SESSION["organization_name"] = $row["organization_name"];
+      $_SESSION["organization_id"] = $row["id"];
       header("location: ../../dashboard/organization.php?status=list_requests");
     } else {
-      header("location: ../../public/404.php");
+      header("location: ../../login/index.php");
     }
   }
 ?>

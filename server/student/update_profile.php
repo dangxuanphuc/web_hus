@@ -1,5 +1,5 @@
 <?php
-  include("../config.php");
+  include "../config.php";
   session_start();
   $student_id = $_SESSION["student_id"];
   $name = $_POST["student_name"];

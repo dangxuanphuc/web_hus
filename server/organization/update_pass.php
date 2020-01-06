@@ -1,5 +1,5 @@
 <?php
-  include("../server/config.php");
+  include "../server/config.php";
   session_start();
   $organization_id = $_SESSION["organization_id"];
   $current = $_POST["current_pass"];
