@@ -1,4 +1,3 @@
-<?php session_start();?>
 <div class="w3-bar w3-light-grey" style="padding: 5px 0">
   <div class="w3-bar-item brand"><a href="organization.php?status=list_requests">Trang chủ</a></div>
   <div class="w3-bar-item w3-right">

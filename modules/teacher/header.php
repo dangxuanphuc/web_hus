@@ -1,4 +1,3 @@
-<?php session_start();?>
 <div class="w3-top">
   <div class="w3-bar header-teacher" style="padding: 5px 0">
     <a href="teacher.php?status=list_request_organization" class="w3-bar-item brand">Trang chủ</a>

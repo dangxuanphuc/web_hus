@@ -119,7 +119,7 @@
   function check_amount($request_id) {
     global $conn;
     $sql_amount = mysqli_query($conn, "SELECT * FROM intern_student_register l
-      WHERE l.request_id=$request_id");
+      WHERE l.request_id = $request_id");
     $num = mysqli_num_rows($sql_amount);
     $sql_request_amount = mysqli_query($conn, "SELECT *
       FROM intern_organization_requests l
