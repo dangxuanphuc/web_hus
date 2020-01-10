@@ -13,7 +13,7 @@
       $_SESSION["student_name"] = $row["name"];
       $id = $row["id"];
       $_SESSION["student_id"] = $id;
-      $sqlSelectStatus = "SELECT status FROM intern_organization_request_assignment WHERE student_id = $id AND status <> 2";
+      $sqlSelectStatus = "SELECT status FROM intern_organization_request_assignment WHERE student_id = $id";
       $resultSatusCode = mysqli_query($conn, $sqlSelectStatus);
       $statusRegister = mysqli_fetch_array($resultSatusCode, MYSQLI_ASSOC);
       if($statusRegister["status"] == 0 || $statusRegister["status"] == 1) {

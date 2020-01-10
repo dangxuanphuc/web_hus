@@ -1,7 +1,11 @@
 <?php
   include "../server/config.php";
   $id = $_SESSION["teacher_id"];
-  $teacher_id = $_GET["teacher_id"];
+  if(isset($_GET["teacher_id"])) {
+    $teacher_id = $_GET["teacher_id"];
+  } else {
+    $teacher_id = $id;
+  }
   $sql = mysqli_query($conn, "SELECT * from intern_teachers where id = $teacher_id");
   $row = mysqli_fetch_assoc($sql);
 ?>

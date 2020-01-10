@@ -18,6 +18,7 @@
     <div class="w3-row">
       <p><b>Công ty: </b><?php name_organization($row["organization_id"]);?></p>
       <p><b>Địa chỉ: </b><?php address_organization($row["organization_id"]);?></p>
+      <p><b>Số lượng tuyển: </b><?php number_amount($row["organization_id"]);?></p>
       <p><b>Số sinh viên đã đăng ký: </b><?php number_of_registrations($row["id"]);?></p>
       <p><b>Số sinh viên đã phân công: </b><?php number_of_assigned($row["id"]);?></p>
       <p><b>Trạng thái: </b><span class="w3-tag w3-round w3-<?php add_label_to_status($row["status"]);?>" style="padding:3px;"><?php check_status($row["status"]);?></span></p>

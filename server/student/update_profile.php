@@ -10,7 +10,6 @@
   move_uploaded_file($avatar_tmp, "../../public/uploads/".$avatar);
 
   $sql = "UPDATE `intern_students` SET `name`='$name', `date_of_birth`='$birthday', `class_name`='$class', `avatar`='$avatar' WHERE `id`=$student_id";
-  echo $sql;
   if (mysqli_query($conn, $sql)) {
     header("location: ../../dashboard/student.php?status=student_profile");
   } else {

@@ -7,7 +7,7 @@
   $teacher_id = $_SESSION["teacher_id"];
 
   if($new_pass == $password) {
-    $sql = "UPDATE `intern_teachers` SET `password` = '$password'  WHERE  `password` = $pass AND `id` = $teacher_id";
+    $sql = "UPDATE `intern_teachers` SET `password` = '$password'  WHERE  `password` = '$pass' AND `id` = '$teacher_id'";
     if(mysqli_query($conn, $sql))
       header("location:../../dashboard/teacher.php?status=list_request_organization");
     else echo "Error deleting record: " . mysqli_error($conn);

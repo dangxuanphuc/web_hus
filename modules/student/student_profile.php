@@ -21,7 +21,7 @@
     <h3>NĂNG LỰC</h3>
     <?php while($temp = mysqli_fetch_assoc($sql_intern_student_ability)) { ?>
       <div class="w3-row">
-        <div class="w3-col s1" style="margin-bottom: 5px;"><?php echo $temp["ability_name"]?></div>
+        <div class="w3-col s2" style="margin-bottom: 5px;"><?php echo $temp["ability_name"]?></div>
         <div class="w3-col s7 w3-light-grey w3-round">
           <div class="w3-green w3-center w3-round" style="width:<?php echo $temp['ability_rate']*10?>%"><?php echo $temp['ability_rate']*10?>%</div>
         </div>

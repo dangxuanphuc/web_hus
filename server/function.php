@@ -88,6 +88,13 @@
     }
     echo $count;
   }
+  function number_amount($organization_id) {
+    global $conn;
+    $sql_amount = mysqli_query($conn, "SELECT * FROM intern_organization_requests
+      WHERE organization_id = $organization_id");
+    $amount = mysqli_fetch_assoc($sql_amount);
+    echo $amount["amount"];
+  }
   function check_status($status) {
     if($status == 1000)
       echo "Đang soạn";
@@ -126,12 +133,13 @@
       WHERE l.id = $request_id");
     $row = mysqli_fetch_assoc($sql_request_amount);
     $amount = $row["amount"];
-    if ($num >= $amount) {
+    echo "num: $num";
+    echo "amount: $amount";
+    if ($num <= $amount) {
       $sql = "UPDATE intern_organization_requests SET status='4000' WHERE id = $request_id";
-      if(mysqli_query($conn, $sql))
-        echo "Done!";
+      mysqli_query($conn, $sql);
     } else {
-      echo "Error deleting record: ".mysqli_error($conn);
+      echo "Đã hết lượt đăng ký";
     }
   }
 ?>
